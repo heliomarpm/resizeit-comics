@@ -26,6 +26,8 @@ namespace ResizeImages
             chkTargetFolder.Checked = false;
             picPreview.Visible = false;
             lstFiles.HeaderStyle = ColumnHeaderStyle.None;
+            //lstFiles.AutoResizeColumn(0, ColumnHeaderAutoResizeStyle.HeaderSize);
+            btnRun.Enabled = false;
 
             SetTargetFolderDefault();
         }
@@ -186,6 +188,8 @@ namespace ResizeImages
                     return;
                 }
 
+                lstFiles.Items.Clear();
+
                 _tokenSource = new CancellationTokenSource();
                 var token = _tokenSource.Token;
 
@@ -194,6 +198,8 @@ namespace ResizeImages
                     btnRun.Text = "Cancelar";
                     this.Refresh();
 
+                    progBar.Value = 0;
+                    progBar.Maximum = 100; // 100%
                     var progress = new Progress<int>(value =>
                     {
                         progBar.Value = value;
@@ -417,6 +423,12 @@ namespace ResizeImages
         private void chkReplaceOriginals_CheckedChanged(object sender, EventArgs e)
         {
             chkKeepBackup.Visible = chkReplaceOriginals.Checked;
+        }
+
+        private void Form1_Resize(object sender, EventArgs e)
+        {
+            if (lstFiles.Columns.Count > 0)
+                lstFiles.Columns[0].Width = lstFiles.Width - 20;
         }
     }
 }

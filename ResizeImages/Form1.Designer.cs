@@ -475,7 +475,7 @@ namespace ResizeImages
             // columnHeader1
             // 
             this.columnHeader1.Name = "columnHeader1";
-            this.columnHeader1.Width = 800;
+            this.columnHeader1.Width = 400;
             // 
             // picPreview
             // 
@@ -506,6 +506,7 @@ namespace ResizeImages
             this.Text = "Redimensionar Imagens";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Form1_Load);
+            this.Resize += new System.EventHandler(this.Form1_Resize);
             this.pnlTop.ResumeLayout(false);
             this.pnlTop.PerformLayout();
             this.pnlFilter.ResumeLayout(false);
