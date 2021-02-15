@@ -13,7 +13,9 @@ namespace ResizeImages
     public partial class Form1 : Form
     {
         CancellationTokenSource _tokenSource;
+        string _targetFolder;
         List<string> _outputs;
+        int _countSubFolders;
 
         public Form1()
         {
@@ -195,6 +197,14 @@ namespace ResizeImages
 
                 try
                 {
+                    // subfolders count
+                    _countSubFolders = Directory.GetDirectories(txtSourcePath.Text, "*", SearchOption.AllDirectories).Length;
+                    lblFolderCount.Text = _countSubFolders.ToString();
+                    lblFolderCount.Visible = _countSubFolders > 0;
+
+                    if (chkReplaceOriginals.Checked)
+                        txtTargetFolder.Text = string.Empty;
+
                     btnRun.Text = "Cancelar";
                     this.Refresh();
 
@@ -205,22 +215,33 @@ namespace ResizeImages
                         progBar.Value = value;
                     });
 
+                    var countSubFolder = new Progress<int>(value =>
+                    {
+                        //_countSubFolders = value;
+                        lblFolderCount.Text = _countSubFolders.ToString();
+                        lblFolderCount.Refresh();
+                    });
+
                     await Task.Run(() =>
                     {
                         string ext = chkFilterJPG.Checked ? chkFilterJPG.Tag.ToString() : string.Empty;
                         ext += chkFilterPNG.Checked ? (!ext.Equals(string.Empty) ? ";" : "") + chkFilterPNG.Tag.ToString() : string.Empty;
 
-                        CarregarImagens(txtSourcePath.Text, ext, progress, token);
+                        _targetFolder = txtTargetFolder.Text;
+
+                        CarregarImagens(txtSourcePath.Text, ext, progress, countSubFolder, token);
                     });
 
                     btnRun.Text = "Começar";
                 }
                 catch (OperationCanceledException)
                 {
-                    btnRun.Text = "Cancelado";
+                    btnRun.Text = "Cancelado (Recomeçar)";
                 }
                 finally
                 {
+                    lblFolderCount.Visible = false;
+
                     progBar.Value = 0;
                     progBar.Maximum = _outputs.Count;
                     foreach (var item in _outputs)
@@ -228,21 +249,21 @@ namespace ResizeImages
                         AddFileList(item);
                         progBar.Value++;
                     }
-                    _tokenSource.Dispose();
+                    _tokenSource.Dispose();                    
                 }
 
             }
 
         }
 
-        void CarregarImagens(string pathFiles, string fileExtensions, IProgress<int> progress, CancellationToken token)
+        void CarregarImagens(string pathFiles, string fileExtensions, IProgress<int> progress, IProgress<int> subFolders, CancellationToken token)
         {
-            var files = Directory.GetFiles(pathFiles, "*.*").Where(f => fileExtensions.Contains(Path.GetExtension(f).ToLower()));
+            _countSubFolders--;
+            subFolders.Report(_countSubFolders);
 
-            if (chkReplaceOriginals.Checked)
-                txtTargetFolder.Text = string.Empty;
+            var files = Directory.GetFiles(pathFiles, "*.*").Where(f => fileExtensions.Contains(Path.GetExtension(f).ToLower()));
            
-            string target = txtTargetFolder.Text.Replace(@"??\", pathFiles + @"\");
+            string target = _targetFolder.Replace(@"??\", pathFiles + @"\");
             bool keepBackup = chkKeepBackup.Visible && chkKeepBackup.Checked;
 
             //progBar.Maximum = files.Count();
@@ -270,7 +291,6 @@ namespace ResizeImages
             //lstFiles.Refresh();
 
             if (chkRecursiveFind.Checked)
-
                 foreach (var sub in Directory.GetDirectories(pathFiles))
                 {
                     if (token.IsCancellationRequested)
@@ -279,7 +299,9 @@ namespace ResizeImages
                     }
 
                     if (!sub.Contains(@"\__output") && !sub.Contains(@"\__backup"))
-                        CarregarImagens(sub, fileExtensions, progress, token);
+                        CarregarImagens(sub, fileExtensions, progress, subFolders, token);
+                    else
+                        _countSubFolders--;
                 }
 
         }
@@ -379,9 +401,12 @@ namespace ResizeImages
                 // Se não estiver explicito para substuir original, então cria um backup da original
                 fpath = Path.Combine(fpath, @"__backup");
                 if (!Directory.Exists(fpath))
+                {
                     Directory.CreateDirectory(fpath);
+                    _countSubFolders++;
+                }
 
-                File.Move(sourceFile, fpath);
+                File.Copy(sourceFile, Path.Combine(fpath, fname), true);
             }
 
             //Salvando Imagem Redimensionada

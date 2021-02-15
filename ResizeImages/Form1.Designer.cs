@@ -64,6 +64,7 @@ namespace ResizeImages
             this.columnHeader1 = new System.Windows.Forms.ColumnHeader();
             this.picPreview = new System.Windows.Forms.PictureBox();
             this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
+            this.lblFolderCount = new System.Windows.Forms.Label();
             this.pnlTop.SuspendLayout();
             this.pnlFilter.SuspendLayout();
             this.pnlLeft.SuspendLayout();
@@ -484,9 +485,24 @@ namespace ResizeImages
             this.picPreview.Name = "picPreview";
             this.picPreview.Padding = new System.Windows.Forms.Padding(8);
             this.picPreview.Size = new System.Drawing.Size(185, 235);
-            this.picPreview.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picPreview.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picPreview.TabIndex = 3;
             this.picPreview.TabStop = false;
+            // 
+            // lblFolderCount
+            // 
+            this.lblFolderCount.BackColor = System.Drawing.Color.Transparent;
+            this.lblFolderCount.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.lblFolderCount.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lblFolderCount.Font = new System.Drawing.Font("Roboto", 140.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblFolderCount.ForeColor = System.Drawing.Color.Black;
+            this.lblFolderCount.Location = new System.Drawing.Point(280, 316);
+            this.lblFolderCount.Name = "lblFolderCount";
+            this.lblFolderCount.Size = new System.Drawing.Size(552, 225);
+            this.lblFolderCount.TabIndex = 4;
+            this.lblFolderCount.Text = "0";
+            this.lblFolderCount.TextAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.lblFolderCount.Visible = false;
             // 
             // Form1
             // 
@@ -494,6 +510,7 @@ namespace ResizeImages
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(23)))), ((int)(((byte)(23)))));
             this.ClientSize = new System.Drawing.Size(832, 546);
+            this.Controls.Add(this.lblFolderCount);
             this.Controls.Add(this.picPreview);
             this.Controls.Add(this.lstFiles);
             this.Controls.Add(this.pnlLeft);
@@ -554,6 +571,7 @@ namespace ResizeImages
         private System.Windows.Forms.FolderBrowserDialog folderBrowserDialog1;
         private System.Windows.Forms.CheckBox chkRecursiveFind;
         private System.Windows.Forms.CheckBox chkKeepBackup;
+        private System.Windows.Forms.Label lblFolderCount;
     }
 }
 
