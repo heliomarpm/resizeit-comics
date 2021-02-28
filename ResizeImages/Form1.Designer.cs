@@ -186,6 +186,8 @@ namespace ResizeImages
             this.txtTargetFolder.PlaceholderText = "Destino da Imagem\'s";
             this.txtTargetFolder.Size = new System.Drawing.Size(767, 24);
             this.txtTargetFolder.TabIndex = 4;
+            this.txtTargetFolder.DoubleClick += new System.EventHandler(this.txtTargetFolder_Enter);
+            this.txtTargetFolder.Enter += new System.EventHandler(this.txtTargetFolder_Enter);
             // 
             // txtSourcePath
             // 
@@ -201,6 +203,8 @@ namespace ResizeImages
             this.txtSourcePath.Size = new System.Drawing.Size(767, 24);
             this.txtSourcePath.TabIndex = 3;
             this.txtSourcePath.TextChanged += new System.EventHandler(this.txtSourcePath_TextChanged);
+            this.txtSourcePath.DoubleClick += new System.EventHandler(this.txtSourcePath_Enter);
+            this.txtSourcePath.Enter += new System.EventHandler(this.txtSourcePath_Enter);
             // 
             // chkTargetFolder
             // 

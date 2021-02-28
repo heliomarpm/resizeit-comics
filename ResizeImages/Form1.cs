@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Imaging;
 using System.IO;
 using System.Linq;
+using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -111,25 +113,34 @@ namespace ResizeImages
 
         private void ShowPicPreview(string path)
         {
-            picPreview.Visible = File.Exists(path);
-
-            if (picPreview.Visible)
+            try
             {
-                picPreview.ImageLocation = path;
+                picPreview.Visible = File.Exists(path);
 
-                var imgOrigem = Image.FromFile(path);
-                if (imgOrigem.Width < imgOrigem.Height)
+                if (picPreview.Visible)
                 {
-                    //retrato
-                    picPreview.Size = new Size(185, 235);
+                    picPreview.ImageLocation = path;
+
+                    var imgOrigem = Image.FromFile(path);
+                    if (imgOrigem.Width < imgOrigem.Height)
+                    {
+                        //retrato
+                        picPreview.Size = new Size(185, 235);
+                    }
+                    else
+                    {
+                        //paisagem
+                        picPreview.Size = new Size(185 * 2, 235);
+                    }
+                    picPreview.Left = this.Width - (picPreview.Width + 33);
                 }
-                else
-                {
-                    //paisagem
-                    picPreview.Size = new Size(185 * 2, 235);
-                }
-                picPreview.Left = this.Width - (picPreview.Width + 33);
             }
+            catch (Exception)
+            {
+                picPreview.Visible = false;
+
+            }
+            
         }
 
         private void btnOpenSource_Click(object sender, EventArgs e)
@@ -218,7 +229,7 @@ namespace ResizeImages
                     var countSubFolder = new Progress<int>(value =>
                     {
                         //_countSubFolders = value;
-                        lblFolderCount.Text = _countSubFolders.ToString();
+                        lblFolderCount.Text = value.ToString();
                         lblFolderCount.Refresh();
                     });
 
@@ -258,8 +269,8 @@ namespace ResizeImages
 
         void CarregarImagens(string pathFiles, string fileExtensions, IProgress<int> progress, IProgress<int> subFolders, CancellationToken token)
         {
-            _countSubFolders--;
             subFolders.Report(_countSubFolders);
+            _countSubFolders--;
 
             var files = Directory.GetFiles(pathFiles, "*.*").Where(f => fileExtensions.Contains(Path.GetExtension(f).ToLower()));
            
@@ -408,13 +419,36 @@ namespace ResizeImages
 
                 File.Copy(sourceFile, Path.Combine(fpath, fname), true);
             }
+                       
 
-            //Salvando Imagem Redimensionada
-            imgOutput.Save(path, tipoImage);
+            // Para evitar o erro de GDI+ quando o caminho é muito longo
+            using (MemoryStream ms = new MemoryStream())
+            {
+                var imgCodec = GetEncoderInfo(tipoImage);
+                imgOutput.Save(ms, imgCodec, null);
+                ms.ToArray();
+                File.WriteAllBytes(path, ms.ToArray());
+            }
+            //imgOutput.Save(shortPath.ToString(), tipoImage);
             imgOutput.Dispose();
 
             _outputs.Add(path);
             //AddFileList(path);
+        }
+
+        private static ImageCodecInfo GetEncoderInfo(ImageFormat imageFormat)
+        {
+            string mimeType = $"image/{imageFormat.ToString().ToLower()}";
+            
+            // Get image codecs for all image formats
+            ImageCodecInfo[] codecs = ImageCodecInfo.GetImageEncoders();
+
+            // Find the correct image codec
+            for (int i = 0; i < codecs.Length; i++)
+                if (codecs[i].MimeType.ToLower() == mimeType)
+                    return codecs[i];
+
+            return null;
         }
 
         private void chkRecursiveFind_CheckedChanged(object sender, EventArgs e)
@@ -454,6 +488,16 @@ namespace ResizeImages
         {
             if (lstFiles.Columns.Count > 0)
                 lstFiles.Columns[0].Width = lstFiles.Width - 20;
+        }
+
+        private void txtSourcePath_Enter(object sender, EventArgs e)
+        {
+            txtSourcePath.SelectAll();
+        }
+
+        private void txtTargetFolder_Enter(object sender, EventArgs e)
+        {
+            txtTargetFolder.SelectAll();
         }
     }
 }
