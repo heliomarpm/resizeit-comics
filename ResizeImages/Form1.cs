@@ -180,10 +180,13 @@ namespace ResizeImages
                 return;
             }
 
+            picPreview.ImageLocation = null;
+
             if (string.IsNullOrWhiteSpace(txtTargetFolder.Text))
                 SetTargetFolderDefault();
 
             _outputs = new List<string>();
+            lstFiles.Items.Clear();
 
             if (File.Exists(txtSourcePath.Text))
             {
@@ -201,17 +204,16 @@ namespace ResizeImages
                     return;
                 }
 
-                lstFiles.Items.Clear();
-
                 _tokenSource = new CancellationTokenSource();
                 var token = _tokenSource.Token;
 
                 try
                 {
-                    // subfolders count
-                    _countSubFolders = Directory.GetDirectories(txtSourcePath.Text, "*", SearchOption.AllDirectories).Length;
+                    // subfolders 
+                    _countSubFolders = Directory.GetDirectories(txtSourcePath.Text, "*", SearchOption.AllDirectories)
+                                                .Where(n => !n.Contains("__output") && !n.Contains("__backup")).Count() + 1;
                     lblFolderCount.Text = _countSubFolders.ToString();
-                    lblFolderCount.Visible = _countSubFolders > 0;
+                    lblFolderCount.Visible = true;
 
                     if (chkReplaceOriginals.Checked)
                         txtTargetFolder.Text = string.Empty;
@@ -224,13 +226,13 @@ namespace ResizeImages
                     var progress = new Progress<int>(value =>
                     {
                         progBar.Value = value;
-                    });
 
-                    var countSubFolder = new Progress<int>(value =>
-                    {
-                        //_countSubFolders = value;
-                        lblFolderCount.Text = value.ToString();
-                        lblFolderCount.Refresh();
+                        if (value == 100)
+                        {
+                            _countSubFolders--;
+                            lblFolderCount.Text = _countSubFolders.ToString();
+                            lblFolderCount.Refresh();
+                        }
                     });
 
                     await Task.Run(() =>
@@ -240,7 +242,7 @@ namespace ResizeImages
 
                         _targetFolder = txtTargetFolder.Text;
 
-                        CarregarImagens(txtSourcePath.Text, ext, progress, countSubFolder, token);
+                        CarregarImagens(txtSourcePath.Text, ext, progress, token);
                     });
 
                     btnRun.Text = "Começar";
@@ -267,11 +269,8 @@ namespace ResizeImages
 
         }
 
-        void CarregarImagens(string pathFiles, string fileExtensions, IProgress<int> progress, IProgress<int> subFolders, CancellationToken token)
+        void CarregarImagens(string pathFiles, string fileExtensions, IProgress<int> progress, CancellationToken token)
         {
-            subFolders.Report(_countSubFolders);
-            _countSubFolders--;
-
             var files = Directory.GetFiles(pathFiles, "*.*").Where(f => fileExtensions.Contains(Path.GetExtension(f).ToLower()));
            
             string target = _targetFolder.Replace(@"??\", pathFiles + @"\");
@@ -294,12 +293,9 @@ namespace ResizeImages
                 var percent = (xfile * 100) / files.Count();
                 progress.Report(percent);
 
-                //progBar.Value += 1;
             }
-            //progBar.Value = 0;
-
-            //this.Refresh();
-            //lstFiles.Refresh();
+            //Se não chamou progress.Report
+            if (xfile == 0) _countSubFolders--;
 
             if (chkRecursiveFind.Checked)
                 foreach (var sub in Directory.GetDirectories(pathFiles))
@@ -310,9 +306,8 @@ namespace ResizeImages
                     }
 
                     if (!sub.Contains(@"\__output") && !sub.Contains(@"\__backup"))
-                        CarregarImagens(sub, fileExtensions, progress, subFolders, token);
-                    else
-                        _countSubFolders--;
+                        CarregarImagens(sub, fileExtensions, progress, token);
+                        
                 }
 
         }
@@ -498,6 +493,15 @@ namespace ResizeImages
         private void txtTargetFolder_Enter(object sender, EventArgs e)
         {
             txtTargetFolder.SelectAll();
+        }
+
+        private void picPreview_Click(object sender, EventArgs e)
+        {
+            picPreview.Dock = picPreview.Dock == DockStyle.None ? DockStyle.Fill : DockStyle.None;
+            if (picPreview.Dock == DockStyle.None)
+            {
+                ShowPicPreview(picPreview.ImageLocation);
+            }
         }
     }
 }
