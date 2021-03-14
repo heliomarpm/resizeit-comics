@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "ResizeImages.Core": {
+      "commandName": "Project",
+      "nativeDebugging": false
+    }
+  }
+}
