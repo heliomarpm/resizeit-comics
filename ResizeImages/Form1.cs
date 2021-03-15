@@ -151,7 +151,6 @@ namespace ResizeImages
             catch (Exception)
             {
                 picPreview.Visible = false;
-
             }
 
         }
@@ -215,13 +214,16 @@ namespace ResizeImages
             _outputFiles = new();
 
             lstFiles.Items.Clear();
+            lblCountInputs.Text = "0";
+            lblCountOutputs.Text = "0";
 
             if (File.Exists(txtInputPath.Text))
             {
+                lblCountInputs.Text = "1";
                 // Apenas 1 arquivo selecionado
                 var rp = this.GetResizePaths(txtInputPath.Text);
 
-                var outFile = _generateImages.Save(rp.InputFile, _resizeScale, rp.pathOutput, rp.pathBackup);
+                var outFile = _generateImages.Save(rp.InputFile, _resizeScale, rp.pathOutput, rp.pathBackup);                
                 AddFileList(SavePackage(outFile).IsNull(outFile));
             }
             else
@@ -257,6 +259,12 @@ namespace ResizeImages
                             _countSubFolders--;
                             lblFolderCount.Text = _countSubFolders.ToString();
                             lblFolderCount.Refresh();
+                        }
+                        
+                        lblCountInputs.Text = (Convert.ToInt32(lblCountInputs.Text) + 1).ToString();
+                        if ((!rdbOutputCbz.Checked && !rdbOutputPdf.Checked) || value == 100)
+                        {
+                            lblCountOutputs.Text = (Convert.ToInt32(lblCountOutputs.Text) + 1).ToString();
                         }
                     });
 
@@ -439,6 +447,7 @@ namespace ResizeImages
             }
 
             oLst.Group = oGrp;
+            lblCountOutputs.Text = lstFiles.Items.Count.ToString();
         }
 
         private float GetWidth => string.IsNullOrEmpty(txtWidth.Text) ? 0 : Convert.ToInt32(txtWidth.Text);

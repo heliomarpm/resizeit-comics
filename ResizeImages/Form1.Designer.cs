@@ -75,12 +75,28 @@ namespace ResizeImages
             this.progBar = new System.Windows.Forms.ProgressBar();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.pnlCountInputs = new System.Windows.Forms.Panel();
+            this.lblCountInputs = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.pnlCountOutputs = new System.Windows.Forms.Panel();
+            this.lblCountOutputs = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.picPreview)).BeginInit();
             this.panel4.SuspendLayout();
             this.panel2.SuspendLayout();
             this.pnlTop.SuspendLayout();
             this.pnlFilter.SuspendLayout();
             this.pnlLeft.SuspendLayout();
+            this.panel3.SuspendLayout();
+            this.tableLayoutPanel1.SuspendLayout();
+            this.pnlCountInputs.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.pnlCountOutputs.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // columnHeader1
@@ -91,7 +107,7 @@ namespace ResizeImages
             // pnlLine
             // 
             this.pnlLine.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
-            this.pnlLine.Location = new System.Drawing.Point(16, 218);
+            this.pnlLine.Location = new System.Drawing.Point(17, 218);
             this.pnlLine.Name = "pnlLine";
             this.pnlLine.Size = new System.Drawing.Size(275, 3);
             this.pnlLine.TabIndex = 20;
@@ -340,9 +356,9 @@ namespace ResizeImages
             this.lstFiles.HideSelection = false;
             this.lstFiles.HotTracking = true;
             this.lstFiles.HoverSelection = true;
-            this.lstFiles.Location = new System.Drawing.Point(308, 124);
+            this.lstFiles.Location = new System.Drawing.Point(308, 244);
             this.lstFiles.Name = "lstFiles";
-            this.lstFiles.Size = new System.Drawing.Size(656, 512);
+            this.lstFiles.Size = new System.Drawing.Size(656, 392);
             this.lstFiles.TabIndex = 8;
             this.lstFiles.UseCompatibleStateImageBehavior = false;
             this.lstFiles.View = System.Windows.Forms.View.Details;
@@ -612,7 +628,7 @@ namespace ResizeImages
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
             this.panel1.Location = new System.Drawing.Point(17, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(246, 1);
+            this.panel1.Size = new System.Drawing.Size(275, 3);
             this.panel1.TabIndex = 5;
             // 
             // progBar
@@ -632,6 +648,131 @@ namespace ResizeImages
             this.toolTip1.IsBalloon = true;
             this.toolTip1.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
             // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
+            this.panel3.Controls.Add(this.tableLayoutPanel1);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel3.Location = new System.Drawing.Point(308, 124);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(656, 120);
+            this.panel3.TabIndex = 11;
+            // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.ColumnCount = 2;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.Controls.Add(this.pnlCountInputs, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.pnlCountOutputs, 1, 0);
+            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 1;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(656, 120);
+            this.tableLayoutPanel1.TabIndex = 0;
+            // 
+            // pnlCountInputs
+            // 
+            this.pnlCountInputs.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(23)))), ((int)(((byte)(23)))));
+            this.pnlCountInputs.Controls.Add(this.lblCountInputs);
+            this.pnlCountInputs.Controls.Add(this.pictureBox1);
+            this.pnlCountInputs.Controls.Add(this.label6);
+            this.pnlCountInputs.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlCountInputs.Location = new System.Drawing.Point(0, 0);
+            this.pnlCountInputs.Margin = new System.Windows.Forms.Padding(0, 0, 3, 6);
+            this.pnlCountInputs.Name = "pnlCountInputs";
+            this.pnlCountInputs.Size = new System.Drawing.Size(325, 114);
+            this.pnlCountInputs.TabIndex = 0;
+            // 
+            // lblCountInputs
+            // 
+            this.lblCountInputs.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblCountInputs.Font = new System.Drawing.Font("Roboto Black", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblCountInputs.ForeColor = System.Drawing.Color.Black;
+            this.lblCountInputs.Location = new System.Drawing.Point(4, 41);
+            this.lblCountInputs.Name = "lblCountInputs";
+            this.lblCountInputs.Size = new System.Drawing.Size(242, 70);
+            this.lblCountInputs.TabIndex = 2;
+            this.lblCountInputs.Text = "0";
+            this.lblCountInputs.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(252, 43);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(73, 71);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Roboto Black", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label6.ForeColor = System.Drawing.Color.Silver;
+            this.label6.Location = new System.Drawing.Point(4, 4);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(167, 44);
+            this.label6.TabIndex = 0;
+            this.label6.Text = "Entradas";
+            // 
+            // pnlCountOutputs
+            // 
+            this.pnlCountOutputs.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(23)))), ((int)(((byte)(23)))));
+            this.pnlCountOutputs.Controls.Add(this.lblCountOutputs);
+            this.pnlCountOutputs.Controls.Add(this.label7);
+            this.pnlCountOutputs.Controls.Add(this.pictureBox2);
+            this.pnlCountOutputs.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlCountOutputs.Location = new System.Drawing.Point(331, 0);
+            this.pnlCountOutputs.Margin = new System.Windows.Forms.Padding(3, 0, 0, 6);
+            this.pnlCountOutputs.Name = "pnlCountOutputs";
+            this.pnlCountOutputs.Size = new System.Drawing.Size(325, 114);
+            this.pnlCountOutputs.TabIndex = 1;
+            // 
+            // lblCountOutputs
+            // 
+            this.lblCountOutputs.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblCountOutputs.Font = new System.Drawing.Font("Roboto Black", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblCountOutputs.ForeColor = System.Drawing.Color.Black;
+            this.lblCountOutputs.Location = new System.Drawing.Point(5, 41);
+            this.lblCountOutputs.Name = "lblCountOutputs";
+            this.lblCountOutputs.Size = new System.Drawing.Size(242, 70);
+            this.lblCountOutputs.TabIndex = 4;
+            this.lblCountOutputs.Text = "0";
+            this.lblCountOutputs.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Roboto Black", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label7.ForeColor = System.Drawing.Color.Silver;
+            this.label7.Location = new System.Drawing.Point(3, 4);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(133, 44);
+            this.label7.TabIndex = 3;
+            this.label7.Text = "Saídas";
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(252, 43);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(73, 71);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBox2.TabIndex = 2;
+            this.pictureBox2.TabStop = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -641,6 +782,7 @@ namespace ResizeImages
             this.Controls.Add(this.lblFolderCount);
             this.Controls.Add(this.picPreview);
             this.Controls.Add(this.lstFiles);
+            this.Controls.Add(this.panel3);
             this.Controls.Add(this.pnlLeft);
             this.Controls.Add(this.progBar);
             this.Controls.Add(this.pnlTop);
@@ -662,6 +804,14 @@ namespace ResizeImages
             this.pnlFilter.ResumeLayout(false);
             this.pnlFilter.PerformLayout();
             this.pnlLeft.ResumeLayout(false);
+            this.panel3.ResumeLayout(false);
+            this.tableLayoutPanel1.ResumeLayout(false);
+            this.pnlCountInputs.ResumeLayout(false);
+            this.pnlCountInputs.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.pnlCountOutputs.ResumeLayout(false);
+            this.pnlCountOutputs.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -712,6 +862,16 @@ namespace ResizeImages
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.CheckBox chkSaveBackup;
         private System.Windows.Forms.Label lblReduceType;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.Panel pnlCountInputs;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Panel pnlCountOutputs;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Label lblCountInputs;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label lblCountOutputs;
     }
 }
 
