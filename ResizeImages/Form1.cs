@@ -47,7 +47,7 @@ namespace ResizeImages
             VerifyOptions();
         }
 
-        private void Form1_Resize(object sender, EventArgs e)
+        private void Form1_ResizeEnd(object sender, EventArgs e)
         {
             if (this.WindowState != FormWindowState.Minimized)
             {
@@ -550,6 +550,8 @@ namespace ResizeImages
 
             return null;
         }
+
+        
     }
 
 }

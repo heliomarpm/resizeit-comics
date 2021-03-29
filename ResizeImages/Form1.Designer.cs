@@ -793,7 +793,7 @@ namespace ResizeImages
             this.Text = "Redimensionar Imagens";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Form1_Load);
-            this.Resize += new System.EventHandler(this.Form1_Resize);
+            this.ResizeEnd += new System.EventHandler(this.Form1_ResizeEnd);
             ((System.ComponentModel.ISupportInitialize)(this.picPreview)).EndInit();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
