@@ -223,7 +223,7 @@ namespace ResizeImages
                 // Apenas 1 arquivo selecionado
                 var rp = this.GetResizePaths(txtInputPath.Text);
 
-                var outFile = _generateImages.Save(rp.InputFile, _resizeScale, rp.pathOutput, rp.pathBackup);                
+                var outFile = _generateImages.Save(rp.InputFile, _resizeScale, rp.pathOutput, rp.pathBackup);
                 AddFileList(SavePackage(outFile).IsNull(outFile));
             }
             else
@@ -260,7 +260,7 @@ namespace ResizeImages
                             lblFolderCount.Text = _countSubFolders.ToString();
                             lblFolderCount.Refresh();
                         }
-                        
+
                         lblCountInputs.Text = (Convert.ToInt32(lblCountInputs.Text) + 1).ToString();
                         if ((!rdbOutputCbz.Checked && !rdbOutputPdf.Checked) || value == 100)
                         {
@@ -551,7 +551,7 @@ namespace ResizeImages
             return null;
         }
 
-        
+
     }
 
 }
