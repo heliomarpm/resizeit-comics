@@ -68,7 +68,7 @@ jobs:
         7z a ResizeIt.zip "ResizeImages/bin/release/net7.0-windows/*"
 
     - name: see directory
-      run: dir *.zip /s
+      run: dir /s "*.zip"
 
     - name: Create Release
       id: create_release
@@ -82,6 +82,9 @@ jobs:
         #   Changes in this release:
         #   - Add feature X
         #   - Fix issue Y
+        body: |
+          "#" ${{ github.ref }}
+          ![](https://img.shields.io/github/downloads/heliomarpm/resize-comics/${{ github.ref }}/total)
         draft: true
         prerelease: true
 
