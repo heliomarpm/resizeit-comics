@@ -68,7 +68,7 @@ jobs:
         7z a ResizeIt.zip "ResizeImages/bin/release/net7.0-windows/*"
 
     - name: see directory
-      run: dir /s "*.zip"
+      run: dir 
 
     - name: Create Release
       id: create_release
