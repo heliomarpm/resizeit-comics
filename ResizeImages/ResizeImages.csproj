@@ -6,7 +6,7 @@
     <UseWindowsForms>true</UseWindowsForms>
     <ApplicationIcon>icon.ico</ApplicationIcon>
     <StartupObject>ResizeImages.Program</StartupObject>
-    <Company>CodeUApp</Company>
+    <Company>QualitaApp</Company>
     <Authors>Heliomar P. Marques</Authors>
     <SignAssembly>false</SignAssembly>
   </PropertyGroup>

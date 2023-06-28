@@ -29,791 +29,778 @@ namespace ResizeImages
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            this.columnHeader1 = new System.Windows.Forms.ColumnHeader();
-            this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
-            this.pnlLine = new System.Windows.Forms.Panel();
-            this.lblFolderCount = new System.Windows.Forms.Label();
-            this.rdbOutputPdf = new System.Windows.Forms.RadioButton();
-            this.rdbOutputCbz = new System.Windows.Forms.RadioButton();
-            this.label3 = new System.Windows.Forms.Label();
-            this.txtHeight = new System.Windows.Forms.TextBox();
-            this.txtWidth = new System.Windows.Forms.TextBox();
-            this.rdbPorcent = new System.Windows.Forms.RadioButton();
-            this.rdbHQ = new System.Windows.Forms.RadioButton();
-            this.rdbLarge = new System.Windows.Forms.RadioButton();
-            this.rdbMedium = new System.Windows.Forms.RadioButton();
-            this.rdbSmall = new System.Windows.Forms.RadioButton();
-            this.label2 = new System.Windows.Forms.Label();
-            this.picPreview = new System.Windows.Forms.PictureBox();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.rdbOutputReplace = new System.Windows.Forms.RadioButton();
-            this.rdbOutputCopy = new System.Windows.Forms.RadioButton();
-            this.label5 = new System.Windows.Forms.Label();
-            this.chkSaveBackup = new System.Windows.Forms.CheckBox();
-            this.lstFiles = new System.Windows.Forms.ListView();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.lblReduceType = new System.Windows.Forms.Label();
-            this.chkPreserveOrientation = new System.Windows.Forms.CheckBox();
-            this.chkAspectRatio = new System.Windows.Forms.CheckBox();
-            this.pnlTop = new System.Windows.Forms.Panel();
-            this.label4 = new System.Windows.Forms.Label();
-            this.btnSelectOutput = new System.Windows.Forms.Button();
-            this.btnSelectInput = new System.Windows.Forms.Button();
-            this.txtOutputFolder = new System.Windows.Forms.TextBox();
-            this.txtInputPath = new System.Windows.Forms.TextBox();
-            this.chkOutputFolder = new System.Windows.Forms.CheckBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.pnlFilter = new System.Windows.Forms.Panel();
-            this.chkSeekRecursively = new System.Windows.Forms.CheckBox();
-            this.chkFilterJPG = new System.Windows.Forms.CheckBox();
-            this.chkFilterPNG = new System.Windows.Forms.CheckBox();
-            this.pnlLeft = new System.Windows.Forms.Panel();
-            this.btnRun = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.progBar = new System.Windows.Forms.ProgressBar();
-            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.pnlCountInputs = new System.Windows.Forms.Panel();
-            this.lblCountInputs = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.pnlCountOutputs = new System.Windows.Forms.Panel();
-            this.lblCountOutputs = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.picPreview)).BeginInit();
-            this.panel4.SuspendLayout();
-            this.panel2.SuspendLayout();
-            this.pnlTop.SuspendLayout();
-            this.pnlFilter.SuspendLayout();
-            this.pnlLeft.SuspendLayout();
-            this.panel3.SuspendLayout();
-            this.tableLayoutPanel1.SuspendLayout();
-            this.pnlCountInputs.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.pnlCountOutputs.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            this.SuspendLayout();
+            columnHeader1 = new System.Windows.Forms.ColumnHeader();
+            folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
+            pnlLine = new System.Windows.Forms.Panel();
+            lblFolderCount = new System.Windows.Forms.Label();
+            rdbOutputPdf = new System.Windows.Forms.RadioButton();
+            rdbOutputCbz = new System.Windows.Forms.RadioButton();
+            label3 = new System.Windows.Forms.Label();
+            txtHeight = new System.Windows.Forms.TextBox();
+            txtWidth = new System.Windows.Forms.TextBox();
+            rdbPorcent = new System.Windows.Forms.RadioButton();
+            rdbHQ = new System.Windows.Forms.RadioButton();
+            rdbLarge = new System.Windows.Forms.RadioButton();
+            rdbMedium = new System.Windows.Forms.RadioButton();
+            rdbSmall = new System.Windows.Forms.RadioButton();
+            label2 = new System.Windows.Forms.Label();
+            picPreview = new System.Windows.Forms.PictureBox();
+            panel4 = new System.Windows.Forms.Panel();
+            rdbOutputReplace = new System.Windows.Forms.RadioButton();
+            rdbOutputCopy = new System.Windows.Forms.RadioButton();
+            label5 = new System.Windows.Forms.Label();
+            chkSaveBackup = new System.Windows.Forms.CheckBox();
+            lstFiles = new System.Windows.Forms.ListView();
+            panel2 = new System.Windows.Forms.Panel();
+            lblReduceType = new System.Windows.Forms.Label();
+            chkPreserveOrientation = new System.Windows.Forms.CheckBox();
+            chkAspectRatio = new System.Windows.Forms.CheckBox();
+            pnlTop = new System.Windows.Forms.Panel();
+            label4 = new System.Windows.Forms.Label();
+            btnSelectOutput = new System.Windows.Forms.Button();
+            btnSelectInput = new System.Windows.Forms.Button();
+            txtOutputFolder = new System.Windows.Forms.TextBox();
+            txtInputPath = new System.Windows.Forms.TextBox();
+            chkOutputFolder = new System.Windows.Forms.CheckBox();
+            label1 = new System.Windows.Forms.Label();
+            pnlFilter = new System.Windows.Forms.Panel();
+            chkSeekRecursively = new System.Windows.Forms.CheckBox();
+            chkFilterJPG = new System.Windows.Forms.CheckBox();
+            chkFilterPNG = new System.Windows.Forms.CheckBox();
+            pnlLeft = new System.Windows.Forms.Panel();
+            btnRun = new System.Windows.Forms.Button();
+            panel1 = new System.Windows.Forms.Panel();
+            progBar = new System.Windows.Forms.ProgressBar();
+            openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            toolTip1 = new System.Windows.Forms.ToolTip(components);
+            panel3 = new System.Windows.Forms.Panel();
+            tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            pnlCountInputs = new System.Windows.Forms.Panel();
+            lblCountInputs = new System.Windows.Forms.Label();
+            pictureBox1 = new System.Windows.Forms.PictureBox();
+            label6 = new System.Windows.Forms.Label();
+            pnlCountOutputs = new System.Windows.Forms.Panel();
+            lblCountOutputs = new System.Windows.Forms.Label();
+            label7 = new System.Windows.Forms.Label();
+            pictureBox2 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)picPreview).BeginInit();
+            panel4.SuspendLayout();
+            panel2.SuspendLayout();
+            pnlTop.SuspendLayout();
+            pnlFilter.SuspendLayout();
+            pnlLeft.SuspendLayout();
+            panel3.SuspendLayout();
+            tableLayoutPanel1.SuspendLayout();
+            pnlCountInputs.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            pnlCountOutputs.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            SuspendLayout();
             // 
             // columnHeader1
             // 
-            this.columnHeader1.Name = "columnHeader1";
-            this.columnHeader1.Width = 400;
+            columnHeader1.Name = "columnHeader1";
+            columnHeader1.Width = 400;
             // 
             // pnlLine
             // 
-            this.pnlLine.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
-            this.pnlLine.Location = new System.Drawing.Point(17, 218);
-            this.pnlLine.Name = "pnlLine";
-            this.pnlLine.Size = new System.Drawing.Size(275, 3);
-            this.pnlLine.TabIndex = 20;
+            pnlLine.BackColor = System.Drawing.Color.FromArgb(20, 20, 20);
+            pnlLine.Location = new System.Drawing.Point(17, 218);
+            pnlLine.Name = "pnlLine";
+            pnlLine.Size = new System.Drawing.Size(275, 3);
+            pnlLine.TabIndex = 20;
             // 
             // lblFolderCount
             // 
-            this.lblFolderCount.BackColor = System.Drawing.Color.Transparent;
-            this.lblFolderCount.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.lblFolderCount.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lblFolderCount.Font = new System.Drawing.Font("Roboto", 140.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblFolderCount.ForeColor = System.Drawing.Color.Black;
-            this.lblFolderCount.Location = new System.Drawing.Point(308, 411);
-            this.lblFolderCount.Name = "lblFolderCount";
-            this.lblFolderCount.Size = new System.Drawing.Size(656, 225);
-            this.lblFolderCount.TabIndex = 10;
-            this.lblFolderCount.Text = "0";
-            this.lblFolderCount.TextAlign = System.Drawing.ContentAlignment.BottomRight;
-            this.lblFolderCount.Visible = false;
+            lblFolderCount.BackColor = System.Drawing.Color.Transparent;
+            lblFolderCount.Dock = System.Windows.Forms.DockStyle.Bottom;
+            lblFolderCount.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            lblFolderCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 140.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            lblFolderCount.ForeColor = System.Drawing.Color.Black;
+            lblFolderCount.Location = new System.Drawing.Point(308, 411);
+            lblFolderCount.Name = "lblFolderCount";
+            lblFolderCount.Size = new System.Drawing.Size(656, 225);
+            lblFolderCount.TabIndex = 10;
+            lblFolderCount.Text = "0";
+            lblFolderCount.TextAlign = System.Drawing.ContentAlignment.BottomRight;
+            lblFolderCount.Visible = false;
             // 
             // rdbOutputPdf
             // 
-            this.rdbOutputPdf.AutoSize = true;
-            this.rdbOutputPdf.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.rdbOutputPdf.Location = new System.Drawing.Point(31, 59);
-            this.rdbOutputPdf.Name = "rdbOutputPdf";
-            this.rdbOutputPdf.Size = new System.Drawing.Size(167, 23);
-            this.rdbOutputPdf.TabIndex = 17;
-            this.rdbOutputPdf.Text = "Consolidado em Pdf";
-            this.toolTip1.SetToolTip(this.rdbOutputPdf, "Unifica todas as imagens da pasta de origem em um arquivo .Pdf de mesmo nome.");
-            this.rdbOutputPdf.UseVisualStyleBackColor = true;
-            this.rdbOutputPdf.CheckedChanged += new System.EventHandler(this.rdbOutputPdf_CheckedChanged);
+            rdbOutputPdf.AutoSize = true;
+            rdbOutputPdf.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            rdbOutputPdf.Location = new System.Drawing.Point(31, 59);
+            rdbOutputPdf.Name = "rdbOutputPdf";
+            rdbOutputPdf.Size = new System.Drawing.Size(130, 23);
+            rdbOutputPdf.TabIndex = 17;
+            rdbOutputPdf.Text = "Unificar em Pdf";
+            toolTip1.SetToolTip(rdbOutputPdf, "Unifica todas as imagens da pasta de origem em um arquivo .Pdf de mesmo nome.");
+            rdbOutputPdf.UseVisualStyleBackColor = true;
+            rdbOutputPdf.CheckedChanged += rdbOutputPdf_CheckedChanged;
             // 
             // rdbOutputCbz
             // 
-            this.rdbOutputCbz.AutoSize = true;
-            this.rdbOutputCbz.Checked = true;
-            this.rdbOutputCbz.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.rdbOutputCbz.Location = new System.Drawing.Point(31, 33);
-            this.rdbOutputCbz.Name = "rdbOutputCbz";
-            this.rdbOutputCbz.Size = new System.Drawing.Size(172, 23);
-            this.rdbOutputCbz.TabIndex = 16;
-            this.rdbOutputCbz.TabStop = true;
-            this.rdbOutputCbz.Text = "Consolidado em Cbz";
-            this.toolTip1.SetToolTip(this.rdbOutputCbz, "Unifica todas as imagens da pasta de origem em um arquivo .Cbz (padrão HQ) de mes" +
-        "mo nome.\r\n");
-            this.rdbOutputCbz.UseVisualStyleBackColor = true;
-            this.rdbOutputCbz.CheckedChanged += new System.EventHandler(this.rdbOutputCbz_CheckedChanged);
+            rdbOutputCbz.AutoSize = true;
+            rdbOutputCbz.Checked = true;
+            rdbOutputCbz.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            rdbOutputCbz.Location = new System.Drawing.Point(31, 33);
+            rdbOutputCbz.Name = "rdbOutputCbz";
+            rdbOutputCbz.Size = new System.Drawing.Size(135, 23);
+            rdbOutputCbz.TabIndex = 16;
+            rdbOutputCbz.TabStop = true;
+            rdbOutputCbz.Text = "Unificar em Cbz";
+            toolTip1.SetToolTip(rdbOutputCbz, "Unifica todas as imagens da pasta de origem em um arquivo .Cbz (padrão HQ) de mesmo nome.\r\n");
+            rdbOutputCbz.UseVisualStyleBackColor = true;
+            rdbOutputCbz.CheckedChanged += rdbOutputCbz_CheckedChanged;
             // 
             // label3
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Century Gothic", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(205, 186);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(16, 20);
-            this.label3.TabIndex = 18;
-            this.label3.Text = "x";
+            label3.AutoSize = true;
+            label3.Font = new System.Drawing.Font("Century Gothic", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            label3.Location = new System.Drawing.Point(205, 186);
+            label3.Name = "label3";
+            label3.Size = new System.Drawing.Size(16, 20);
+            label3.TabIndex = 18;
+            label3.Text = "x";
             // 
             // txtHeight
             // 
-            this.txtHeight.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            this.txtHeight.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtHeight.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtHeight.ForeColor = System.Drawing.Color.LightGray;
-            this.txtHeight.Location = new System.Drawing.Point(224, 184);
-            this.txtHeight.Name = "txtHeight";
-            this.txtHeight.Size = new System.Drawing.Size(67, 24);
-            this.txtHeight.TabIndex = 17;
-            this.txtHeight.Text = "999999";
-            this.txtHeight.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txtHeight.TextChanged += new System.EventHandler(this.txtHeight_TextChanged);
-            this.txtHeight.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtHeight_KeyPress);
+            txtHeight.BackColor = System.Drawing.Color.FromArgb(28, 28, 28);
+            txtHeight.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            txtHeight.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            txtHeight.ForeColor = System.Drawing.Color.LightGray;
+            txtHeight.Location = new System.Drawing.Point(224, 184);
+            txtHeight.Name = "txtHeight";
+            txtHeight.Size = new System.Drawing.Size(67, 24);
+            txtHeight.TabIndex = 17;
+            txtHeight.Text = "999999";
+            txtHeight.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            txtHeight.TextChanged += txtHeight_TextChanged;
+            txtHeight.KeyPress += txtHeight_KeyPress;
             // 
             // txtWidth
             // 
-            this.txtWidth.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            this.txtWidth.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtWidth.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtWidth.ForeColor = System.Drawing.Color.LightGray;
-            this.txtWidth.Location = new System.Drawing.Point(135, 184);
-            this.txtWidth.Name = "txtWidth";
-            this.txtWidth.Size = new System.Drawing.Size(67, 24);
-            this.txtWidth.TabIndex = 16;
-            this.txtWidth.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txtWidth.TextChanged += new System.EventHandler(this.txtWidth_TextChanged);
-            this.txtWidth.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtWidth_KeyPress);
+            txtWidth.BackColor = System.Drawing.Color.FromArgb(28, 28, 28);
+            txtWidth.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            txtWidth.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            txtWidth.ForeColor = System.Drawing.Color.LightGray;
+            txtWidth.Location = new System.Drawing.Point(135, 184);
+            txtWidth.Name = "txtWidth";
+            txtWidth.Size = new System.Drawing.Size(67, 24);
+            txtWidth.TabIndex = 16;
+            txtWidth.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            txtWidth.TextChanged += txtWidth_TextChanged;
+            txtWidth.KeyPress += txtWidth_KeyPress;
             // 
             // rdbPorcent
             // 
-            this.rdbPorcent.AutoSize = true;
-            this.rdbPorcent.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.rdbPorcent.Location = new System.Drawing.Point(31, 151);
-            this.rdbPorcent.Name = "rdbPorcent";
-            this.rdbPorcent.Size = new System.Drawing.Size(121, 23);
-            this.rdbPorcent.TabIndex = 15;
-            this.rdbPorcent.Text = "Porcentagem";
-            this.rdbPorcent.UseVisualStyleBackColor = true;
-            this.rdbPorcent.CheckedChanged += new System.EventHandler(this.rdbPorcent_CheckedChanged);
+            rdbPorcent.AutoSize = true;
+            rdbPorcent.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            rdbPorcent.Location = new System.Drawing.Point(31, 151);
+            rdbPorcent.Name = "rdbPorcent";
+            rdbPorcent.Size = new System.Drawing.Size(121, 23);
+            rdbPorcent.TabIndex = 15;
+            rdbPorcent.Text = "Porcentagem";
+            rdbPorcent.UseVisualStyleBackColor = true;
+            rdbPorcent.CheckedChanged += rdbPorcent_CheckedChanged;
             // 
             // rdbHQ
             // 
-            this.rdbHQ.AutoSize = true;
-            this.rdbHQ.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.rdbHQ.Location = new System.Drawing.Point(31, 122);
-            this.rdbHQ.Name = "rdbHQ";
-            this.rdbHQ.Size = new System.Drawing.Size(179, 23);
-            this.rdbHQ.TabIndex = 14;
-            this.rdbHQ.Text = "HQ ( 720 x 1080 pixels)";
-            this.rdbHQ.UseVisualStyleBackColor = true;
-            this.rdbHQ.CheckedChanged += new System.EventHandler(this.rdbHQ_CheckedChanged);
+            rdbHQ.AutoSize = true;
+            rdbHQ.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            rdbHQ.Location = new System.Drawing.Point(31, 122);
+            rdbHQ.Name = "rdbHQ";
+            rdbHQ.Size = new System.Drawing.Size(179, 23);
+            rdbHQ.TabIndex = 14;
+            rdbHQ.Text = "HQ ( 720 x 1080 pixels)";
+            rdbHQ.UseVisualStyleBackColor = true;
+            rdbHQ.CheckedChanged += rdbHQ_CheckedChanged;
             // 
             // rdbLarge
             // 
-            this.rdbLarge.AutoSize = true;
-            this.rdbLarge.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.rdbLarge.Location = new System.Drawing.Point(31, 93);
-            this.rdbLarge.Name = "rdbLarge";
-            this.rdbLarge.Size = new System.Drawing.Size(219, 23);
-            this.rdbLarge.TabIndex = 13;
-            this.rdbLarge.Text = "Grande ( 1920 x 1080 pixels)";
-            this.rdbLarge.UseVisualStyleBackColor = true;
-            this.rdbLarge.CheckedChanged += new System.EventHandler(this.rdbLarge_CheckedChanged);
+            rdbLarge.AutoSize = true;
+            rdbLarge.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            rdbLarge.Location = new System.Drawing.Point(31, 93);
+            rdbLarge.Name = "rdbLarge";
+            rdbLarge.Size = new System.Drawing.Size(219, 23);
+            rdbLarge.TabIndex = 13;
+            rdbLarge.Text = "Grande ( 1920 x 1080 pixels)";
+            rdbLarge.UseVisualStyleBackColor = true;
+            rdbLarge.CheckedChanged += rdbLarge_CheckedChanged;
             // 
             // rdbMedium
             // 
-            this.rdbMedium.AutoSize = true;
-            this.rdbMedium.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.rdbMedium.Location = new System.Drawing.Point(31, 64);
-            this.rdbMedium.Name = "rdbMedium";
-            this.rdbMedium.Size = new System.Drawing.Size(201, 23);
-            this.rdbMedium.TabIndex = 12;
-            this.rdbMedium.Text = "Médio ( 1366 x 768 pixels)";
-            this.rdbMedium.UseVisualStyleBackColor = true;
-            this.rdbMedium.CheckedChanged += new System.EventHandler(this.rdbMedium_CheckedChanged);
+            rdbMedium.AutoSize = true;
+            rdbMedium.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            rdbMedium.Location = new System.Drawing.Point(31, 64);
+            rdbMedium.Name = "rdbMedium";
+            rdbMedium.Size = new System.Drawing.Size(201, 23);
+            rdbMedium.TabIndex = 12;
+            rdbMedium.Text = "Médio ( 1366 x 768 pixels)";
+            rdbMedium.UseVisualStyleBackColor = true;
+            rdbMedium.CheckedChanged += rdbMedium_CheckedChanged;
             // 
             // rdbSmall
             // 
-            this.rdbSmall.AutoSize = true;
-            this.rdbSmall.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.rdbSmall.Location = new System.Drawing.Point(31, 35);
-            this.rdbSmall.Name = "rdbSmall";
-            this.rdbSmall.Size = new System.Drawing.Size(212, 23);
-            this.rdbSmall.TabIndex = 11;
-            this.rdbSmall.Text = "Pequeno ( 854 x 480 pixels)";
-            this.rdbSmall.UseVisualStyleBackColor = true;
-            this.rdbSmall.CheckedChanged += new System.EventHandler(this.rdbSmall_CheckedChanged);
+            rdbSmall.AutoSize = true;
+            rdbSmall.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            rdbSmall.Location = new System.Drawing.Point(31, 35);
+            rdbSmall.Name = "rdbSmall";
+            rdbSmall.Size = new System.Drawing.Size(212, 23);
+            rdbSmall.TabIndex = 11;
+            rdbSmall.Text = "Pequeno ( 854 x 480 pixels)";
+            rdbSmall.UseVisualStyleBackColor = true;
+            rdbSmall.CheckedChanged += rdbSmall_CheckedChanged;
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Century Gothic", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(16, 8);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(116, 20);
-            this.label2.TabIndex = 10;
-            this.label2.Text = "Redimensionar";
+            label2.AutoSize = true;
+            label2.Font = new System.Drawing.Font("Century Gothic", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            label2.Location = new System.Drawing.Point(16, 8);
+            label2.Name = "label2";
+            label2.Size = new System.Drawing.Size(116, 20);
+            label2.TabIndex = 10;
+            label2.Text = "Redimensionar";
             // 
             // picPreview
             // 
-            this.picPreview.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.picPreview.Location = new System.Drawing.Point(745, 330);
-            this.picPreview.Name = "picPreview";
-            this.picPreview.Padding = new System.Windows.Forms.Padding(8);
-            this.picPreview.Size = new System.Drawing.Size(200, 285);
-            this.picPreview.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picPreview.TabIndex = 9;
-            this.picPreview.TabStop = false;
-            this.picPreview.Click += new System.EventHandler(this.picPreview_Click);
+            picPreview.Anchor = System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right;
+            picPreview.Location = new System.Drawing.Point(745, 330);
+            picPreview.Name = "picPreview";
+            picPreview.Padding = new System.Windows.Forms.Padding(8);
+            picPreview.Size = new System.Drawing.Size(200, 285);
+            picPreview.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            picPreview.TabIndex = 9;
+            picPreview.TabStop = false;
+            picPreview.Click += picPreview_Click;
             // 
             // panel4
             // 
-            this.panel4.Controls.Add(this.rdbOutputReplace);
-            this.panel4.Controls.Add(this.rdbOutputCopy);
-            this.panel4.Controls.Add(this.label5);
-            this.panel4.Controls.Add(this.chkSaveBackup);
-            this.panel4.Controls.Add(this.rdbOutputPdf);
-            this.panel4.Controls.Add(this.rdbOutputCbz);
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel4.Location = new System.Drawing.Point(0, 282);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(308, 172);
-            this.panel4.TabIndex = 22;
+            panel4.Controls.Add(rdbOutputReplace);
+            panel4.Controls.Add(rdbOutputCopy);
+            panel4.Controls.Add(label5);
+            panel4.Controls.Add(chkSaveBackup);
+            panel4.Controls.Add(rdbOutputPdf);
+            panel4.Controls.Add(rdbOutputCbz);
+            panel4.Dock = System.Windows.Forms.DockStyle.Top;
+            panel4.Location = new System.Drawing.Point(0, 282);
+            panel4.Name = "panel4";
+            panel4.Size = new System.Drawing.Size(308, 172);
+            panel4.TabIndex = 22;
             // 
             // rdbOutputReplace
             // 
-            this.rdbOutputReplace.AutoSize = true;
-            this.rdbOutputReplace.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.rdbOutputReplace.Location = new System.Drawing.Point(31, 111);
-            this.rdbOutputReplace.Name = "rdbOutputReplace";
-            this.rdbOutputReplace.Size = new System.Drawing.Size(202, 23);
-            this.rdbOutputReplace.TabIndex = 27;
-            this.rdbOutputReplace.Text = "Substituir imagem original";
-            this.toolTip1.SetToolTip(this.rdbOutputReplace, "Imagem original será substituida.");
-            this.rdbOutputReplace.UseVisualStyleBackColor = true;
-            this.rdbOutputReplace.CheckedChanged += new System.EventHandler(this.rdbOutputReplace_CheckedChanged);
+            rdbOutputReplace.AutoSize = true;
+            rdbOutputReplace.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            rdbOutputReplace.Location = new System.Drawing.Point(31, 111);
+            rdbOutputReplace.Name = "rdbOutputReplace";
+            rdbOutputReplace.Size = new System.Drawing.Size(202, 23);
+            rdbOutputReplace.TabIndex = 27;
+            rdbOutputReplace.Text = "Substituir imagem original";
+            toolTip1.SetToolTip(rdbOutputReplace, "Imagem original será substituida.");
+            rdbOutputReplace.UseVisualStyleBackColor = true;
+            rdbOutputReplace.CheckedChanged += rdbOutputReplace_CheckedChanged;
             // 
             // rdbOutputCopy
             // 
-            this.rdbOutputCopy.AutoSize = true;
-            this.rdbOutputCopy.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.rdbOutputCopy.Location = new System.Drawing.Point(31, 85);
-            this.rdbOutputCopy.Name = "rdbOutputCopy";
-            this.rdbOutputCopy.Size = new System.Drawing.Size(140, 23);
-            this.rdbOutputCopy.TabIndex = 26;
-            this.rdbOutputCopy.Text = "Criar uma cópia";
-            this.toolTip1.SetToolTip(this.rdbOutputCopy, "Cópia será numerada, caso o destino selecionado seja o mesmo da imagem original.");
-            this.rdbOutputCopy.UseVisualStyleBackColor = true;
-            this.rdbOutputCopy.CheckedChanged += new System.EventHandler(this.rdbOutputCopy_CheckedChanged);
+            rdbOutputCopy.AutoSize = true;
+            rdbOutputCopy.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            rdbOutputCopy.Location = new System.Drawing.Point(31, 85);
+            rdbOutputCopy.Name = "rdbOutputCopy";
+            rdbOutputCopy.Size = new System.Drawing.Size(140, 23);
+            rdbOutputCopy.TabIndex = 26;
+            rdbOutputCopy.Text = "Criar uma cópia";
+            toolTip1.SetToolTip(rdbOutputCopy, "Cópia será numerada, caso o destino selecionado seja o mesmo da imagem original.");
+            rdbOutputCopy.UseVisualStyleBackColor = true;
+            rdbOutputCopy.CheckedChanged += rdbOutputCopy_CheckedChanged;
             // 
             // label5
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Century Gothic", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label5.Location = new System.Drawing.Point(16, 8);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(136, 20);
-            this.label5.TabIndex = 25;
-            this.label5.Text = "Opções de Saída";
+            label5.AutoSize = true;
+            label5.Font = new System.Drawing.Font("Century Gothic", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            label5.Location = new System.Drawing.Point(16, 8);
+            label5.Name = "label5";
+            label5.Size = new System.Drawing.Size(136, 20);
+            label5.TabIndex = 25;
+            label5.Text = "Opções de Saída";
             // 
             // chkSaveBackup
             // 
-            this.chkSaveBackup.AutoSize = true;
-            this.chkSaveBackup.Enabled = false;
-            this.chkSaveBackup.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.chkSaveBackup.Location = new System.Drawing.Point(43, 137);
-            this.chkSaveBackup.Name = "chkSaveBackup";
-            this.chkSaveBackup.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
-            this.chkSaveBackup.Size = new System.Drawing.Size(201, 23);
-            this.chkSaveBackup.TabIndex = 24;
-            this.chkSaveBackup.Text = "Guardar Backup original";
-            this.toolTip1.SetToolTip(this.chkSaveBackup, "Opção de armazenar imagem original na pasta \"__backup\" localizado dentro da pasta" +
-        " origem das imagens");
-            this.chkSaveBackup.UseVisualStyleBackColor = true;
+            chkSaveBackup.AutoSize = true;
+            chkSaveBackup.Enabled = false;
+            chkSaveBackup.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            chkSaveBackup.Location = new System.Drawing.Point(43, 137);
+            chkSaveBackup.Name = "chkSaveBackup";
+            chkSaveBackup.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
+            chkSaveBackup.Size = new System.Drawing.Size(201, 23);
+            chkSaveBackup.TabIndex = 24;
+            chkSaveBackup.Text = "Guardar Backup original";
+            toolTip1.SetToolTip(chkSaveBackup, "Opção de armazenar imagem original na pasta \"__backup\" localizado dentro da pasta origem das imagens");
+            chkSaveBackup.UseVisualStyleBackColor = true;
             // 
             // lstFiles
             // 
-            this.lstFiles.Activation = System.Windows.Forms.ItemActivation.OneClick;
-            this.lstFiles.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(23)))), ((int)(((byte)(23)))));
-            this.lstFiles.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.lstFiles.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader1});
-            this.lstFiles.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lstFiles.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lstFiles.ForeColor = System.Drawing.Color.White;
-            this.lstFiles.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
-            this.lstFiles.HideSelection = false;
-            this.lstFiles.HotTracking = true;
-            this.lstFiles.HoverSelection = true;
-            this.lstFiles.Location = new System.Drawing.Point(308, 244);
-            this.lstFiles.Name = "lstFiles";
-            this.lstFiles.Size = new System.Drawing.Size(656, 392);
-            this.lstFiles.TabIndex = 8;
-            this.lstFiles.UseCompatibleStateImageBehavior = false;
-            this.lstFiles.View = System.Windows.Forms.View.Details;
-            this.lstFiles.ItemSelectionChanged += new System.Windows.Forms.ListViewItemSelectionChangedEventHandler(this.lstFiles_ItemSelectionChanged);
+            lstFiles.Activation = System.Windows.Forms.ItemActivation.OneClick;
+            lstFiles.BackColor = System.Drawing.Color.FromArgb(23, 23, 23);
+            lstFiles.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            lstFiles.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] { columnHeader1 });
+            lstFiles.Dock = System.Windows.Forms.DockStyle.Fill;
+            lstFiles.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            lstFiles.ForeColor = System.Drawing.Color.White;
+            lstFiles.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
+            lstFiles.HotTracking = true;
+            lstFiles.HoverSelection = true;
+            lstFiles.Location = new System.Drawing.Point(308, 244);
+            lstFiles.Name = "lstFiles";
+            lstFiles.Size = new System.Drawing.Size(656, 392);
+            lstFiles.TabIndex = 8;
+            lstFiles.UseCompatibleStateImageBehavior = false;
+            lstFiles.View = System.Windows.Forms.View.Details;
+            lstFiles.ItemSelectionChanged += lstFiles_ItemSelectionChanged;
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.lblReduceType);
-            this.panel2.Controls.Add(this.chkPreserveOrientation);
-            this.panel2.Controls.Add(this.chkAspectRatio);
-            this.panel2.Controls.Add(this.pnlLine);
-            this.panel2.Controls.Add(this.label3);
-            this.panel2.Controls.Add(this.txtHeight);
-            this.panel2.Controls.Add(this.txtWidth);
-            this.panel2.Controls.Add(this.rdbPorcent);
-            this.panel2.Controls.Add(this.rdbHQ);
-            this.panel2.Controls.Add(this.rdbLarge);
-            this.panel2.Controls.Add(this.rdbMedium);
-            this.panel2.Controls.Add(this.rdbSmall);
-            this.panel2.Controls.Add(this.label2);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(308, 282);
-            this.panel2.TabIndex = 2;
+            panel2.Controls.Add(lblReduceType);
+            panel2.Controls.Add(chkPreserveOrientation);
+            panel2.Controls.Add(chkAspectRatio);
+            panel2.Controls.Add(pnlLine);
+            panel2.Controls.Add(label3);
+            panel2.Controls.Add(txtHeight);
+            panel2.Controls.Add(txtWidth);
+            panel2.Controls.Add(rdbPorcent);
+            panel2.Controls.Add(rdbHQ);
+            panel2.Controls.Add(rdbLarge);
+            panel2.Controls.Add(rdbMedium);
+            panel2.Controls.Add(rdbSmall);
+            panel2.Controls.Add(label2);
+            panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            panel2.Location = new System.Drawing.Point(0, 0);
+            panel2.Name = "panel2";
+            panel2.Size = new System.Drawing.Size(308, 282);
+            panel2.TabIndex = 2;
             // 
             // lblReduceType
             // 
-            this.lblReduceType.AutoSize = true;
-            this.lblReduceType.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblReduceType.Location = new System.Drawing.Point(43, 188);
-            this.lblReduceType.Name = "lblReduceType";
-            this.lblReduceType.Size = new System.Drawing.Size(91, 17);
-            this.lblReduceType.TabIndex = 23;
-            this.lblReduceType.Text = "Dimensão % ";
+            lblReduceType.AutoSize = true;
+            lblReduceType.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            lblReduceType.Location = new System.Drawing.Point(43, 188);
+            lblReduceType.Name = "lblReduceType";
+            lblReduceType.Size = new System.Drawing.Size(91, 17);
+            lblReduceType.TabIndex = 23;
+            lblReduceType.Text = "Dimensão % ";
             // 
             // chkPreserveOrientation
             // 
-            this.chkPreserveOrientation.AutoSize = true;
-            this.chkPreserveOrientation.Checked = true;
-            this.chkPreserveOrientation.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chkPreserveOrientation.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.chkPreserveOrientation.Location = new System.Drawing.Point(31, 253);
-            this.chkPreserveOrientation.Name = "chkPreserveOrientation";
-            this.chkPreserveOrientation.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
-            this.chkPreserveOrientation.Size = new System.Drawing.Size(261, 23);
-            this.chkPreserveOrientation.TabIndex = 22;
-            this.chkPreserveOrientation.Text = "Manter a orientação da imagem";
-            this.chkPreserveOrientation.UseVisualStyleBackColor = true;
+            chkPreserveOrientation.AutoSize = true;
+            chkPreserveOrientation.Checked = true;
+            chkPreserveOrientation.CheckState = System.Windows.Forms.CheckState.Checked;
+            chkPreserveOrientation.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            chkPreserveOrientation.Location = new System.Drawing.Point(31, 253);
+            chkPreserveOrientation.Name = "chkPreserveOrientation";
+            chkPreserveOrientation.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
+            chkPreserveOrientation.Size = new System.Drawing.Size(261, 23);
+            chkPreserveOrientation.TabIndex = 22;
+            chkPreserveOrientation.Text = "Manter a orientação da imagem";
+            chkPreserveOrientation.UseVisualStyleBackColor = true;
             // 
             // chkAspectRatio
             // 
-            this.chkAspectRatio.AutoSize = true;
-            this.chkAspectRatio.Checked = true;
-            this.chkAspectRatio.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chkAspectRatio.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.chkAspectRatio.Location = new System.Drawing.Point(31, 224);
-            this.chkAspectRatio.Name = "chkAspectRatio";
-            this.chkAspectRatio.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
-            this.chkAspectRatio.Size = new System.Drawing.Size(232, 23);
-            this.chkAspectRatio.TabIndex = 21;
-            this.chkAspectRatio.Text = "Manter a taxa de proporção";
-            this.chkAspectRatio.UseVisualStyleBackColor = true;
+            chkAspectRatio.AutoSize = true;
+            chkAspectRatio.Checked = true;
+            chkAspectRatio.CheckState = System.Windows.Forms.CheckState.Checked;
+            chkAspectRatio.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            chkAspectRatio.Location = new System.Drawing.Point(31, 224);
+            chkAspectRatio.Name = "chkAspectRatio";
+            chkAspectRatio.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
+            chkAspectRatio.Size = new System.Drawing.Size(232, 23);
+            chkAspectRatio.TabIndex = 21;
+            chkAspectRatio.Text = "Manter a taxa de proporção";
+            chkAspectRatio.UseVisualStyleBackColor = true;
             // 
             // pnlTop
             // 
-            this.pnlTop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
-            this.pnlTop.Controls.Add(this.label4);
-            this.pnlTop.Controls.Add(this.btnSelectOutput);
-            this.pnlTop.Controls.Add(this.btnSelectInput);
-            this.pnlTop.Controls.Add(this.txtOutputFolder);
-            this.pnlTop.Controls.Add(this.txtInputPath);
-            this.pnlTop.Controls.Add(this.chkOutputFolder);
-            this.pnlTop.Controls.Add(this.label1);
-            this.pnlTop.Controls.Add(this.pnlFilter);
-            this.pnlTop.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlTop.Font = new System.Drawing.Font("Century Gothic", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.pnlTop.Location = new System.Drawing.Point(0, 0);
-            this.pnlTop.Name = "pnlTop";
-            this.pnlTop.Size = new System.Drawing.Size(964, 124);
-            this.pnlTop.TabIndex = 0;
+            pnlTop.BackColor = System.Drawing.Color.FromArgb(38, 38, 38);
+            pnlTop.Controls.Add(label4);
+            pnlTop.Controls.Add(btnSelectOutput);
+            pnlTop.Controls.Add(btnSelectInput);
+            pnlTop.Controls.Add(txtOutputFolder);
+            pnlTop.Controls.Add(txtInputPath);
+            pnlTop.Controls.Add(chkOutputFolder);
+            pnlTop.Controls.Add(label1);
+            pnlTop.Controls.Add(pnlFilter);
+            pnlTop.Dock = System.Windows.Forms.DockStyle.Top;
+            pnlTop.Font = new System.Drawing.Font("Century Gothic", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            pnlTop.Location = new System.Drawing.Point(0, 0);
+            pnlTop.Name = "pnlTop";
+            pnlTop.Size = new System.Drawing.Size(964, 124);
+            pnlTop.TabIndex = 0;
             // 
             // label4
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Century Gothic", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label4.Location = new System.Drawing.Point(12, 63);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(153, 20);
-            this.label4.TabIndex = 10;
-            this.label4.Text = "Diretório de Destino";
+            label4.AutoSize = true;
+            label4.Font = new System.Drawing.Font("Century Gothic", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            label4.Location = new System.Drawing.Point(12, 63);
+            label4.Name = "label4";
+            label4.Size = new System.Drawing.Size(153, 20);
+            label4.TabIndex = 10;
+            label4.Text = "Diretório de Destino";
             // 
             // btnSelectOutput
             // 
-            this.btnSelectOutput.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSelectOutput.FlatAppearance.BorderColor = System.Drawing.Color.DimGray;
-            this.btnSelectOutput.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSelectOutput.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnSelectOutput.Location = new System.Drawing.Point(918, 87);
-            this.btnSelectOutput.Name = "btnSelectOutput";
-            this.btnSelectOutput.Size = new System.Drawing.Size(30, 24);
-            this.btnSelectOutput.TabIndex = 9;
-            this.btnSelectOutput.Text = "...";
-            this.btnSelectOutput.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnSelectOutput.UseVisualStyleBackColor = true;
-            this.btnSelectOutput.Click += new System.EventHandler(this.btnSelectOutput_Click);
+            btnSelectOutput.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right;
+            btnSelectOutput.FlatAppearance.BorderColor = System.Drawing.Color.DimGray;
+            btnSelectOutput.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            btnSelectOutput.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            btnSelectOutput.Location = new System.Drawing.Point(918, 87);
+            btnSelectOutput.Name = "btnSelectOutput";
+            btnSelectOutput.Size = new System.Drawing.Size(30, 24);
+            btnSelectOutput.TabIndex = 9;
+            btnSelectOutput.Text = "...";
+            btnSelectOutput.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            btnSelectOutput.UseVisualStyleBackColor = true;
+            btnSelectOutput.Click += btnSelectOutput_Click;
             // 
             // btnSelectInput
             // 
-            this.btnSelectInput.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSelectInput.FlatAppearance.BorderColor = System.Drawing.Color.DimGray;
-            this.btnSelectInput.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSelectInput.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnSelectInput.Location = new System.Drawing.Point(918, 32);
-            this.btnSelectInput.Name = "btnSelectInput";
-            this.btnSelectInput.Size = new System.Drawing.Size(30, 24);
-            this.btnSelectInput.TabIndex = 8;
-            this.btnSelectInput.Text = "...";
-            this.btnSelectInput.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnSelectInput.UseVisualStyleBackColor = true;
-            this.btnSelectInput.Click += new System.EventHandler(this.btnSelectInput_Click);
+            btnSelectInput.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right;
+            btnSelectInput.FlatAppearance.BorderColor = System.Drawing.Color.DimGray;
+            btnSelectInput.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            btnSelectInput.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            btnSelectInput.Location = new System.Drawing.Point(918, 32);
+            btnSelectInput.Name = "btnSelectInput";
+            btnSelectInput.Size = new System.Drawing.Size(30, 24);
+            btnSelectInput.TabIndex = 8;
+            btnSelectInput.Text = "...";
+            btnSelectInput.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            btnSelectInput.UseVisualStyleBackColor = true;
+            btnSelectInput.Click += btnSelectInput_Click;
             // 
             // txtOutputFolder
             // 
-            this.txtOutputFolder.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtOutputFolder.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            this.txtOutputFolder.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtOutputFolder.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtOutputFolder.ForeColor = System.Drawing.Color.DarkGray;
-            this.txtOutputFolder.Location = new System.Drawing.Point(17, 87);
-            this.txtOutputFolder.Name = "txtOutputFolder";
-            this.txtOutputFolder.PlaceholderText = "Destino da Imagem\'s";
-            this.txtOutputFolder.Size = new System.Drawing.Size(902, 24);
-            this.txtOutputFolder.TabIndex = 4;
-            this.txtOutputFolder.DoubleClick += new System.EventHandler(this.txtOutputFolder_Enter);
-            this.txtOutputFolder.Enter += new System.EventHandler(this.txtOutputFolder_Enter);
-            this.txtOutputFolder.Leave += new System.EventHandler(this.txtOutputFolder_Leave);
+            txtOutputFolder.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            txtOutputFolder.BackColor = System.Drawing.Color.FromArgb(28, 28, 28);
+            txtOutputFolder.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            txtOutputFolder.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            txtOutputFolder.ForeColor = System.Drawing.Color.DarkGray;
+            txtOutputFolder.Location = new System.Drawing.Point(17, 87);
+            txtOutputFolder.Name = "txtOutputFolder";
+            txtOutputFolder.PlaceholderText = "Destino da Imagem's";
+            txtOutputFolder.Size = new System.Drawing.Size(902, 24);
+            txtOutputFolder.TabIndex = 4;
+            txtOutputFolder.DoubleClick += txtOutputFolder_Enter;
+            txtOutputFolder.Enter += txtOutputFolder_Enter;
+            txtOutputFolder.Leave += txtOutputFolder_Leave;
             // 
             // txtInputPath
             // 
-            this.txtInputPath.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtInputPath.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            this.txtInputPath.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtInputPath.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtInputPath.ForeColor = System.Drawing.Color.LightGray;
-            this.txtInputPath.Location = new System.Drawing.Point(17, 32);
-            this.txtInputPath.Name = "txtInputPath";
-            this.txtInputPath.PlaceholderText = "Origem da Imagem\'s";
-            this.txtInputPath.Size = new System.Drawing.Size(902, 24);
-            this.txtInputPath.TabIndex = 3;
-            this.txtInputPath.TextChanged += new System.EventHandler(this.txtInputPath_TextChanged);
-            this.txtInputPath.DoubleClick += new System.EventHandler(this.txtInputPath_Enter);
-            this.txtInputPath.Enter += new System.EventHandler(this.txtInputPath_Enter);
+            txtInputPath.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            txtInputPath.BackColor = System.Drawing.Color.FromArgb(28, 28, 28);
+            txtInputPath.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            txtInputPath.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            txtInputPath.ForeColor = System.Drawing.Color.LightGray;
+            txtInputPath.Location = new System.Drawing.Point(17, 32);
+            txtInputPath.Name = "txtInputPath";
+            txtInputPath.PlaceholderText = "Origem da Imagem's";
+            txtInputPath.Size = new System.Drawing.Size(902, 24);
+            txtInputPath.TabIndex = 3;
+            txtInputPath.TextChanged += txtInputPath_TextChanged;
+            txtInputPath.DoubleClick += txtInputPath_Enter;
+            txtInputPath.Enter += txtInputPath_Enter;
             // 
             // chkOutputFolder
             // 
-            this.chkOutputFolder.AutoSize = true;
-            this.chkOutputFolder.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.chkOutputFolder.Location = new System.Drawing.Point(175, 63);
-            this.chkOutputFolder.Name = "chkOutputFolder";
-            this.chkOutputFolder.Size = new System.Drawing.Size(133, 24);
-            this.chkOutputFolder.TabIndex = 2;
-            this.chkOutputFolder.Text = "alterar destino";
-            this.chkOutputFolder.UseVisualStyleBackColor = true;
-            this.chkOutputFolder.Visible = false;
-            this.chkOutputFolder.CheckedChanged += new System.EventHandler(this.chkOutputFolder_CheckedChanged);
+            chkOutputFolder.AutoSize = true;
+            chkOutputFolder.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            chkOutputFolder.Location = new System.Drawing.Point(175, 63);
+            chkOutputFolder.Name = "chkOutputFolder";
+            chkOutputFolder.Size = new System.Drawing.Size(133, 24);
+            chkOutputFolder.TabIndex = 2;
+            chkOutputFolder.Text = "alterar destino";
+            chkOutputFolder.UseVisualStyleBackColor = true;
+            chkOutputFolder.Visible = false;
+            chkOutputFolder.CheckedChanged += chkOutputFolder_CheckedChanged;
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(12, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(258, 20);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Diretório de Origem e/ou Imagem";
+            label1.AutoSize = true;
+            label1.Font = new System.Drawing.Font("Century Gothic", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            label1.Location = new System.Drawing.Point(12, 9);
+            label1.Name = "label1";
+            label1.Size = new System.Drawing.Size(258, 20);
+            label1.TabIndex = 0;
+            label1.Text = "Diretório de Origem e/ou Imagem";
             // 
             // pnlFilter
             // 
-            this.pnlFilter.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pnlFilter.Controls.Add(this.chkSeekRecursively);
-            this.pnlFilter.Controls.Add(this.chkFilterJPG);
-            this.pnlFilter.Controls.Add(this.chkFilterPNG);
-            this.pnlFilter.Location = new System.Drawing.Point(641, 2);
-            this.pnlFilter.Name = "pnlFilter";
-            this.pnlFilter.Size = new System.Drawing.Size(323, 27);
-            this.pnlFilter.TabIndex = 1;
-            this.pnlFilter.Visible = false;
+            pnlFilter.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right;
+            pnlFilter.Controls.Add(chkSeekRecursively);
+            pnlFilter.Controls.Add(chkFilterJPG);
+            pnlFilter.Controls.Add(chkFilterPNG);
+            pnlFilter.Location = new System.Drawing.Point(641, 2);
+            pnlFilter.Name = "pnlFilter";
+            pnlFilter.Size = new System.Drawing.Size(323, 27);
+            pnlFilter.TabIndex = 1;
+            pnlFilter.Visible = false;
             // 
             // chkSeekRecursively
             // 
-            this.chkSeekRecursively.AutoSize = true;
-            this.chkSeekRecursively.Checked = true;
-            this.chkSeekRecursively.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chkSeekRecursively.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.chkSeekRecursively.Location = new System.Drawing.Point(9, 1);
-            this.chkSeekRecursively.Name = "chkSeekRecursively";
-            this.chkSeekRecursively.Size = new System.Drawing.Size(134, 23);
-            this.chkSeekRecursively.TabIndex = 7;
-            this.chkSeekRecursively.Tag = "";
-            this.chkSeekRecursively.Text = "Busca recursiva";
-            this.chkSeekRecursively.UseVisualStyleBackColor = true;
+            chkSeekRecursively.AutoSize = true;
+            chkSeekRecursively.Checked = true;
+            chkSeekRecursively.CheckState = System.Windows.Forms.CheckState.Checked;
+            chkSeekRecursively.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            chkSeekRecursively.Location = new System.Drawing.Point(9, 1);
+            chkSeekRecursively.Name = "chkSeekRecursively";
+            chkSeekRecursively.Size = new System.Drawing.Size(134, 23);
+            chkSeekRecursively.TabIndex = 7;
+            chkSeekRecursively.Tag = "";
+            chkSeekRecursively.Text = "Busca recursiva";
+            chkSeekRecursively.UseVisualStyleBackColor = true;
             // 
             // chkFilterJPG
             // 
-            this.chkFilterJPG.AutoSize = true;
-            this.chkFilterJPG.Checked = true;
-            this.chkFilterJPG.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chkFilterJPG.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.chkFilterJPG.Location = new System.Drawing.Point(182, 1);
-            this.chkFilterJPG.Name = "chkFilterJPG";
-            this.chkFilterJPG.Size = new System.Drawing.Size(63, 23);
-            this.chkFilterJPG.TabIndex = 5;
-            this.chkFilterJPG.Tag = "*.jpg;*.jpeg";
-            this.chkFilterJPG.Text = ".jpeg";
-            this.chkFilterJPG.UseVisualStyleBackColor = true;
+            chkFilterJPG.AutoSize = true;
+            chkFilterJPG.Checked = true;
+            chkFilterJPG.CheckState = System.Windows.Forms.CheckState.Checked;
+            chkFilterJPG.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            chkFilterJPG.Location = new System.Drawing.Point(182, 1);
+            chkFilterJPG.Name = "chkFilterJPG";
+            chkFilterJPG.Size = new System.Drawing.Size(63, 23);
+            chkFilterJPG.TabIndex = 5;
+            chkFilterJPG.Tag = "*.jpg;*.jpeg";
+            chkFilterJPG.Text = ".jpeg";
+            chkFilterJPG.UseVisualStyleBackColor = true;
             // 
             // chkFilterPNG
             // 
-            this.chkFilterPNG.AutoSize = true;
-            this.chkFilterPNG.Checked = true;
-            this.chkFilterPNG.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chkFilterPNG.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.chkFilterPNG.Location = new System.Drawing.Point(251, 1);
-            this.chkFilterPNG.Name = "chkFilterPNG";
-            this.chkFilterPNG.Size = new System.Drawing.Size(60, 23);
-            this.chkFilterPNG.TabIndex = 6;
-            this.chkFilterPNG.Tag = "*.png";
-            this.chkFilterPNG.Text = ".png";
-            this.chkFilterPNG.UseVisualStyleBackColor = true;
+            chkFilterPNG.AutoSize = true;
+            chkFilterPNG.Checked = true;
+            chkFilterPNG.CheckState = System.Windows.Forms.CheckState.Checked;
+            chkFilterPNG.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            chkFilterPNG.Location = new System.Drawing.Point(251, 1);
+            chkFilterPNG.Name = "chkFilterPNG";
+            chkFilterPNG.Size = new System.Drawing.Size(60, 23);
+            chkFilterPNG.TabIndex = 6;
+            chkFilterPNG.Tag = "*.png";
+            chkFilterPNG.Text = ".png";
+            chkFilterPNG.UseVisualStyleBackColor = true;
             // 
             // pnlLeft
             // 
-            this.pnlLeft.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
-            this.pnlLeft.Controls.Add(this.panel4);
-            this.pnlLeft.Controls.Add(this.btnRun);
-            this.pnlLeft.Controls.Add(this.panel1);
-            this.pnlLeft.Controls.Add(this.panel2);
-            this.pnlLeft.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pnlLeft.Location = new System.Drawing.Point(0, 124);
-            this.pnlLeft.Name = "pnlLeft";
-            this.pnlLeft.Size = new System.Drawing.Size(308, 512);
-            this.pnlLeft.TabIndex = 6;
+            pnlLeft.BackColor = System.Drawing.Color.FromArgb(38, 38, 38);
+            pnlLeft.Controls.Add(panel4);
+            pnlLeft.Controls.Add(btnRun);
+            pnlLeft.Controls.Add(panel1);
+            pnlLeft.Controls.Add(panel2);
+            pnlLeft.Dock = System.Windows.Forms.DockStyle.Left;
+            pnlLeft.Location = new System.Drawing.Point(0, 124);
+            pnlLeft.Name = "pnlLeft";
+            pnlLeft.Size = new System.Drawing.Size(308, 512);
+            pnlLeft.TabIndex = 6;
             // 
             // btnRun
             // 
-            this.btnRun.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            this.btnRun.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.btnRun.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            this.btnRun.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            this.btnRun.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(58)))), ((int)(((byte)(58)))));
-            this.btnRun.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRun.ForeColor = System.Drawing.Color.White;
-            this.btnRun.Location = new System.Drawing.Point(0, 458);
-            this.btnRun.Margin = new System.Windows.Forms.Padding(5);
-            this.btnRun.Name = "btnRun";
-            this.btnRun.Size = new System.Drawing.Size(308, 54);
-            this.btnRun.TabIndex = 13;
-            this.btnRun.Text = "Começar";
-            this.btnRun.UseVisualStyleBackColor = false;
-            this.btnRun.Click += new System.EventHandler(this.btnRun_Click);
+            btnRun.BackColor = System.Drawing.Color.FromArgb(48, 48, 48);
+            btnRun.Dock = System.Windows.Forms.DockStyle.Bottom;
+            btnRun.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(28, 28, 28);
+            btnRun.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(28, 28, 28);
+            btnRun.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(58, 58, 58);
+            btnRun.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            btnRun.ForeColor = System.Drawing.Color.White;
+            btnRun.Location = new System.Drawing.Point(0, 458);
+            btnRun.Margin = new System.Windows.Forms.Padding(5);
+            btnRun.Name = "btnRun";
+            btnRun.Size = new System.Drawing.Size(308, 54);
+            btnRun.TabIndex = 13;
+            btnRun.Text = "Começar";
+            btnRun.UseVisualStyleBackColor = false;
+            btnRun.Click += btnRun_Click;
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
-            this.panel1.Location = new System.Drawing.Point(17, 3);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(275, 3);
-            this.panel1.TabIndex = 5;
+            panel1.BackColor = System.Drawing.Color.FromArgb(20, 20, 20);
+            panel1.Location = new System.Drawing.Point(17, 3);
+            panel1.Name = "panel1";
+            panel1.Size = new System.Drawing.Size(275, 3);
+            panel1.TabIndex = 5;
             // 
             // progBar
             // 
-            this.progBar.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.progBar.Location = new System.Drawing.Point(0, 636);
-            this.progBar.Name = "progBar";
-            this.progBar.Size = new System.Drawing.Size(964, 5);
-            this.progBar.TabIndex = 7;
+            progBar.Dock = System.Windows.Forms.DockStyle.Bottom;
+            progBar.Location = new System.Drawing.Point(0, 636);
+            progBar.Name = "progBar";
+            progBar.Size = new System.Drawing.Size(964, 5);
+            progBar.TabIndex = 7;
             // 
             // openFileDialog1
             // 
-            this.openFileDialog1.FileName = "openFileDialog1";
+            openFileDialog1.FileName = "openFileDialog1";
             // 
             // toolTip1
             // 
-            this.toolTip1.IsBalloon = true;
-            this.toolTip1.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
+            toolTip1.IsBalloon = true;
+            toolTip1.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
             // 
             // panel3
             // 
-            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(38)))));
-            this.panel3.Controls.Add(this.tableLayoutPanel1);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel3.Location = new System.Drawing.Point(308, 124);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(656, 120);
-            this.panel3.TabIndex = 11;
+            panel3.BackColor = System.Drawing.Color.FromArgb(38, 38, 38);
+            panel3.Controls.Add(tableLayoutPanel1);
+            panel3.Dock = System.Windows.Forms.DockStyle.Top;
+            panel3.Location = new System.Drawing.Point(308, 124);
+            panel3.Name = "panel3";
+            panel3.Size = new System.Drawing.Size(656, 120);
+            panel3.TabIndex = 11;
             // 
             // tableLayoutPanel1
             // 
-            this.tableLayoutPanel1.ColumnCount = 2;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Controls.Add(this.pnlCountInputs, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.pnlCountOutputs, 1, 0);
-            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 1;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(656, 120);
-            this.tableLayoutPanel1.TabIndex = 0;
+            tableLayoutPanel1.ColumnCount = 2;
+            tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            tableLayoutPanel1.Controls.Add(pnlCountInputs, 0, 0);
+            tableLayoutPanel1.Controls.Add(pnlCountOutputs, 1, 0);
+            tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            tableLayoutPanel1.Name = "tableLayoutPanel1";
+            tableLayoutPanel1.RowCount = 1;
+            tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            tableLayoutPanel1.Size = new System.Drawing.Size(656, 120);
+            tableLayoutPanel1.TabIndex = 0;
             // 
             // pnlCountInputs
             // 
-            this.pnlCountInputs.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(23)))), ((int)(((byte)(23)))));
-            this.pnlCountInputs.Controls.Add(this.lblCountInputs);
-            this.pnlCountInputs.Controls.Add(this.pictureBox1);
-            this.pnlCountInputs.Controls.Add(this.label6);
-            this.pnlCountInputs.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlCountInputs.Location = new System.Drawing.Point(0, 0);
-            this.pnlCountInputs.Margin = new System.Windows.Forms.Padding(0, 0, 3, 6);
-            this.pnlCountInputs.Name = "pnlCountInputs";
-            this.pnlCountInputs.Size = new System.Drawing.Size(325, 114);
-            this.pnlCountInputs.TabIndex = 0;
+            pnlCountInputs.BackColor = System.Drawing.Color.FromArgb(23, 23, 23);
+            pnlCountInputs.Controls.Add(lblCountInputs);
+            pnlCountInputs.Controls.Add(pictureBox1);
+            pnlCountInputs.Controls.Add(label6);
+            pnlCountInputs.Dock = System.Windows.Forms.DockStyle.Fill;
+            pnlCountInputs.Location = new System.Drawing.Point(0, 0);
+            pnlCountInputs.Margin = new System.Windows.Forms.Padding(0, 0, 3, 6);
+            pnlCountInputs.Name = "pnlCountInputs";
+            pnlCountInputs.Size = new System.Drawing.Size(325, 114);
+            pnlCountInputs.TabIndex = 0;
             // 
             // lblCountInputs
             // 
-            this.lblCountInputs.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblCountInputs.Font = new System.Drawing.Font("Roboto Black", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblCountInputs.ForeColor = System.Drawing.Color.Black;
-            this.lblCountInputs.Location = new System.Drawing.Point(4, 41);
-            this.lblCountInputs.Name = "lblCountInputs";
-            this.lblCountInputs.Size = new System.Drawing.Size(242, 70);
-            this.lblCountInputs.TabIndex = 2;
-            this.lblCountInputs.Text = "0";
-            this.lblCountInputs.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            lblCountInputs.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            lblCountInputs.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            lblCountInputs.ForeColor = System.Drawing.Color.Black;
+            lblCountInputs.Location = new System.Drawing.Point(4, 41);
+            lblCountInputs.Name = "lblCountInputs";
+            lblCountInputs.Size = new System.Drawing.Size(242, 70);
+            lblCountInputs.TabIndex = 2;
+            lblCountInputs.Text = "0";
+            lblCountInputs.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(252, 43);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(73, 71);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
+            pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right;
+            pictureBox1.Image = (System.Drawing.Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new System.Drawing.Point(252, 43);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new System.Drawing.Size(73, 71);
+            pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            pictureBox1.TabIndex = 1;
+            pictureBox1.TabStop = false;
             // 
             // label6
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Roboto Black", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label6.ForeColor = System.Drawing.Color.Silver;
-            this.label6.Location = new System.Drawing.Point(4, 4);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(167, 44);
-            this.label6.TabIndex = 0;
-            this.label6.Text = "Entradas";
+            label6.AutoSize = true;
+            label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            label6.ForeColor = System.Drawing.Color.Silver;
+            label6.Location = new System.Drawing.Point(4, 4);
+            label6.Name = "label6";
+            label6.Size = new System.Drawing.Size(176, 42);
+            label6.TabIndex = 0;
+            label6.Text = "Entradas";
             // 
             // pnlCountOutputs
             // 
-            this.pnlCountOutputs.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(23)))), ((int)(((byte)(23)))));
-            this.pnlCountOutputs.Controls.Add(this.lblCountOutputs);
-            this.pnlCountOutputs.Controls.Add(this.label7);
-            this.pnlCountOutputs.Controls.Add(this.pictureBox2);
-            this.pnlCountOutputs.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlCountOutputs.Location = new System.Drawing.Point(331, 0);
-            this.pnlCountOutputs.Margin = new System.Windows.Forms.Padding(3, 0, 0, 6);
-            this.pnlCountOutputs.Name = "pnlCountOutputs";
-            this.pnlCountOutputs.Size = new System.Drawing.Size(325, 114);
-            this.pnlCountOutputs.TabIndex = 1;
+            pnlCountOutputs.BackColor = System.Drawing.Color.FromArgb(23, 23, 23);
+            pnlCountOutputs.Controls.Add(lblCountOutputs);
+            pnlCountOutputs.Controls.Add(label7);
+            pnlCountOutputs.Controls.Add(pictureBox2);
+            pnlCountOutputs.Dock = System.Windows.Forms.DockStyle.Fill;
+            pnlCountOutputs.Location = new System.Drawing.Point(331, 0);
+            pnlCountOutputs.Margin = new System.Windows.Forms.Padding(3, 0, 0, 6);
+            pnlCountOutputs.Name = "pnlCountOutputs";
+            pnlCountOutputs.Size = new System.Drawing.Size(325, 114);
+            pnlCountOutputs.TabIndex = 1;
             // 
             // lblCountOutputs
             // 
-            this.lblCountOutputs.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblCountOutputs.Font = new System.Drawing.Font("Roboto Black", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblCountOutputs.ForeColor = System.Drawing.Color.Black;
-            this.lblCountOutputs.Location = new System.Drawing.Point(5, 41);
-            this.lblCountOutputs.Name = "lblCountOutputs";
-            this.lblCountOutputs.Size = new System.Drawing.Size(242, 70);
-            this.lblCountOutputs.TabIndex = 4;
-            this.lblCountOutputs.Text = "0";
-            this.lblCountOutputs.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            lblCountOutputs.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            lblCountOutputs.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            lblCountOutputs.ForeColor = System.Drawing.Color.Black;
+            lblCountOutputs.Location = new System.Drawing.Point(5, 41);
+            lblCountOutputs.Name = "lblCountOutputs";
+            lblCountOutputs.Size = new System.Drawing.Size(242, 70);
+            lblCountOutputs.TabIndex = 4;
+            lblCountOutputs.Text = "0";
+            lblCountOutputs.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // label7
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Roboto Black", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label7.ForeColor = System.Drawing.Color.Silver;
-            this.label7.Location = new System.Drawing.Point(3, 4);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(133, 44);
-            this.label7.TabIndex = 3;
-            this.label7.Text = "Saídas";
+            label7.AutoSize = true;
+            label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            label7.ForeColor = System.Drawing.Color.Silver;
+            label7.Location = new System.Drawing.Point(3, 4);
+            label7.Name = "label7";
+            label7.Size = new System.Drawing.Size(139, 42);
+            label7.TabIndex = 3;
+            label7.Text = "Saídas";
             // 
             // pictureBox2
             // 
-            this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(252, 43);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(73, 71);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBox2.TabIndex = 2;
-            this.pictureBox2.TabStop = false;
+            pictureBox2.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right;
+            pictureBox2.Image = (System.Drawing.Image)resources.GetObject("pictureBox2.Image");
+            pictureBox2.Location = new System.Drawing.Point(252, 43);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new System.Drawing.Size(73, 71);
+            pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            pictureBox2.TabIndex = 2;
+            pictureBox2.TabStop = false;
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(23)))), ((int)(((byte)(23)))));
-            this.ClientSize = new System.Drawing.Size(964, 641);
-            this.Controls.Add(this.lblFolderCount);
-            this.Controls.Add(this.picPreview);
-            this.Controls.Add(this.lstFiles);
-            this.Controls.Add(this.panel3);
-            this.Controls.Add(this.pnlLeft);
-            this.Controls.Add(this.progBar);
-            this.Controls.Add(this.pnlTop);
-            this.Font = new System.Drawing.Font("Century Gothic", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "Form1";
-            this.Text = "Redimensionar Imagens";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.Load += new System.EventHandler(this.Form1_Load);
-            this.ResizeEnd += new System.EventHandler(this.Form1_ResizeEnd);
-            ((System.ComponentModel.ISupportInitialize)(this.picPreview)).EndInit();
-            this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
-            this.pnlTop.ResumeLayout(false);
-            this.pnlTop.PerformLayout();
-            this.pnlFilter.ResumeLayout(false);
-            this.pnlFilter.PerformLayout();
-            this.pnlLeft.ResumeLayout(false);
-            this.panel3.ResumeLayout(false);
-            this.tableLayoutPanel1.ResumeLayout(false);
-            this.pnlCountInputs.ResumeLayout(false);
-            this.pnlCountInputs.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.pnlCountOutputs.ResumeLayout(false);
-            this.pnlCountOutputs.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            this.ResumeLayout(false);
-
+            AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            BackColor = System.Drawing.Color.FromArgb(23, 23, 23);
+            ClientSize = new System.Drawing.Size(964, 641);
+            Controls.Add(lblFolderCount);
+            Controls.Add(picPreview);
+            Controls.Add(lstFiles);
+            Controls.Add(panel3);
+            Controls.Add(pnlLeft);
+            Controls.Add(progBar);
+            Controls.Add(pnlTop);
+            Font = new System.Drawing.Font("Century Gothic", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            ForeColor = System.Drawing.Color.WhiteSmoke;
+            Icon = (System.Drawing.Icon)resources.GetObject("$this.Icon");
+            Name = "Form1";
+            Text = "ResizeIt! Redimensionador de Imagens";
+            WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            Load += Form1_Load;
+            ResizeEnd += Form1_ResizeEnd;
+            ((System.ComponentModel.ISupportInitialize)picPreview).EndInit();
+            panel4.ResumeLayout(false);
+            panel4.PerformLayout();
+            panel2.ResumeLayout(false);
+            panel2.PerformLayout();
+            pnlTop.ResumeLayout(false);
+            pnlTop.PerformLayout();
+            pnlFilter.ResumeLayout(false);
+            pnlFilter.PerformLayout();
+            pnlLeft.ResumeLayout(false);
+            panel3.ResumeLayout(false);
+            tableLayoutPanel1.ResumeLayout(false);
+            pnlCountInputs.ResumeLayout(false);
+            pnlCountInputs.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            pnlCountOutputs.ResumeLayout(false);
+            pnlCountOutputs.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            ResumeLayout(false);
         }
 
         #endregion

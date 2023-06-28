@@ -1,18 +1,24 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.30717.126
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.33502.453
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ResizeImages", "ResizeImages\ResizeImages.csproj", "{50C5C2DE-FF76-439E-AAEC-3FE135FE4E7B}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{BCA5410A-6BF9-4C66-89CC-EF2705E906AD}"
 	ProjectSection(SolutionItems) = preProject
 		.gitignore = .gitignore
+		icon.png = icon.png
 		README.md = README.md
 		ScreenCapture.png = ScreenCapture.png
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ResizeImages.Core", "ResizeImages.Core\ResizeImages.Core.csproj", "{80FDF741-A9A4-4CAF-B2A3-8829325CB7F8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ResizeImages.Core", "ResizeImages.Core\ResizeImages.Core.csproj", "{80FDF741-A9A4-4CAF-B2A3-8829325CB7F8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".github", ".github", "{428A32BC-0F0A-4174-8848-DC9B02267D66}"
+	ProjectSection(SolutionItems) = preProject
+		.github\FUNDING.yml = .github\FUNDING.yml
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -31,6 +37,9 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{428A32BC-0F0A-4174-8848-DC9B02267D66} = {BCA5410A-6BF9-4C66-89CC-EF2705E906AD}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {8DCFBEE0-25AA-46F5-8303-AB599913AF7E}
