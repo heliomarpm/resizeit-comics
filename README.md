@@ -1,9 +1,13 @@
 <span id="top"></span>
 <h1 align="center">
   <img src="icon.png" width="128" />
-  <br> ResizeIt - Redimensionador de Imagens para Leitura de Quadrinhos
+  <br> ResizeIt - Redimensionador de Imagens
 
-  [![CodeFactor](https://www.codefactor.io/repository/github/heliomarpm/resizeit-comics/badge)](https://www.codefactor.io/repository/github/heliomarpm/resizeit-comics) ![CodeQL](https://github.com/heliomarpm/resizeit-comics/actions/workflows/codeql-analysis.yml/badge.svg) ![Publish](https://github.com/heliomarpm/resizeit-comics/actions/workflows/publish.yml/badge.svg) <a href="https://navto.me/heliomarpm" target="_blank"><img src="https://navto.me/assets/navigatetome-brand.png" width="32"/></a>
+  <!--
+  [![CodeFactor](https://www.codefactor.io/repository/github/heliomarpm/resizeit-comics/badge)](https://www.codefactor.io/repository/github/heliomarpm/resizeit-comics) 
+  ![CodeQL](https://github.com/heliomarpm/resizeit-comics/actions/workflows/codeql-analysis.yml/badge.svg) 
+  ![Publish](https://github.com/heliomarpm/resizeit-comics/actions/workflows/publish.yml/badge.svg) -->
+  <a href="https://navto.me/heliomarpm" target="_blank"><img src="https://navto.me/assets/navigatetome-brand.png" width="32"/></a>
 
 </h1>
 
@@ -38,17 +42,14 @@
   </a>
 </p>
 
-# 
-[![DeepScan grade](https://deepscan.io/api/teams/19612/projects/23421/branches/709688/badge/grade.svg)](https://deepscan.io/dashboard#view=project&tid=19612&pid=23421&bid=709688)
-
-O ResizeIt é um aplicativo que permite redimensionar imagens de forma fácil e rápida, especialmente desenvolvido para gerar arquivos adequados para leitura de quadrinhos digitais. 
-Com ele, você pode unificar várias imagens selecionadas em um arquivo CBz (Comic Book ZIP) ou arquivo PDF, ao mesmo tempo em que realiza o redimensionamento para dimensões ideais para quadrinhos. \
+O ResizeIt é um aplicativo que permite redimensionar imagens de forma fácil e rápida, especialmente desenvolvido para gerar arquivos adequados para leitura de quadrinhos digitais. \
+Com ele, você pode unificar várias imagens selecionadas em um arquivo CBz (Comic Book ZIP) ou arquivo PDF, ao mesmo tempo em que realiza o redimensionamento para dimensões ideais para quadrinhos. 
 
 O aplicativo oferece opções de redimensionamento pré-definidas, como:
 * Pequeno (854x480)
 * Médio (1366x768)
 * Grande (1920x1080)
-* HQ (720x1080). 
+* HQ (720x1080)
  
 Além disso, você pode personalizar o redimensionamento por percentual, ajustando a largura (Width) e a altura (Height) da imagem conforme sua preferência, opcionalmente você marcar para forçar o redimensionamento a manter a proporsão da imagem
 
