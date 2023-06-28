@@ -83,7 +83,7 @@ jobs:
         #   - Add feature X
         #   - Fix issue Y
         body: |
-          "#" ${{ github.ref }}
+          #${{ github.ref }}
           ![](https://img.shields.io/github/downloads/heliomarpm/resize-comics/${{ github.ref }}/total)
         draft: true
         prerelease: true
@@ -93,5 +93,5 @@ jobs:
     - name: Upload build artifacts
       uses: actions/upload-artifact@v3
       with:
-        name: ResizeImages
+        name: ResizeIt
         path: ResizeIt.zip
