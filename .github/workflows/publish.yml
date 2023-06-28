@@ -35,8 +35,8 @@ jobs:
         dotnet-version: 7.0.x
 
     # Add  MSBuild to the PATH: https://github.com/microsoft/setup-msbuild
-    - name: Setup MSBuild.exe
-      uses: microsoft/setup-msbuild@v1.0.2
+    # - name: Setup MSBuild.exe
+    #   uses: microsoft/setup-msbuild@v1.0.2
 
     # Execute all unit tests in the solution
     #- name: Execute unit tests
@@ -66,6 +66,9 @@ jobs:
     - name: Compress files
       run: |
         7z a ResizeIt.zip "ResizeImages/bin/release/net7.0-windows/*"
+
+    - name: see directory
+      run: dir *.zip /s
 
     - name: Create Release
       id: create_release
