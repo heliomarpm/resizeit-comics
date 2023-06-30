@@ -103,7 +103,7 @@ jobs:
     - name: Set Variables
       id: vars
       run: |
-        echo "release_date=$(date +%b,\ %d\ %Y)" >> $GITHUB_OUTPUT
+        echo "release_date=$(date +'%b,\ %d\ %Y')" >> $GITHUB_OUTPUT
 
     - name: Create Release
       uses: softprops/action-gh-release@v1
