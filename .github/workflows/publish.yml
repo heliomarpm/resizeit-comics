@@ -13,8 +13,9 @@ jobs:
       matrix:
         configuration: [Release]
 
-    runs-on: windows-latest  # For a list of available runner types, refer to
-                             # https://help.github.com/en/actions/reference/workflow-syntax-for-github-actions#jobsjob_idruns-on
+    runs-on: windows-latest  
+    permissions:
+      contents: write
 
     env:
       Solution_Name: ResizeImages.sln
@@ -70,23 +71,23 @@ jobs:
     - name: see directory
       run: dir 
 
-    - name: Create Release
-      id: create_release
-      uses: actions/create-release@v1
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      with:
-        tag_name: ${{ github.ref }}
-        release_name: Release ${{ github.ref }}
-        # body: |
-        #   Changes in this release:
-        #   - Add feature X
-        #   - Fix issue Y
-        body: |
-          #${{ github.ref }}
-          ![](https://img.shields.io/github/downloads/heliomarpm/resize-comics/${{ github.ref }}/total)
-        draft: true
-        prerelease: true
+    # - name: Create Release
+    #   id: create_release
+    #   uses: actions/create-release@v1
+    #   env:
+    #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    #   with:
+    #     tag_name: ${{ github.ref }}
+    #     release_name: Release ${{ github.ref }}
+    #     # body: |
+    #     #   Changes in this release:
+    #     #   - Add feature X
+    #     #   - Fix issue Y
+    #     body: |
+    #       #${{ github.ref }}
+    #       ![](https://img.shields.io/github/downloads/heliomarpm/resize-comics/${{ github.ref }}/total)
+    #     draft: true
+    #     prerelease: true
 
     # Upload the MSIX package: https://github.com/marketplace/actions/upload-a-build-artifact
     - name: Upload build artifacts
@@ -95,9 +96,15 @@ jobs:
         name: ResizeIt
         path: ResizeIt.zip
 
-    - name: Publish to Release
+    - name: Create Release
       uses: softprops/action-gh-release@v1
       with:
-        files: ResizeIt.zip
+        body: |
+          #${{ github.ref }}
+          ![](https://img.shields.io/github/downloads/heliomarpm/resize-comics/${{ github.ref }}/total)
+        draft: true
+        prerelease: true
+        files: |
+          ResizeIt.zip
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
