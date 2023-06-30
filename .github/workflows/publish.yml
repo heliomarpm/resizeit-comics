@@ -103,13 +103,13 @@ jobs:
     - name: Set Variables
       id: vars
       run: |
-        echo "release_date=$(date +'%b, %d %Y')" >> $GITHUB_OUTPUT
+        echo "release_date=$(date +'%b, %d %Y')" >> "$GITHUB_ENV"
 
     - name: Create Release
       uses: softprops/action-gh-release@v1
       with:
         body: |          
-          ###### ${{ steps.vars.outputs.release_date }}
+          ###### ${{ env.release_date }}
           ![](https://img.shields.io/github/downloads/heliomarpm/resize-comics/${{ github.ref_name }}/total)
         draft: true
         prerelease: true
