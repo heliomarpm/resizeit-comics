@@ -99,9 +99,8 @@ jobs:
     - name: Create Release
       uses: softprops/action-gh-release@v1
       with:
-        body: |
-          #${{ github.ref }}
-          ![](https://img.shields.io/github/downloads/heliomarpm/resize-comics/${{ github.ref }}/total)
+        body: |          
+          ![](https://img.shields.io/github/downloads/heliomarpm/resize-comics/${{ github.ref/refs\/tags\// }}/total)
         draft: true
         prerelease: true
         files: |
