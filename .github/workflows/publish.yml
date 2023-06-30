@@ -89,12 +89,12 @@ jobs:
     #     draft: true
     #     prerelease: true
 
-    # Upload the MSIX package: https://github.com/marketplace/actions/upload-a-build-artifact
-    - name: Upload build artifacts
-      uses: actions/upload-artifact@v3
-      with:
-        name: ResizeIt
-        path: ResizeIt.zip
+    # # Upload the MSIX package: https://github.com/marketplace/actions/upload-a-build-artifact
+    # - name: Upload build artifacts
+    #   uses: actions/upload-artifact@v3
+    #   with:
+    #     name: ResizeIt
+    #     path: ResizeIt.zip
 
     # - name: Set Variables
     #   id: vars
@@ -103,7 +103,7 @@ jobs:
     - name: Set Variables
       id: vars
       run: |
-        echo "release_date=$(date +'%b,\ %d\ %Y')" >> $GITHUB_OUTPUT
+        echo "release_date=$(date +'%b, %d %Y')" >> $GITHUB_OUTPUT
 
     - name: Create Release
       uses: softprops/action-gh-release@v1
