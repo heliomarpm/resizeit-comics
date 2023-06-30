@@ -88,10 +88,16 @@ jobs:
         draft: true
         prerelease: true
 
-
     # Upload the MSIX package: https://github.com/marketplace/actions/upload-a-build-artifact
     - name: Upload build artifacts
       uses: actions/upload-artifact@v3
       with:
         name: ResizeIt
         path: ResizeIt.zip
+
+    - name: Publish to Release
+      uses: softprops/action-gh-release@v1
+      with:
+        files: ResizeIt.zip
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
