@@ -96,11 +96,17 @@ jobs:
         name: ResizeIt
         path: ResizeIt.zip
 
+    - name: Set Variables
+      id: set_variables
+      run: |
+        echo "::set-output name=release_date::$(date +%b,\ %d\ %Y)"
+
     - name: Create Release
       uses: softprops/action-gh-release@v1
       with:
         body: |          
-          ![](https://img.shields.io/github/downloads/heliomarpm/resize-comics/${{ github.ref/refs\/tags\// }}/total)
+          ###### ${{ steps.set_variables.outputs.release_date }}
+          ![](https://img.shields.io/github/downloads/heliomarpm/resize-comics/${{ github.ref_name }}/total)
         draft: true
         prerelease: true
         files: |
