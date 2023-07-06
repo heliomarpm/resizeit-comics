@@ -53,20 +53,17 @@ jobs:
       run: dotnet restore
 
     - name: Build project
-      run: dotnet build --configuration Release
-
+      run: dotnet build --configuration release --output ./publish/win-x64
+   
     # - name: Publish application
-    #   run: dotnet publish --configuration Release --output ./publish/win-x64 --runtime win-x64
+    #   run: dotnet publish -c release -r win-x64 --output ./publish/win-x64 -p:PublishSingleFile=true -p:PublishTrimmed=true
 
     - name: see directory
-      run: dir "ResizeImages/bin/release"
-
-    #- name: Publish application
-    #  run: dotnet publish --configuration Release --output ./publish/win-x64 --runtime win-x64
-
+      run: dir "publish/win-x64"
+      
     - name: Compress files
       run: |
-        7z a ResizeIt.zip "ResizeImages/bin/release/net7.0-windows/*"
+        7z a ResizeIt.zip "publish/win-x64/*"
 
     - name: see directory
       run: dir 
@@ -101,15 +98,15 @@ jobs:
     #   run: |
     #     echo "::set-output name=release_date::$(date +%b,\ %d\ %Y)"
     - name: Set Variables
-      id: vars
+      id: variables
       run: |
-        echo "release_date=$(date +'%b, %d %Y')" >> "$GITHUB_OUTPUT"
+        echo "release_date=$(date +'%b, %d %Y')" >> $GITHUB_OUTPUT
 
     - name: Create Release
       uses: softprops/action-gh-release@v1
       with:
         body: |          
-          ###### ${{ steps.vars.outputs.release_date }}
+          ###### ${{ steps.variables.outputs.release_date }}
           ![](https://img.shields.io/github/downloads/heliomarpm/resize-comics/${{ github.ref_name }}/total)
         draft: true
         prerelease: true
