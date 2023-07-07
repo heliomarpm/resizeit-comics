@@ -99,7 +99,7 @@ Obrigado, a todas as pessoas que já contribuiram com esse projeto
 
 ## Donate
 
-If you appreciate that, please consider donating to the Developer.
+Se você aprecia isso, considere doar para o desenvolvedor.
 
 <p align="center">
   <!-- PayPal -->
@@ -124,10 +124,11 @@ If you appreciate that, please consider donating to the Developer.
 ## Licença
 
 O ResizeIt é distribuído sob a licença MIT. Consulte o arquivo `LICENSE` para obter mais informações.
-[MIT © Heliomar P. Marques](https://github.com/heliomarpm/electron-quick-start/blob/main/LICENSE) <a href="#top">🔝</a>
+[MIT © Heliomar P. Marques](https://github.com/heliomarpm/resizeit-comics/blob/main/LICENSE) <a href="#top">🔝</a>
 
 
 ## Agradecimentos
-Agradecemos por utilizar o ResizeIt. Esperamos que ele seja útil e facilite suas tarefas de redimensionamento de imagens para leitura de quadrinhos digitais. Se tiver alguma dúvida ou sugestão, não hesite em entrar em contato conosco.
+Agradeço por utilizar o ResizeIt. Espero que ele seja útil e facilite suas tarefas de redimensionamento de imagens para leitura de quadrinhos digitais. \
+Se tiver alguma dúvida ou sugestão, não hesite em entrar em perguntar.
 
-[Última Versão](https://github.com/heliomarpm/ResizeImages/releases/latest)
+[Última Versão](https://github.com/heliomarpm/resizeit-comics/releases/latest)
