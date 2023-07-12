@@ -129,6 +129,6 @@ O ResizeIt é distribuído sob a licença MIT. Consulte o arquivo `LICENSE` para
 
 ## Agradecimentos
 Agradeço por utilizar o ResizeIt. Espero que ele seja útil e facilite suas tarefas de redimensionamento de imagens para leitura de quadrinhos digitais. \
-Se tiver alguma dúvida ou sugestão, não hesite em entrar em perguntar.
+Se tiver alguma dúvida ou sugestão, não hesite em perguntar.
 
 [Última Versão](https://github.com/heliomarpm/resizeit-comics/releases/latest)
