@@ -44,7 +44,7 @@
 </p>
 
 ![C#](https://img.shields.io/badge/c%23-%23239120.svg?style=for-the-badge&logo=c-sharp&logoColor=white) 
-&nbsp;![.net Core 7](https://img.shields.io/badge/CORE%207-5C2D91?style=for-the-badge&logo=.net&logoColor=white)
+&nbsp;![.net 7](https://img.shields.io/badge/CORE%207-5C2D91?style=for-the-badge&logo=.net&logoColor=white)
 
 O ResizeIt é um aplicativo que permite redimensionar imagens de forma fácil e rápida, especialmente desenvolvido para gerar arquivos adequados para leitura de quadrinhos digitais. \
 Com ele, você pode unificar várias imagens selecionadas em um arquivo CBz (Comic Book ZIP) ou arquivo PDF, ao mesmo tempo em que realiza o redimensionamento para dimensões ideais para quadrinhos. 
