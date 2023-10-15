@@ -96,7 +96,6 @@ namespace ResizeImages.Core
                     wPdf.DirectContent.AddImage(img);
                     //}
                 }
-
             }
 
             //save file
@@ -108,7 +107,6 @@ namespace ResizeImages.Core
 
             wPdf.Close();
             wPdf.Dispose();
-
         }
 
         /*

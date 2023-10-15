@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace ResizeImages
 {
-    public partial class Form1 : Form
+    public partial class frmMain : Form
     {
         private CancellationTokenSource _tokenSource;
         private GenerateImages _generateImages;
@@ -25,11 +25,11 @@ namespace ResizeImages
         private struct ResizePaths
         {
             public string InputFile { get; set; }
-            public string pathOutput { get; set; }
-            public string pathBackup { get; set; }
+            public string PathOutput { get; set; }
+            public string PathBackup { get; set; }
         }
 
-        public Form1()
+        public frmMain()
         {
             InitializeComponent();
             _userOp = new();
@@ -157,30 +157,26 @@ namespace ResizeImages
 
         private void btnSelectInput_Click(object sender, EventArgs e)
         {
-            using (var dlg = openFileDialog1)
-            {
-                dlg.Filter = "Imagens |*.jpg;*.jpeg;*.png";
-                dlg.FileName = "";
-                var result = dlg.ShowDialog();
+            using var dlg = openFileDialog1;
+            dlg.Filter = "Imagens |*.jpg;*.jpeg;*.png";
+            dlg.FileName = "";
+            var result = dlg.ShowDialog();
 
-                if (result == DialogResult.OK)
-                {
-                    txtInputPath.Text = dlg.FileName;
-                }
+            if (result == DialogResult.OK)
+            {
+                txtInputPath.Text = dlg.FileName;
             }
 
         }
 
         private void btnSelectOutput_Click(object sender, EventArgs e)
         {
-            using (var dlg = folderBrowserDialog1)
+            using var dlg = folderBrowserDialog1;
+            var result = dlg.ShowDialog();
+            if (result == DialogResult.OK)
             {
-                var result = dlg.ShowDialog();
-                if (result == DialogResult.OK)
-                {
-                    txtOutputFolder.Text = folderBrowserDialog1.SelectedPath;
-                    this.VerifyOptions();
-                }
+                txtOutputFolder.Text = folderBrowserDialog1.SelectedPath;
+                this.VerifyOptions();
             }
         }
 
@@ -223,7 +219,7 @@ namespace ResizeImages
                 // Apenas 1 arquivo selecionado
                 var rp = this.GetResizePaths(txtInputPath.Text);
 
-                var outFile = _generateImages.Save(rp.InputFile, _resizeScale, rp.pathOutput, rp.pathBackup);
+                var outFile = _generateImages.Save(rp.InputFile, _resizeScale, rp.PathOutput, rp.PathBackup);
                 AddFileList(SavePackage(outFile).IsNull(outFile));
             }
             else
@@ -270,7 +266,7 @@ namespace ResizeImages
 
                     await Task.Run(() =>
                     {
-                        CarregarImagens(txtInputPath.Text, _userOp.SeekImageExtensions, _userOp.OutputType, progress, token);
+                        CarregarImagens(txtInputPath.Text, _userOp.SeekImageExtensions, progress, token);
                     });
 
                     btnRun.Text = "Começar";
@@ -381,8 +377,23 @@ namespace ResizeImages
 
         }
 
-        void CarregarImagens(string pathFiles, string fileExtensions, GenerateImages.EOutputType outputType, IProgress<int> progress, CancellationToken token)
+        void CarregarImagens(string pathFiles, string fileExtensions, IProgress<int> progress, CancellationToken token)
         {
+            if (string.IsNullOrEmpty(pathFiles))
+            {
+                throw new ArgumentException($"'{nameof(pathFiles)}' não pode ser nulo nem vazio.", nameof(pathFiles));
+            }
+
+            if (string.IsNullOrEmpty(fileExtensions))
+            {
+                throw new ArgumentException($"'{nameof(fileExtensions)}' não pode ser nulo nem vazio.", nameof(fileExtensions));
+            }
+
+            if (progress is null)
+            {
+                throw new ArgumentNullException(nameof(progress));
+            }
+
             string output = string.Empty;
 
             var files = Directory.GetFiles(pathFiles, "*.*").Where(f => fileExtensions.Contains(System.IO.Path.GetExtension(f).ToLower()));
@@ -399,7 +410,7 @@ namespace ResizeImages
                 xfile++;
 
                 var rp = this.GetResizePaths(file, output);
-                _generateImages.Save(rp.InputFile, _resizeScale, rp.pathOutput, rp.pathBackup);
+                _generateImages.Save(rp.InputFile, _resizeScale, rp.PathOutput, rp.PathBackup);
 
                 var percent = (xfile * 100) / files.Count();
                 progress.Report(percent);
@@ -427,7 +438,7 @@ namespace ResizeImages
                     }
 
                     if (!sub.Contains(@"\__output") && !sub.Contains(@"\__backup"))
-                        CarregarImagens(sub, fileExtensions, _userOp.OutputType, progress, token);
+                        CarregarImagens(sub, fileExtensions, progress, token);
 
                 }
 
@@ -441,10 +452,7 @@ namespace ResizeImages
             var oLst = lstFiles.Items.Add(file);
 
             var oGrp = lstFiles.Groups[grupo];
-            if (oGrp == null)
-            {
-                oGrp = lstFiles.Groups.Add(grupo, grupo);
-            }
+            oGrp ??= lstFiles.Groups.Add(grupo, grupo);
 
             oLst.Group = oGrp;
             lblCountOutputs.Text = lstFiles.Items.Count.ToString();
@@ -459,7 +467,7 @@ namespace ResizeImages
                 return path + @"\";
             else
             {
-                var temp = rdbOutputCbz.Checked || rdbOutputPdf.Checked ? $@"\{Guid.NewGuid().ToString().Substring(0, 8)}\" : @"\";
+                var temp = rdbOutputCbz.Checked || rdbOutputPdf.Checked ? $@"\{Guid.NewGuid().ToString()[..8]}\" : @"\";
                 return _userOp.OutputDirectory.Replace(@"%DIR_ORIGEM%", path) + temp;
             }
 
@@ -467,11 +475,12 @@ namespace ResizeImages
 
         private ResizePaths GetResizePaths(string inputFile, string output = null)
         {
-            ResizePaths p = new();
-
-            p.InputFile = inputFile;
-            p.pathOutput = output ?? ReplaceOutputFolder(Path.GetDirectoryName(inputFile));
-            p.pathBackup = rdbOutputReplace.Checked && chkSaveBackup.Checked ? Path.Combine(Path.GetDirectoryName(inputFile), @"__backup\") : string.Empty;
+            ResizePaths p = new()
+            {
+                InputFile = inputFile,
+                PathOutput = output ?? ReplaceOutputFolder(Path.GetDirectoryName(inputFile)),
+                PathBackup = rdbOutputReplace.Checked && chkSaveBackup.Checked ? Path.Combine(Path.GetDirectoryName(inputFile), @"__backup\") : string.Empty
+            };
 
             return p;
         }

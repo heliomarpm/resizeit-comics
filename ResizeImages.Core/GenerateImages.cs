@@ -60,7 +60,6 @@ namespace ResizeImages.Core
 
         private ResizeScale ResetScale(ResizeScale scale, int widthImgOriginal, int heightImgOriginal)
         {
-            //' create New image and bitmap objects. Load the image file and put into a resized bitmap.
             bool retrato = widthImgOriginal <= heightImgOriginal;
 
             if (scale.Width < 1) scale.Width = widthImgOriginal;
@@ -70,11 +69,10 @@ namespace ResizeImages.Core
             float width = scale.Width;
             float height = scale.Height;
 
-            // Se é pra manter a orientação então inverte se estiver diferente da imagem original
+            // Se é pra manter a orientação, inverte a largura e a altura se a orientação deve ser preservada
             if (scale.PreserveOrientation && (width <= height && !retrato))
             {
-                width = scale.Height;
-                height = scale.Width;
+                (width, height) = (height, width);
             }
 
             if (scale.IsPercentage)
@@ -82,50 +80,53 @@ namespace ResizeImages.Core
                 width = widthImgOriginal * (width / 100);
                 height = heightImgOriginal * (height / 100);
             }
-            else
+            else if (scale.PreserveAspectRatio)
             {
-                // Se deve manter proporção para evitar distorção na imagem
-                if (scale.PreserveAspectRatio)
+                if (width > 0)
                 {
-                    float percetual;
-
-                    if (width > 0)
-                    {
-                        if (width == widthImgOriginal)
-                        {
-                            height = heightImgOriginal; //mantem original
-                        }
-                        else
-                        {
-                            percetual = (float)width / widthImgOriginal;
-                            height = (heightImgOriginal * percetual);
-                        }
-                    }
-                    else if (height > 0)
-                    {
-                        if (height == heightImgOriginal)
-                        {
-                            width = widthImgOriginal; //mantem original
-                        }
-                        else
-                        {
-                            percetual = (float)height / heightImgOriginal;
-                            width = (widthImgOriginal * percetual);
-                        }
-                    }
+                    //if (width == widthImgOriginal)
+                    //{
+                    //    height = heightImgOriginal; //mantem original
+                    //}
+                    //else
+                    //{
+                    //float percetual = (float)width / widthImgOriginal;
+                    height = width == widthImgOriginal
+                            ? heightImgOriginal
+                            : heightImgOriginal * (width / widthImgOriginal);
+                    //}
+                }
+                else if (height > 0)
+                {
+                    //if (height == heightImgOriginal)
+                    //{
+                    //    width = widthImgOriginal; //mantem original
+                    //}
+                    //else
+                    //{
+                    //float percetual = (float)height / heightImgOriginal;
+                    width = height == heightImgOriginal
+                        ? widthImgOriginal
+                        : widthImgOriginal * (height / heightImgOriginal);
+                    //}
                 }
             }
 
-            if (width == 0 || height == 0)
-            {
-                width = widthImgOriginal;
-                height = heightImgOriginal;
-            }
+
+            //if (width == 0 || height == 0)
+            //{
+            //    width = widthImgOriginal;
+            //    height = heightImgOriginal;
+            //}
+            // Garante que width e height sejam valores válidos
+            if (width <= 0) width = widthImgOriginal;
+            if (height <= 0) height = heightImgOriginal;
 
             scale.Width = width;
             scale.Height = height;
             return scale;
         }
+
         private static ImageCodecInfo GetEncoderInfo(ImageFormat imageFormat)
         {
             string mimeType = $"image/{imageFormat.ToString().ToLower()}";
@@ -224,6 +225,5 @@ namespace ResizeImages.Core
 
             return outputFile;
         }
-
     }
 }
