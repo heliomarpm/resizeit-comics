@@ -3,10 +3,8 @@
   <img src="icon.png" width="128" />
   <br> ResizeIt - Redimensionador de Imagens
 
-  <!--
-  [![CodeFactor](https://www.codefactor.io/repository/github/heliomarpm/resizeit-comics/badge)](https://www.codefactor.io/repository/github/heliomarpm/resizeit-comics) 
-  ![CodeQL](https://github.com/heliomarpm/resizeit-comics/actions/workflows/codeql-analysis.yml/badge.svg) 
-  -->
+  [![CodeFactor](https://www.codefactor.io/repository/github/heliomarpm/resizeit-comics/badge)](https://www.codefactor.io/repository/github/heliomarpm/resizeit-comics)
+  [![CodeQL](https://github.com/heliomarpm/resizeit-comics/actions/workflows/codeql.yml/badge.svg)](https://github.com/heliomarpm/resizeit-comics/actions/workflows/codeql.yml)
   ![Publish](https://github.com/heliomarpm/resizeit-comics/actions/workflows/publish.yml/badge.svg) 
   <a href="https://navto.me/heliomarpm" target="_blank"><img src="https://navto.me/assets/navigatetome-brand.png" width="32"/></a>
 
@@ -127,7 +125,7 @@ Se você aprecia isso, considere doar para o desenvolvedor.
 ## Licença
 
 O ResizeIt é distribuído sob a licença MIT. Consulte o arquivo `LICENSE` para obter mais informações.
-[MIT © Heliomar P. Marques](https://github.com/heliomarpm/resizeit-comics/blob/main/LICENSE) <a href="#top">🔝</a>
+[MIT © Heliomar P. Marques](LICENSE) <a href="#top">🔝</a>
 
 
 ## Agradecimentos
