@@ -5,7 +5,7 @@
 
   [![CodeFactor](https://www.codefactor.io/repository/github/heliomarpm/resizeit-comics/badge)](https://www.codefactor.io/repository/github/heliomarpm/resizeit-comics)
   <!--[![CodeQL](https://github.com/heliomarpm/resizeit-comics/actions/workflows/codeql.yml/badge.svg)](https://github.com/heliomarpm/resizeit-comics/actions/workflows/codeql.yml)-->
-  ![Publish](https://github.com/heliomarpm/resizeit-comics/actions/workflows/publish.yml/badge.svg) 
+  [![Publish](https://github.com/heliomarpm/resizeit-comics/actions/workflows/publish.yml/badge.svg)](README.md) 
   <a href="https://navto.me/heliomarpm" target="_blank"><img src="https://navto.me/assets/navigatetome-brand.png" width="32"/></a>
 
 </h1>
