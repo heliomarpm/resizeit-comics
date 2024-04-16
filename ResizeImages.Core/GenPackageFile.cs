@@ -1,7 +1,13 @@
 ﻿
 //using Ionic.Zip;
-using iTextSharp.text.pdf;
+using iText.IO.Image;
+using iText.Kernel.Geom;
+using iText.Kernel.Pdf;
+using iText.Layout;
+using iText.Layout.Element;
+using iText.Layout.Properties;
 using System;
+
 using System.IO;
 using System.IO.Compression;
 
@@ -15,25 +21,27 @@ namespace ResizeImages.Core
             PdfFile = 2
         }
 
-        public string Save(string pathImages, ETypeFile saveType)
+        public string Save(string pathImages, ETypeFile saveType,string pdfname=null)
         {
             if (string.IsNullOrEmpty(pathImages))
             {
-                throw new ArgumentException($"'{nameof(pathImages)}' não pode ser nulo ou vazio", nameof(pathImages));
+                throw new ArgumentException($"'{nameof(pathImages)}' 不能为 null 或为空", nameof(pathImages));
             }
 
             var singleFile = File.Exists(pathImages);
-            var fileName = Path.GetFileNameWithoutExtension(pathImages);
+            var fileName = System.IO.Path.GetFileNameWithoutExtension(pathImages);
 
             if (!singleFile)
             {
-                pathImages += @"\"; // para garantiar que irá pegar a pasta temporaria
+                pathImages += @"\"; // 以确保您获得临时文件夹
+                if(pdfname==null)
                 fileName = new DirectoryInfo(Directory.GetParent(pathImages).Parent.FullName).Name;
+                else fileName = System.IO.Path.GetFileNameWithoutExtension( pdfname);
             }
 
             var extFile = saveType == ETypeFile.CbzFile ? ".cbz" : ".pdf";
             var tempDir = Directory.GetParent(pathImages).FullName;
-            var saveFile = Path.Combine(Directory.GetParent(tempDir).Parent.FullName, $"{fileName}{extFile}");
+            var saveFile = System.IO.Path.Combine(Directory.GetParent(tempDir).Parent.FullName, $"{fileName}{extFile}");
 
             if (saveType == ETypeFile.CbzFile)
             {
@@ -58,55 +66,90 @@ namespace ResizeImages.Core
         private void SavePdf(string inputPath, string pathSaveFile)
         {
             // Create a new PDF document
-            var doc = new iTextSharp.text.Document(iTextSharp.text.PageSize.A4);
-            var fs = new FileStream(pathSaveFile, FileMode.Create);
-            var wPdf = PdfWriter.GetInstance(doc, fs);
-
-            doc.Open();
+            //var doc = new iTextSharp.text.Document(iTextSharp.text.PageSize.A4);
+            //var fs = new FileStream(pathSaveFile, FileMode.Create);
+            var writer = new PdfWriter(pathSaveFile);
+            PdfDocument pdf = new PdfDocument(writer);
+            
+            //doc.Open();
 
             if (File.Exists(inputPath))
             {
-                //se arquivo unico                
-                var img = iTextSharp.text.Image.GetInstance(inputPath);
+               
+                //如果是单个文件
+                Image image = new Image(ImageDataFactory
+            .Create(inputPath));
+                var width = image.GetImageScaledWidth();
+                var height = image.GetImageScaledHeight();
+                PageSize size = new PageSize(width, height);
+                Document document = new Document(pdf, size);
+                document.SetMargins(0, 0, 0, 0);
+                //.SetTextAlignment(TextAlignment.CENTER);
+                document.Add(image);
+                document.Close();
+                //var img = iTextSharp.text.Image.GetInstance(inputPath);
 
-                doc.SetPageSize(new iTextSharp.text.Rectangle(img.Width, img.Height));
-                doc.NewPage();
+                //doc.SetPageSize(new iTextSharp.text.Rectangle(img.Width, img.Height));
+                //doc.NewPage();
 
-                img.SetAbsolutePosition(0, 0);
-                wPdf.DirectContent.AddImage(img);
+                //img.SetAbsolutePosition(0, 0);
+                //wPdf.DirectContent.AddImage(img);
             }
             else
             {
                 var imageFiles = Directory.GetFiles(inputPath, "*.*"); //.Where(f => fileExtensions.Contains(Path.GetExtension(f).ToLower()));
                 //Array.Sort(imageFiles.ToArray(), new AlphanumComparatorFast());
-
+                PageSize size =null;
                 //importing the images in the pdf
                 foreach (string imageFile in imageFiles)
-                {
+                { //checking file extension
+                    string ext = System.IO.Path.GetExtension(imageFile).ToLower();
+                    if ((string.Compare(ext, ".jpg") == 0) || (string.Compare(ext, ".jpeg") == 0) || (string.Compare(ext, ".png") == 0) || (string.Compare(ext, ".bmp") == 0) || (string.Compare(ext, ".new") == 0))
+                    {
+                        Image image = new Image(ImageDataFactory
+                        .Create(inputPath));
+                        var width = image.GetImageScaledWidth();
+                        var height = image.GetImageScaledHeight();
+                        size=   new PageSize(width, height);
+                        break;
+                    }
+
+                       
                     //checking file extension
                     //string ext = Path.GetExtension(imageFile).ToLower();
                     //if ((string.Compare(ext, ".jpg") == 0) || (string.Compare(ext, ".jpeg") == 0) || (string.Compare(ext, ".png") == 0) || (string.Compare(ext, ".bmp") == 0) || (string.Compare(ext, ".new") == 0))
                     //{                                                 
-                    var img = iTextSharp.text.Image.GetInstance(imageFile);
+                    //var img = iTextSharp.text.Image.GetInstance(imageFile);
 
-                    doc.SetPageSize(new iTextSharp.text.Rectangle(img.Width, img.Height));
-                    doc.NewPage();
+                    //doc.SetPageSize(new iTextSharp.text.Rectangle(img.Width, img.Height));
+                    //doc.NewPage();
 
-                    img.SetAbsolutePosition(0, 0);
-                    wPdf.DirectContent.AddImage(img);
+                    //img.SetAbsolutePosition(0, 0);
+                    //wPdf.DirectContent.AddImage(img);
                     //}
                 }
+                Document document = new Document(pdf, size);
+                int i = 0;
+                foreach (string imageFile in imageFiles)
+                {
+                    string ext = System.IO.Path.GetExtension(imageFile).ToLower();
+                    if ((string.Compare(ext, ".jpg") == 0) || (string.Compare(ext, ".jpeg") == 0) || (string.Compare(ext, ".png") == 0) || (string.Compare(ext, ".bmp") == 0) || (string.Compare(ext, ".new") == 0))
+                    {
+                        Image image = new Image(ImageDataFactory
+                        .Create(inputPath));
+                        pdf.AddNewPage(new PageSize(image.GetImageWidth(), image.GetImageHeight()));
+                        image.SetFixedPosition(i + 1, 0, 0);
+                        document.Add(image);
+                        i++;
+                    }
+                }
+                document.Close();
+
             }
-
+            
             //save file
-            doc.Close();
-            doc.Dispose();
-
-            fs.Close();
-            fs.Dispose();
-
-            wPdf.Close();
-            wPdf.Dispose();
+            pdf.Close();
+           
         }
 
         /*

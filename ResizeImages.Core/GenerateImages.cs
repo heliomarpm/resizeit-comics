@@ -46,7 +46,7 @@ namespace ResizeImages.Core
         public List<string> Outputs { get; private set; }
 
         /// <summary>
-        /// Dir. Origem / Dir. Destino / Arquivos
+        /// 源目录/目标目录/文件
         /// </summary>
         public Dictionary<string, Dictionary<string, List<string>>> Output { get; private set; }
 
@@ -141,7 +141,7 @@ namespace ResizeImages.Core
             return null;
         }
 
-        public string Save(string inputFile, ResizeScale scale, string outputFile = null, string pathBackup = null)
+        public List<string> Save(string inputFile, ResizeScale scale, string outputFile = null, string pathBackup = null)
         {
             if (string.IsNullOrEmpty(outputFile))
                 outputFile = inputFile;
@@ -155,7 +155,7 @@ namespace ResizeImages.Core
 
             outputFile = Path.Combine(outPath, outFile);
 
-            #region "SE SOLICITADO, SALVA BACKUP ANTES DE ALTERAR."
+            #region "如果需要，请在更改之前保存备份。"
 
             if (!string.IsNullOrEmpty(pathBackup))
             {
@@ -164,7 +164,7 @@ namespace ResizeImages.Core
                 if (inPath != pathBackup)
                 {
                     if (outputFile == Path.Combine(pathBackup, Path.GetFileName(inputFile)))
-                        throw new ArgumentException("Local de Backup não pode ser o mesmo do local de destino");
+                        throw new ArgumentException("备份位置不能与目标位置相同");
 
                     this.SaveBackup(inputFile, pathBackup);
                 }
@@ -172,57 +172,76 @@ namespace ResizeImages.Core
 
             #endregion
 
-            #region "CRIA IMAGEM COM NOVAS DIMENSOES"
+            #region "创建新尺寸图像"
 
             // cria o diretorio de output se necessario
             if (!Directory.Exists(outPath))
                 Directory.CreateDirectory(outPath);
-
+            List<string> files = new List<string>();
             //outPath = $@"{outPath}\{Path.GetFileName(inputFile)}";
-
-            Bitmap imgOutput;
-            ImageCodecInfo imgCodec;
-
-            using (var img = Image.FromFile(inputFile))
+            if(Path.GetExtension(inputFile)!=".pdf")
             {
-                imgCodec = GetEncoderInfo(img.RawFormat);
-                scale = ResetScale(scale, img.Width, img.Height);
-                imgOutput = new Bitmap(img, (int)scale.Width, (int)scale.Height);
-            }
+                Bitmap imgOutput;
+                ImageCodecInfo imgCodec;
 
-            // Para evitar o erro de GDI+ quando o caminho é muito longo
-            using (MemoryStream ms = new MemoryStream())
+                using (var img = Image.FromFile(inputFile))
+                {
+                    imgCodec = GetEncoderInfo(img.RawFormat);
+                    scale = ResetScale(scale, img.Width, img.Height);
+                    imgOutput = new Bitmap(img, (int)scale.Width, (int)scale.Height);
+                }
+
+                // Para evitar o erro de GDI+ quando o caminho é muito longo
+                using (MemoryStream ms = new MemoryStream())
+                {
+                    imgOutput.Save(ms, imgCodec, null);
+                    imgOutput.Dispose();
+
+                    // Se arquivo estiver bloqueado cria um nome aleatorio
+                    //if (!Utils.DeleteFile(outputFile))
+                    //{
+                    //    outputFile = $@"{Path.GetFileNameWithoutExtension(outputFile)}_{Guid.NewGuid().ToString().Substring(0, 8)}{Path.GetExtension(outputFile)}";
+                    //    outputFile = Path.Combine(outPath, outputFile);
+                    //}
+
+                    File.WriteAllBytes(outputFile, ms.ToArray());
+                }
+            }
+            else
             {
-                imgOutput.Save(ms, imgCodec, null);
-                imgOutput.Dispose();
-
-                // Se arquivo estiver bloqueado cria um nome aleatorio
-                //if (!Utils.DeleteFile(outputFile))
-                //{
-                //    outputFile = $@"{Path.GetFileNameWithoutExtension(outputFile)}_{Guid.NewGuid().ToString().Substring(0, 8)}{Path.GetExtension(outputFile)}";
-                //    outputFile = Path.Combine(outPath, outputFile);
-                //}
-
-                File.WriteAllBytes(outputFile, ms.ToArray());
+                files= LoadPdf.LoadFilePdfSavePics(inputFile, outPath);
             }
+            
 
             #endregion
 
-            #region "GUARDA LISTA DOS ARQUIVOS PROCESSADOS"
+            #region "保存已处理文件列表"
 
             if (!this.Output.ContainsKey(inPath))
                 this.Output.Add(inPath, new Dictionary<string, List<string>>());
 
             if (!this.Output[inPath].ContainsKey(outPath))
                 this.Output[inPath].Add(outPath, new List<string>());
+            if(files.Count==0)
+            {
+                this.Output[inPath][outPath].Add(outputFile);
 
-            this.Output[inPath][outPath].Add(outputFile);
+                this.Outputs.Add(outputFile);
+                files.Add(outputFile);
+            }
+            else
+            {
+                for (int i = 0;i<files.Count;i++)
+                {
+                    this.Output[inPath][outPath].Add(files[i]);
 
-            this.Outputs.Add(outputFile);
+                    this.Outputs.Add(files[i]);
+                }
+            }
 
             #endregion
 
-            return outputFile;
+            return files;
         }
     }
 }

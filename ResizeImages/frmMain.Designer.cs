@@ -85,6 +85,7 @@ namespace ResizeImages
             lblCountOutputs = new System.Windows.Forms.Label();
             label7 = new System.Windows.Forms.Label();
             pictureBox2 = new System.Windows.Forms.PictureBox();
+            chkFilterPDF = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)picPreview).BeginInit();
             panel4.SuspendLayout();
             panel2.SuspendLayout();
@@ -133,9 +134,9 @@ namespace ResizeImages
             rdbOutputPdf.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             rdbOutputPdf.Location = new System.Drawing.Point(31, 59);
             rdbOutputPdf.Name = "rdbOutputPdf";
-            rdbOutputPdf.Size = new System.Drawing.Size(130, 23);
+            rdbOutputPdf.Size = new System.Drawing.Size(91, 23);
             rdbOutputPdf.TabIndex = 17;
-            rdbOutputPdf.Text = "Unificar em Pdf";
+            rdbOutputPdf.Text = "统一为Pdf";
             toolTip1.SetToolTip(rdbOutputPdf, "Unifica todas as imagens da pasta de origem em um arquivo .Pdf de mesmo nome.");
             rdbOutputPdf.UseVisualStyleBackColor = true;
             rdbOutputPdf.CheckedChanged += rdbOutputPdf_CheckedChanged;
@@ -147,10 +148,10 @@ namespace ResizeImages
             rdbOutputCbz.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             rdbOutputCbz.Location = new System.Drawing.Point(31, 33);
             rdbOutputCbz.Name = "rdbOutputCbz";
-            rdbOutputCbz.Size = new System.Drawing.Size(135, 23);
+            rdbOutputCbz.Size = new System.Drawing.Size(93, 23);
             rdbOutputCbz.TabIndex = 16;
             rdbOutputCbz.TabStop = true;
-            rdbOutputCbz.Text = "Unificar em Cbz";
+            rdbOutputCbz.Text = "统一为Bbz";
             toolTip1.SetToolTip(rdbOutputCbz, "Unifica todas as imagens da pasta de origem em um arquivo .Cbz (padrão HQ) de mesmo nome.\r\n");
             rdbOutputCbz.UseVisualStyleBackColor = true;
             rdbOutputCbz.CheckedChanged += rdbOutputCbz_CheckedChanged;
@@ -200,9 +201,9 @@ namespace ResizeImages
             rdbPorcent.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             rdbPorcent.Location = new System.Drawing.Point(31, 151);
             rdbPorcent.Name = "rdbPorcent";
-            rdbPorcent.Size = new System.Drawing.Size(121, 23);
+            rdbPorcent.Size = new System.Drawing.Size(69, 23);
             rdbPorcent.TabIndex = 15;
-            rdbPorcent.Text = "Porcentagem";
+            rdbPorcent.Text = "百分比";
             rdbPorcent.UseVisualStyleBackColor = true;
             rdbPorcent.CheckedChanged += rdbPorcent_CheckedChanged;
             // 
@@ -212,9 +213,9 @@ namespace ResizeImages
             rdbHQ.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             rdbHQ.Location = new System.Drawing.Point(31, 122);
             rdbHQ.Name = "rdbHQ";
-            rdbHQ.Size = new System.Drawing.Size(179, 23);
+            rdbHQ.Size = new System.Drawing.Size(185, 23);
             rdbHQ.TabIndex = 14;
-            rdbHQ.Text = "HQ ( 720 x 1080 pixels)";
+            rdbHQ.Text = "标清 ( 720 x 1080 pixels)";
             rdbHQ.UseVisualStyleBackColor = true;
             rdbHQ.CheckedChanged += rdbHQ_CheckedChanged;
             // 
@@ -224,9 +225,9 @@ namespace ResizeImages
             rdbLarge.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             rdbLarge.Location = new System.Drawing.Point(31, 93);
             rdbLarge.Name = "rdbLarge";
-            rdbLarge.Size = new System.Drawing.Size(219, 23);
+            rdbLarge.Size = new System.Drawing.Size(193, 23);
             rdbLarge.TabIndex = 13;
-            rdbLarge.Text = "Grande ( 1920 x 1080 pixels)";
+            rdbLarge.Text = "超清 ( 1920 x 1080 pixels)";
             rdbLarge.UseVisualStyleBackColor = true;
             rdbLarge.CheckedChanged += rdbLarge_CheckedChanged;
             // 
@@ -236,9 +237,9 @@ namespace ResizeImages
             rdbMedium.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             rdbMedium.Location = new System.Drawing.Point(31, 64);
             rdbMedium.Name = "rdbMedium";
-            rdbMedium.Size = new System.Drawing.Size(201, 23);
+            rdbMedium.Size = new System.Drawing.Size(185, 23);
             rdbMedium.TabIndex = 12;
-            rdbMedium.Text = "Médio ( 1366 x 768 pixels)";
+            rdbMedium.Text = "高清 ( 1366 x 768 pixels)";
             rdbMedium.UseVisualStyleBackColor = true;
             rdbMedium.CheckedChanged += rdbMedium_CheckedChanged;
             // 
@@ -248,9 +249,9 @@ namespace ResizeImages
             rdbSmall.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             rdbSmall.Location = new System.Drawing.Point(31, 35);
             rdbSmall.Name = "rdbSmall";
-            rdbSmall.Size = new System.Drawing.Size(212, 23);
+            rdbSmall.Size = new System.Drawing.Size(177, 23);
             rdbSmall.TabIndex = 11;
-            rdbSmall.Text = "Pequeno ( 854 x 480 pixels)";
+            rdbSmall.Text = "低清 ( 854 x 480 pixels)";
             rdbSmall.UseVisualStyleBackColor = true;
             rdbSmall.CheckedChanged += rdbSmall_CheckedChanged;
             // 
@@ -260,9 +261,9 @@ namespace ResizeImages
             label2.Font = new System.Drawing.Font("Century Gothic", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             label2.Location = new System.Drawing.Point(16, 8);
             label2.Name = "label2";
-            label2.Size = new System.Drawing.Size(116, 20);
+            label2.Size = new System.Drawing.Size(73, 20);
             label2.TabIndex = 10;
-            label2.Text = "Redimensionar";
+            label2.Text = "调整大小";
             // 
             // picPreview
             // 
@@ -296,10 +297,10 @@ namespace ResizeImages
             rdbOutputReplace.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             rdbOutputReplace.Location = new System.Drawing.Point(31, 111);
             rdbOutputReplace.Name = "rdbOutputReplace";
-            rdbOutputReplace.Size = new System.Drawing.Size(202, 23);
+            rdbOutputReplace.Size = new System.Drawing.Size(111, 23);
             rdbOutputReplace.TabIndex = 27;
-            rdbOutputReplace.Text = "Substituir imagem original";
-            toolTip1.SetToolTip(rdbOutputReplace, "Imagem original será substituida.");
+            rdbOutputReplace.Text = "替换原始图像";
+            toolTip1.SetToolTip(rdbOutputReplace, "原始图像将被替换。");
             rdbOutputReplace.UseVisualStyleBackColor = true;
             rdbOutputReplace.CheckedChanged += rdbOutputReplace_CheckedChanged;
             // 
@@ -309,10 +310,10 @@ namespace ResizeImages
             rdbOutputCopy.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             rdbOutputCopy.Location = new System.Drawing.Point(31, 85);
             rdbOutputCopy.Name = "rdbOutputCopy";
-            rdbOutputCopy.Size = new System.Drawing.Size(140, 23);
+            rdbOutputCopy.Size = new System.Drawing.Size(83, 23);
             rdbOutputCopy.TabIndex = 26;
-            rdbOutputCopy.Text = "Criar uma cópia";
-            toolTip1.SetToolTip(rdbOutputCopy, "Cópia será numerada, caso o destino selecionado seja o mesmo da imagem original.");
+            rdbOutputCopy.Text = "创建副本";
+            toolTip1.SetToolTip(rdbOutputCopy, "如果所选目的地与原始图像相同，副本将被编号。");
             rdbOutputCopy.UseVisualStyleBackColor = true;
             rdbOutputCopy.CheckedChanged += rdbOutputCopy_CheckedChanged;
             // 
@@ -322,9 +323,9 @@ namespace ResizeImages
             label5.Font = new System.Drawing.Font("Century Gothic", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             label5.Location = new System.Drawing.Point(16, 8);
             label5.Name = "label5";
-            label5.Size = new System.Drawing.Size(136, 20);
+            label5.Size = new System.Drawing.Size(73, 20);
             label5.TabIndex = 25;
-            label5.Text = "Opções de Saída";
+            label5.Text = "输出选项";
             // 
             // chkSaveBackup
             // 
@@ -334,10 +335,10 @@ namespace ResizeImages
             chkSaveBackup.Location = new System.Drawing.Point(43, 137);
             chkSaveBackup.Name = "chkSaveBackup";
             chkSaveBackup.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
-            chkSaveBackup.Size = new System.Drawing.Size(201, 23);
+            chkSaveBackup.Size = new System.Drawing.Size(115, 23);
             chkSaveBackup.TabIndex = 24;
-            chkSaveBackup.Text = "Guardar Backup original";
-            toolTip1.SetToolTip(chkSaveBackup, "Opção de armazenar imagem original na pasta \"__backup\" localizado dentro da pasta origem das imagens");
+            chkSaveBackup.Text = "保存原始备份";
+            toolTip1.SetToolTip(chkSaveBackup, "将原始图像存储在文件夹中的选项 \"__backup\" 位于图像的源文件夹内");
             chkSaveBackup.UseVisualStyleBackColor = true;
             // 
             // lstFiles
@@ -387,9 +388,9 @@ namespace ResizeImages
             lblReduceType.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             lblReduceType.Location = new System.Drawing.Point(43, 188);
             lblReduceType.Name = "lblReduceType";
-            lblReduceType.Size = new System.Drawing.Size(91, 17);
+            lblReduceType.Size = new System.Drawing.Size(64, 17);
             lblReduceType.TabIndex = 23;
-            lblReduceType.Text = "Dimensão % ";
+            lblReduceType.Text = "方面 ％ ";
             // 
             // chkPreserveOrientation
             // 
@@ -400,9 +401,9 @@ namespace ResizeImages
             chkPreserveOrientation.Location = new System.Drawing.Point(31, 253);
             chkPreserveOrientation.Name = "chkPreserveOrientation";
             chkPreserveOrientation.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
-            chkPreserveOrientation.Size = new System.Drawing.Size(261, 23);
+            chkPreserveOrientation.Size = new System.Drawing.Size(115, 23);
             chkPreserveOrientation.TabIndex = 22;
-            chkPreserveOrientation.Text = "Manter a orientação da imagem";
+            chkPreserveOrientation.Text = "保持图像方向";
             chkPreserveOrientation.UseVisualStyleBackColor = true;
             // 
             // chkAspectRatio
@@ -414,9 +415,9 @@ namespace ResizeImages
             chkAspectRatio.Location = new System.Drawing.Point(31, 224);
             chkAspectRatio.Name = "chkAspectRatio";
             chkAspectRatio.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
-            chkAspectRatio.Size = new System.Drawing.Size(232, 23);
+            chkAspectRatio.Size = new System.Drawing.Size(101, 23);
             chkAspectRatio.TabIndex = 21;
-            chkAspectRatio.Text = "Manter a taxa de proporção";
+            chkAspectRatio.Text = "保持纵横比";
             chkAspectRatio.UseVisualStyleBackColor = true;
             // 
             // pnlTop
@@ -443,9 +444,9 @@ namespace ResizeImages
             label4.Font = new System.Drawing.Font("Century Gothic", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             label4.Location = new System.Drawing.Point(12, 63);
             label4.Name = "label4";
-            label4.Size = new System.Drawing.Size(153, 20);
+            label4.Size = new System.Drawing.Size(73, 20);
             label4.TabIndex = 10;
-            label4.Text = "Diretório de Destino";
+            label4.Text = "目标目录";
             // 
             // btnSelectOutput
             // 
@@ -515,9 +516,9 @@ namespace ResizeImages
             chkOutputFolder.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             chkOutputFolder.Location = new System.Drawing.Point(175, 63);
             chkOutputFolder.Name = "chkOutputFolder";
-            chkOutputFolder.Size = new System.Drawing.Size(133, 24);
+            chkOutputFolder.Size = new System.Drawing.Size(108, 24);
             chkOutputFolder.TabIndex = 2;
-            chkOutputFolder.Text = "alterar destino";
+            chkOutputFolder.Text = "改变目的地";
             chkOutputFolder.UseVisualStyleBackColor = true;
             chkOutputFolder.Visible = false;
             chkOutputFolder.CheckedChanged += chkOutputFolder_CheckedChanged;
@@ -528,13 +529,14 @@ namespace ResizeImages
             label1.Font = new System.Drawing.Font("Century Gothic", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             label1.Location = new System.Drawing.Point(12, 9);
             label1.Name = "label1";
-            label1.Size = new System.Drawing.Size(258, 20);
+            label1.Size = new System.Drawing.Size(105, 20);
             label1.TabIndex = 0;
-            label1.Text = "Diretório de Origem e/ou Imagem";
+            label1.Text = "源或图像目录";
             // 
             // pnlFilter
             // 
             pnlFilter.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right;
+            pnlFilter.Controls.Add(chkFilterPDF);
             pnlFilter.Controls.Add(chkSeekRecursively);
             pnlFilter.Controls.Add(chkFilterJPG);
             pnlFilter.Controls.Add(chkFilterPNG);
@@ -552,10 +554,10 @@ namespace ResizeImages
             chkSeekRecursively.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             chkSeekRecursively.Location = new System.Drawing.Point(9, 1);
             chkSeekRecursively.Name = "chkSeekRecursively";
-            chkSeekRecursively.Size = new System.Drawing.Size(134, 23);
+            chkSeekRecursively.Size = new System.Drawing.Size(84, 23);
             chkSeekRecursively.TabIndex = 7;
             chkSeekRecursively.Tag = "";
-            chkSeekRecursively.Text = "Busca recursiva";
+            chkSeekRecursively.Text = "递归搜索";
             chkSeekRecursively.UseVisualStyleBackColor = true;
             // 
             // chkFilterJPG
@@ -613,7 +615,7 @@ namespace ResizeImages
             btnRun.Name = "btnRun";
             btnRun.Size = new System.Drawing.Size(308, 54);
             btnRun.TabIndex = 13;
-            btnRun.Text = "Começar";
+            btnRun.Text = "开始";
             btnRun.UseVisualStyleBackColor = false;
             btnRun.Click += btnRun_Click;
             // 
@@ -710,9 +712,9 @@ namespace ResizeImages
             label6.ForeColor = System.Drawing.Color.Silver;
             label6.Location = new System.Drawing.Point(4, 4);
             label6.Name = "label6";
-            label6.Size = new System.Drawing.Size(176, 42);
+            label6.Size = new System.Drawing.Size(132, 42);
             label6.TabIndex = 0;
-            label6.Text = "Entradas";
+            label6.Text = "开胃菜";
             // 
             // pnlCountOutputs
             // 
@@ -746,9 +748,9 @@ namespace ResizeImages
             label7.ForeColor = System.Drawing.Color.Silver;
             label7.Location = new System.Drawing.Point(3, 4);
             label7.Name = "label7";
-            label7.Size = new System.Drawing.Size(139, 42);
+            label7.Size = new System.Drawing.Size(94, 42);
             label7.TabIndex = 3;
-            label7.Text = "Saídas";
+            label7.Text = "退出";
             // 
             // pictureBox2
             // 
@@ -760,6 +762,20 @@ namespace ResizeImages
             pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             pictureBox2.TabIndex = 2;
             pictureBox2.TabStop = false;
+            // 
+            // chkFilterPDF
+            // 
+            chkFilterPDF.AutoSize = true;
+            chkFilterPDF.Checked = true;
+            chkFilterPDF.CheckState = System.Windows.Forms.CheckState.Checked;
+            chkFilterPDF.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            chkFilterPDF.Location = new System.Drawing.Point(113, 1);
+            chkFilterPDF.Name = "chkFilterPDF";
+            chkFilterPDF.Size = new System.Drawing.Size(56, 23);
+            chkFilterPDF.TabIndex = 8;
+            chkFilterPDF.Tag = "*.pdf";
+            chkFilterPDF.Text = ".pdf";
+            chkFilterPDF.UseVisualStyleBackColor = true;
             // 
             // frmMain
             // 
@@ -778,7 +794,7 @@ namespace ResizeImages
             ForeColor = System.Drawing.Color.WhiteSmoke;
             Icon = (System.Drawing.Icon)resources.GetObject("$this.Icon");
             Name = "frmMain";
-            Text = "ResizeIt! Redimensionador de Imagens";
+            Text = "图像调整器";
             WindowState = System.Windows.Forms.FormWindowState.Maximized;
             Load += Form1_Load;
             ResizeEnd += Form1_ResizeEnd;
@@ -859,6 +875,7 @@ namespace ResizeImages
         private System.Windows.Forms.Label lblCountInputs;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label lblCountOutputs;
+        private System.Windows.Forms.CheckBox chkFilterPDF;
     }
 }
 

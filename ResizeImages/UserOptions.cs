@@ -10,7 +10,7 @@ namespace ResizeImages
         public readonly bool InputDirExists => Directory.Exists(this.InputFullPath);
         public readonly bool InputFileExists => File.Exists(this.InputFullPath);
 
-        public bool SeekRecursively { get; set; }
+        public bool 递归查找 { get; set; }
         public string SeekImageExtensions { get; set; }
 
         public string InputFullPath { get; set; }
