@@ -117,8 +117,8 @@ namespace ResizeImages
             lblFolderCount.BackColor = System.Drawing.Color.Transparent;
             lblFolderCount.Dock = System.Windows.Forms.DockStyle.Bottom;
             lblFolderCount.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            lblFolderCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 140.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            lblFolderCount.ForeColor = System.Drawing.Color.Black;
+            lblFolderCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 140.25F, System.Drawing.FontStyle.Bold);
+            lblFolderCount.ForeColor = System.Drawing.Color.Gainsboro;
             lblFolderCount.Location = new System.Drawing.Point(308, 411);
             lblFolderCount.Name = "lblFolderCount";
             lblFolderCount.Size = new System.Drawing.Size(656, 225);
@@ -130,7 +130,7 @@ namespace ResizeImages
             // rdbOutputPdf
             // 
             rdbOutputPdf.AutoSize = true;
-            rdbOutputPdf.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            rdbOutputPdf.Font = new System.Drawing.Font("Century Gothic", 10F);
             rdbOutputPdf.Location = new System.Drawing.Point(31, 59);
             rdbOutputPdf.Name = "rdbOutputPdf";
             rdbOutputPdf.Size = new System.Drawing.Size(130, 23);
@@ -144,7 +144,7 @@ namespace ResizeImages
             // 
             rdbOutputCbz.AutoSize = true;
             rdbOutputCbz.Checked = true;
-            rdbOutputCbz.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            rdbOutputCbz.Font = new System.Drawing.Font("Century Gothic", 10F);
             rdbOutputCbz.Location = new System.Drawing.Point(31, 33);
             rdbOutputCbz.Name = "rdbOutputCbz";
             rdbOutputCbz.Size = new System.Drawing.Size(135, 23);
@@ -158,7 +158,7 @@ namespace ResizeImages
             // label3
             // 
             label3.AutoSize = true;
-            label3.Font = new System.Drawing.Font("Century Gothic", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            label3.Font = new System.Drawing.Font("Century Gothic", 11F);
             label3.Location = new System.Drawing.Point(205, 186);
             label3.Name = "label3";
             label3.Size = new System.Drawing.Size(16, 20);
@@ -169,7 +169,7 @@ namespace ResizeImages
             // 
             txtHeight.BackColor = System.Drawing.Color.FromArgb(28, 28, 28);
             txtHeight.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            txtHeight.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            txtHeight.Font = new System.Drawing.Font("Century Gothic", 10F);
             txtHeight.ForeColor = System.Drawing.Color.LightGray;
             txtHeight.Location = new System.Drawing.Point(224, 184);
             txtHeight.Name = "txtHeight";
@@ -184,7 +184,7 @@ namespace ResizeImages
             // 
             txtWidth.BackColor = System.Drawing.Color.FromArgb(28, 28, 28);
             txtWidth.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            txtWidth.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            txtWidth.Font = new System.Drawing.Font("Century Gothic", 10F);
             txtWidth.ForeColor = System.Drawing.Color.LightGray;
             txtWidth.Location = new System.Drawing.Point(135, 184);
             txtWidth.Name = "txtWidth";
@@ -197,7 +197,7 @@ namespace ResizeImages
             // rdbPorcent
             // 
             rdbPorcent.AutoSize = true;
-            rdbPorcent.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            rdbPorcent.Font = new System.Drawing.Font("Century Gothic", 10F);
             rdbPorcent.Location = new System.Drawing.Point(31, 151);
             rdbPorcent.Name = "rdbPorcent";
             rdbPorcent.Size = new System.Drawing.Size(121, 23);
@@ -209,7 +209,7 @@ namespace ResizeImages
             // rdbHQ
             // 
             rdbHQ.AutoSize = true;
-            rdbHQ.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            rdbHQ.Font = new System.Drawing.Font("Century Gothic", 10F);
             rdbHQ.Location = new System.Drawing.Point(31, 122);
             rdbHQ.Name = "rdbHQ";
             rdbHQ.Size = new System.Drawing.Size(179, 23);
@@ -221,7 +221,7 @@ namespace ResizeImages
             // rdbLarge
             // 
             rdbLarge.AutoSize = true;
-            rdbLarge.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            rdbLarge.Font = new System.Drawing.Font("Century Gothic", 10F);
             rdbLarge.Location = new System.Drawing.Point(31, 93);
             rdbLarge.Name = "rdbLarge";
             rdbLarge.Size = new System.Drawing.Size(219, 23);
@@ -233,7 +233,7 @@ namespace ResizeImages
             // rdbMedium
             // 
             rdbMedium.AutoSize = true;
-            rdbMedium.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            rdbMedium.Font = new System.Drawing.Font("Century Gothic", 10F);
             rdbMedium.Location = new System.Drawing.Point(31, 64);
             rdbMedium.Name = "rdbMedium";
             rdbMedium.Size = new System.Drawing.Size(201, 23);
@@ -245,7 +245,7 @@ namespace ResizeImages
             // rdbSmall
             // 
             rdbSmall.AutoSize = true;
-            rdbSmall.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            rdbSmall.Font = new System.Drawing.Font("Century Gothic", 10F);
             rdbSmall.Location = new System.Drawing.Point(31, 35);
             rdbSmall.Name = "rdbSmall";
             rdbSmall.Size = new System.Drawing.Size(212, 23);
@@ -257,7 +257,7 @@ namespace ResizeImages
             // label2
             // 
             label2.AutoSize = true;
-            label2.Font = new System.Drawing.Font("Century Gothic", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            label2.Font = new System.Drawing.Font("Century Gothic", 11F);
             label2.Location = new System.Drawing.Point(16, 8);
             label2.Name = "label2";
             label2.Size = new System.Drawing.Size(116, 20);
@@ -293,7 +293,7 @@ namespace ResizeImages
             // rdbOutputReplace
             // 
             rdbOutputReplace.AutoSize = true;
-            rdbOutputReplace.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            rdbOutputReplace.Font = new System.Drawing.Font("Century Gothic", 10F);
             rdbOutputReplace.Location = new System.Drawing.Point(31, 111);
             rdbOutputReplace.Name = "rdbOutputReplace";
             rdbOutputReplace.Size = new System.Drawing.Size(202, 23);
@@ -306,7 +306,7 @@ namespace ResizeImages
             // rdbOutputCopy
             // 
             rdbOutputCopy.AutoSize = true;
-            rdbOutputCopy.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            rdbOutputCopy.Font = new System.Drawing.Font("Century Gothic", 10F);
             rdbOutputCopy.Location = new System.Drawing.Point(31, 85);
             rdbOutputCopy.Name = "rdbOutputCopy";
             rdbOutputCopy.Size = new System.Drawing.Size(140, 23);
@@ -319,7 +319,7 @@ namespace ResizeImages
             // label5
             // 
             label5.AutoSize = true;
-            label5.Font = new System.Drawing.Font("Century Gothic", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            label5.Font = new System.Drawing.Font("Century Gothic", 11F);
             label5.Location = new System.Drawing.Point(16, 8);
             label5.Name = "label5";
             label5.Size = new System.Drawing.Size(136, 20);
@@ -330,7 +330,7 @@ namespace ResizeImages
             // 
             chkSaveBackup.AutoSize = true;
             chkSaveBackup.Enabled = false;
-            chkSaveBackup.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            chkSaveBackup.Font = new System.Drawing.Font("Century Gothic", 10F);
             chkSaveBackup.Location = new System.Drawing.Point(43, 137);
             chkSaveBackup.Name = "chkSaveBackup";
             chkSaveBackup.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
@@ -347,7 +347,7 @@ namespace ResizeImages
             lstFiles.BorderStyle = System.Windows.Forms.BorderStyle.None;
             lstFiles.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] { columnHeader1 });
             lstFiles.Dock = System.Windows.Forms.DockStyle.Fill;
-            lstFiles.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            lstFiles.Font = new System.Drawing.Font("Century Gothic", 10F);
             lstFiles.ForeColor = System.Drawing.Color.White;
             lstFiles.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
             lstFiles.HotTracking = true;
@@ -384,7 +384,7 @@ namespace ResizeImages
             // lblReduceType
             // 
             lblReduceType.AutoSize = true;
-            lblReduceType.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            lblReduceType.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             lblReduceType.Location = new System.Drawing.Point(43, 188);
             lblReduceType.Name = "lblReduceType";
             lblReduceType.Size = new System.Drawing.Size(91, 17);
@@ -396,7 +396,7 @@ namespace ResizeImages
             chkPreserveOrientation.AutoSize = true;
             chkPreserveOrientation.Checked = true;
             chkPreserveOrientation.CheckState = System.Windows.Forms.CheckState.Checked;
-            chkPreserveOrientation.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            chkPreserveOrientation.Font = new System.Drawing.Font("Century Gothic", 10F);
             chkPreserveOrientation.Location = new System.Drawing.Point(31, 253);
             chkPreserveOrientation.Name = "chkPreserveOrientation";
             chkPreserveOrientation.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
@@ -410,7 +410,7 @@ namespace ResizeImages
             chkAspectRatio.AutoSize = true;
             chkAspectRatio.Checked = true;
             chkAspectRatio.CheckState = System.Windows.Forms.CheckState.Checked;
-            chkAspectRatio.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            chkAspectRatio.Font = new System.Drawing.Font("Century Gothic", 10F);
             chkAspectRatio.Location = new System.Drawing.Point(31, 224);
             chkAspectRatio.Name = "chkAspectRatio";
             chkAspectRatio.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
@@ -431,7 +431,7 @@ namespace ResizeImages
             pnlTop.Controls.Add(label1);
             pnlTop.Controls.Add(pnlFilter);
             pnlTop.Dock = System.Windows.Forms.DockStyle.Top;
-            pnlTop.Font = new System.Drawing.Font("Century Gothic", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            pnlTop.Font = new System.Drawing.Font("Century Gothic", 11F);
             pnlTop.Location = new System.Drawing.Point(0, 0);
             pnlTop.Name = "pnlTop";
             pnlTop.Size = new System.Drawing.Size(964, 124);
@@ -440,7 +440,7 @@ namespace ResizeImages
             // label4
             // 
             label4.AutoSize = true;
-            label4.Font = new System.Drawing.Font("Century Gothic", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            label4.Font = new System.Drawing.Font("Century Gothic", 11F);
             label4.Location = new System.Drawing.Point(12, 63);
             label4.Name = "label4";
             label4.Size = new System.Drawing.Size(153, 20);
@@ -452,7 +452,7 @@ namespace ResizeImages
             btnSelectOutput.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right;
             btnSelectOutput.FlatAppearance.BorderColor = System.Drawing.Color.DimGray;
             btnSelectOutput.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            btnSelectOutput.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            btnSelectOutput.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold);
             btnSelectOutput.Location = new System.Drawing.Point(918, 87);
             btnSelectOutput.Name = "btnSelectOutput";
             btnSelectOutput.Size = new System.Drawing.Size(30, 24);
@@ -467,7 +467,7 @@ namespace ResizeImages
             btnSelectInput.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right;
             btnSelectInput.FlatAppearance.BorderColor = System.Drawing.Color.DimGray;
             btnSelectInput.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            btnSelectInput.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            btnSelectInput.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold);
             btnSelectInput.Location = new System.Drawing.Point(918, 32);
             btnSelectInput.Name = "btnSelectInput";
             btnSelectInput.Size = new System.Drawing.Size(30, 24);
@@ -482,7 +482,7 @@ namespace ResizeImages
             txtOutputFolder.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
             txtOutputFolder.BackColor = System.Drawing.Color.FromArgb(28, 28, 28);
             txtOutputFolder.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            txtOutputFolder.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            txtOutputFolder.Font = new System.Drawing.Font("Century Gothic", 10F);
             txtOutputFolder.ForeColor = System.Drawing.Color.DarkGray;
             txtOutputFolder.Location = new System.Drawing.Point(17, 87);
             txtOutputFolder.Name = "txtOutputFolder";
@@ -498,7 +498,7 @@ namespace ResizeImages
             txtInputPath.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
             txtInputPath.BackColor = System.Drawing.Color.FromArgb(28, 28, 28);
             txtInputPath.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            txtInputPath.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            txtInputPath.Font = new System.Drawing.Font("Century Gothic", 10F);
             txtInputPath.ForeColor = System.Drawing.Color.LightGray;
             txtInputPath.Location = new System.Drawing.Point(17, 32);
             txtInputPath.Name = "txtInputPath";
@@ -512,7 +512,7 @@ namespace ResizeImages
             // chkOutputFolder
             // 
             chkOutputFolder.AutoSize = true;
-            chkOutputFolder.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            chkOutputFolder.Font = new System.Drawing.Font("Century Gothic", 11.25F);
             chkOutputFolder.Location = new System.Drawing.Point(175, 63);
             chkOutputFolder.Name = "chkOutputFolder";
             chkOutputFolder.Size = new System.Drawing.Size(133, 24);
@@ -525,7 +525,7 @@ namespace ResizeImages
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new System.Drawing.Font("Century Gothic", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            label1.Font = new System.Drawing.Font("Century Gothic", 11F);
             label1.Location = new System.Drawing.Point(12, 9);
             label1.Name = "label1";
             label1.Size = new System.Drawing.Size(258, 20);
@@ -549,7 +549,7 @@ namespace ResizeImages
             chkSeekRecursively.AutoSize = true;
             chkSeekRecursively.Checked = true;
             chkSeekRecursively.CheckState = System.Windows.Forms.CheckState.Checked;
-            chkSeekRecursively.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            chkSeekRecursively.Font = new System.Drawing.Font("Century Gothic", 10F);
             chkSeekRecursively.Location = new System.Drawing.Point(9, 1);
             chkSeekRecursively.Name = "chkSeekRecursively";
             chkSeekRecursively.Size = new System.Drawing.Size(134, 23);
@@ -563,7 +563,7 @@ namespace ResizeImages
             chkFilterJPG.AutoSize = true;
             chkFilterJPG.Checked = true;
             chkFilterJPG.CheckState = System.Windows.Forms.CheckState.Checked;
-            chkFilterJPG.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            chkFilterJPG.Font = new System.Drawing.Font("Century Gothic", 10F);
             chkFilterJPG.Location = new System.Drawing.Point(182, 1);
             chkFilterJPG.Name = "chkFilterJPG";
             chkFilterJPG.Size = new System.Drawing.Size(63, 23);
@@ -577,7 +577,7 @@ namespace ResizeImages
             chkFilterPNG.AutoSize = true;
             chkFilterPNG.Checked = true;
             chkFilterPNG.CheckState = System.Windows.Forms.CheckState.Checked;
-            chkFilterPNG.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            chkFilterPNG.Font = new System.Drawing.Font("Century Gothic", 10F);
             chkFilterPNG.Location = new System.Drawing.Point(251, 1);
             chkFilterPNG.Name = "chkFilterPNG";
             chkFilterPNG.Size = new System.Drawing.Size(60, 23);
@@ -683,8 +683,8 @@ namespace ResizeImages
             // lblCountInputs
             // 
             lblCountInputs.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
-            lblCountInputs.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            lblCountInputs.ForeColor = System.Drawing.Color.Black;
+            lblCountInputs.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Bold);
+            lblCountInputs.ForeColor = System.Drawing.Color.Gainsboro;
             lblCountInputs.Location = new System.Drawing.Point(4, 41);
             lblCountInputs.Name = "lblCountInputs";
             lblCountInputs.Size = new System.Drawing.Size(242, 70);
@@ -706,7 +706,7 @@ namespace ResizeImages
             // label6
             // 
             label6.AutoSize = true;
-            label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Bold);
             label6.ForeColor = System.Drawing.Color.Silver;
             label6.Location = new System.Drawing.Point(4, 4);
             label6.Name = "label6";
@@ -730,8 +730,8 @@ namespace ResizeImages
             // lblCountOutputs
             // 
             lblCountOutputs.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
-            lblCountOutputs.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            lblCountOutputs.ForeColor = System.Drawing.Color.Black;
+            lblCountOutputs.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Bold);
+            lblCountOutputs.ForeColor = System.Drawing.Color.Gainsboro;
             lblCountOutputs.Location = new System.Drawing.Point(5, 41);
             lblCountOutputs.Name = "lblCountOutputs";
             lblCountOutputs.Size = new System.Drawing.Size(242, 70);
@@ -742,7 +742,7 @@ namespace ResizeImages
             // label7
             // 
             label7.AutoSize = true;
-            label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Bold);
             label7.ForeColor = System.Drawing.Color.Silver;
             label7.Location = new System.Drawing.Point(3, 4);
             label7.Name = "label7";
@@ -774,7 +774,7 @@ namespace ResizeImages
             Controls.Add(pnlLeft);
             Controls.Add(progBar);
             Controls.Add(pnlTop);
-            Font = new System.Drawing.Font("Century Gothic", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            Font = new System.Drawing.Font("Century Gothic", 11F);
             ForeColor = System.Drawing.Color.WhiteSmoke;
             Icon = (System.Drawing.Icon)resources.GetObject("$this.Icon");
             Name = "frmMain";
