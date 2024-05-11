@@ -3,9 +3,9 @@
   <img src="icon.png" width="128" />
   <br> ResizeIt - Redimensionador de Imagens
 
-  <!--[![CodeQL](https://github.com/heliomarpm/resizeit-comics/actions/workflows/codeql.yml/badge.svg)](https://github.com/heliomarpm/resizeit-comics/actions/workflows/codeql.yml)-->
+  [![CodeQL](https://github.com/heliomarpm/resizeit-comics/actions/workflows/codeql.yml/badge.svg)](https://github.com/heliomarpm/resizeit-comics/actions/workflows/codeql.yml)
   [![CodeFactor](https://www.codefactor.io/repository/github/heliomarpm/resizeit-comics/badge)](https://www.codefactor.io/repository/github/heliomarpm/resizeit-comics)
-  [![Publish](https://github.com/heliomarpm/resizeit-comics/actions/workflows/publish.yml/badge.svg)](README.md) 
+  [![Publish](https://github.com/heliomarpm/resizeit-comics/actions/workflows/publish.yml/badge.svg)](README.md)
   <a href="https://navto.me/heliomarpm" target="_blank"><img src="https://navto.me/assets/navigatetome-brand.png" width="32"/></a>
 
 </h1>
@@ -41,29 +41,30 @@
   </a>
 </p>
 
-![C#](https://img.shields.io/badge/c%23-%23239120.svg?style=for-the-badge&logo=c-sharp&logoColor=white) 
+![C#](https://img.shields.io/badge/c%23-%23239120.svg?style=for-the-badge&logo=c-sharp&logoColor=white)
 &nbsp;![.net 7](https://img.shields.io/badge/CORE%207-5C2D91?style=for-the-badge&logo=.net&logoColor=white)
 
 O ResizeIt é um aplicativo que permite redimensionar imagens de forma fácil e rápida, especialmente desenvolvido para gerar arquivos adequados para leitura de quadrinhos digitais. \
-Com ele, você pode unificar várias imagens selecionadas em um arquivo CBz (Comic Book ZIP) ou arquivo PDF, ao mesmo tempo em que realiza o redimensionamento para dimensões ideais para quadrinhos. 
+Com ele, você pode unificar várias imagens selecionadas em um arquivo CBz (Comic Book ZIP) ou arquivo PDF, ao mesmo tempo em que realiza o redimensionamento para dimensões ideais para quadrinhos.
 
 O aplicativo oferece opções de redimensionamento pré-definidas, como:
+
 * Pequeno (854x480)
 * Médio (1366x768)
 * Grande (1920x1080)
 * HQ (720x1080)
- 
+
 Além disso, você pode personalizar o redimensionamento por percentual, ajustando a largura (Width) e a altura (Height) da imagem conforme sua preferência, opcionalmente você marcar para forçar o redimensionamento a manter a proporsão da imagem
 
-
 ## Recursos Principais
+
 * Redimensionamento fácil de imagens para leitura de quadrinhos: Escolha entre opções pré-definidas ou personalize o redimensionamento por percentual.
 * Unificação de imagens em arquivos CBz ou PDF: Selecione várias imagens e crie um arquivo CBz ou arquivo PDF contendo todas elas.
 * Substituição ou cópia: Escolha se deseja substituir o arquivo original com a imagem redimensionada ou criar uma cópia separada.
 * Mantenha a proporção da imagem: Opção para manter sempre a proporção da imagem durante o redimensionamento, evitando distorções indesejadas.
 
-
 ## Como usar o ResizeIt
+
 1. Faça o download e instale o aplicativo ResizeIt em seu dispositivo.
 1. Abra o aplicativo e selecione as imagens que deseja redimensionar para leitura de quadrinhos. Você pode selecionar várias imagens de uma só vez.
 1. Escolha uma das opções pré-definidas de redimensionamento (Pequeno, Médio, Grande, HQ) ou personalize o redimensionamento por percentual, ajustando a largura e altura desejadas.
@@ -76,16 +77,16 @@ Experimente o ResizeIt e simplifique o redimensionamento de suas imagens para um
 
 ![Capa](https://user-images.githubusercontent.com/13087389/126058296-27a3cca2-a8eb-4f02-99b7-2e00745e7a74.png)
 
-## Contribuição 
+## Contribuição
 
 Você pode contribuir para o desenvolvimento do ResizeIt.
 
-- :star: Dando uma estrela neste repositório _(isso é muito importante e não custa nada)_
-- :beetle: Relatando problemas ou solitando recursos _([Issues](https://github.com/heliomarpm/resizeit-comics/issues))_
-- :computer: Enviando solicitações de recursos _([Pull Requests](https://github.com/heliomarpm/resizeit-comics/pulls))_
-- :page_facing_up: Melhorando esta documentação
-- :rotating_light: Compartilhando este projeto e recomendando-o aos seus amigos
-- :dollar: Apoiando este projeto no GitHub Sponsors, PayPal, Ko-fi ou Liberapay _(você decide)_ 😉
+* :star: Dando uma estrela neste repositório _(isso é muito importante e não custa nada)_
+* :beetle: Relatando problemas ou solitando recursos _([Issues](https://github.com/heliomarpm/resizeit-comics/issues))_
+* :computer: Enviando solicitações de recursos _([Pull Requests](https://github.com/heliomarpm/resizeit-comics/pulls))_
+* :page_facing_up: Melhorando esta documentação
+* :rotating_light: Compartilhando este projeto e recomendando-o aos seus amigos
+* :dollar: Apoiando este projeto no GitHub Sponsors, PayPal, Ko-fi ou Liberapay _(você decide)_ 😉
 
 <!--
 Obrigado, a todas as pessoas que já contribuiram com esse projeto
@@ -96,7 +97,6 @@ Obrigado, a todas as pessoas que já contribuiram com esse projeto
 
 ###### Made with [contrib.rocks](https://contrib.rocks).
 -->
-
 
 ## Donate
 
@@ -121,14 +121,13 @@ Se você aprecia isso, considere doar para o desenvolvedor.
   </a>
 </p>
 
-
 ## Licença
 
 O ResizeIt é distribuído sob a licença MIT. Consulte o arquivo `LICENSE` para obter mais informações.
 [MIT © Heliomar P. Marques](LICENSE) <a href="#top">🔝</a>
 
-
 ## Agradecimentos
+
 Agradeço por utilizar o ResizeIt. Espero que ele seja útil e facilite suas tarefas de redimensionamento de imagens para leitura de quadrinhos digitais. \
 Se tiver alguma dúvida ou sugestão, não hesite em perguntar.
 
