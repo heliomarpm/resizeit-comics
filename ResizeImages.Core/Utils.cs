@@ -23,7 +23,6 @@ namespace ResizeImages.Core
                     repeat--;
                     Console.WriteLine(ex.Message);
                 }
-
             } while (repeat > 0);
 
             return false;
@@ -47,7 +46,6 @@ namespace ResizeImages.Core
                     repeat--;
                     Console.WriteLine(ex.Message);
                 }
-
             } while (repeat > 0);
 
             return false;

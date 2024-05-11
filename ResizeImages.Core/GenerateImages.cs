@@ -191,7 +191,7 @@ namespace ResizeImages.Core
             }
 
             // Para evitar o erro de GDI+ quando o caminho é muito longo
-            using (MemoryStream ms = new MemoryStream())
+            using (MemoryStream ms = new())
             {
                 imgOutput.Save(ms, imgCodec, null);
                 imgOutput.Dispose();

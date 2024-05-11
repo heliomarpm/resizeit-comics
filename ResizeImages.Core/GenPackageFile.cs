@@ -1,5 +1,4 @@
 ﻿
-//using Ionic.Zip;
 using iTextSharp.text.pdf;
 using System;
 using System.IO;
@@ -49,13 +48,13 @@ namespace ResizeImages.Core
             return saveFile;
         }
 
-        private void SaveCbz(string inputPath, string pathSaveFile)
+        private static void SaveCbz(string inputPath, string pathSaveFile)
         {
             Utils.DeleteFile(pathSaveFile);
             ZipFile.CreateFromDirectory(inputPath, pathSaveFile);
         }
 
-        private void SavePdf(string inputPath, string pathSaveFile)
+        private static void SavePdf(string inputPath, string pathSaveFile)
         {
             // Create a new PDF document
             var doc = new iTextSharp.text.Document(iTextSharp.text.PageSize.A4);

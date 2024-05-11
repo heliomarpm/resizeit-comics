@@ -134,7 +134,7 @@ namespace ResizeImages
                 {
                     picPreview.ImageLocation = path;
 
-                    var imgOrigem = System.Drawing.Image.FromFile(path);
+                    var imgOrigem = Image.FromFile(path);
                     if (imgOrigem.Width < imgOrigem.Height)
                     {
                         //retrato
@@ -152,7 +152,6 @@ namespace ResizeImages
             {
                 picPreview.Visible = false;
             }
-
         }
 
         private void btnSelectInput_Click(object sender, EventArgs e)
@@ -166,7 +165,6 @@ namespace ResizeImages
             {
                 txtInputPath.Text = dlg.FileName;
             }
-
         }
 
         private void btnSelectOutput_Click(object sender, EventArgs e)
@@ -207,7 +205,7 @@ namespace ResizeImages
 
             _generateImages = new();
             _resizeScale = new(this.GetWidth, this.GetHeight, rdbPorcent.Checked, chkPreserveOrientation.Checked, chkAspectRatio.Checked);
-            _outputFiles = new();
+            _outputFiles = [];
 
             lstFiles.Items.Clear();
             lblCountInputs.Text = "0";
@@ -290,16 +288,14 @@ namespace ResizeImages
                     }
                     _tokenSource.Dispose();
                 }
-
             }
-
         }
 
         private void lstFiles_ItemSelectionChanged(object sender, ListViewItemSelectionChangedEventArgs e)
         {
             var item = lstFiles.FocusedItem;
             if (item != null)
-                ShowPicPreview(System.IO.Path.Combine(item.Group.Header, item.Text));
+                ShowPicPreview(Path.Combine(item.Group.Header, item.Text));
         }
 
         private void txtInputPath_Enter(object sender, EventArgs e)
@@ -338,7 +334,6 @@ namespace ResizeImages
                 }
             }
 
-
             VerifyOptions();
         }
 
@@ -374,7 +369,6 @@ namespace ResizeImages
             {
                 chkOutputFolder.Checked = false;
             }
-
         }
 
         void CarregarImagens(string pathFiles, string fileExtensions, IProgress<int> progress, CancellationToken token)
@@ -389,14 +383,11 @@ namespace ResizeImages
                 throw new ArgumentException($"'{nameof(fileExtensions)}' não pode ser nulo nem vazio.", nameof(fileExtensions));
             }
 
-            if (progress is null)
-            {
-                throw new ArgumentNullException(nameof(progress));
-            }
+            ArgumentNullException.ThrowIfNull(progress);
 
             string output = string.Empty;
 
-            var files = Directory.GetFiles(pathFiles, "*.*").Where(f => fileExtensions.Contains(System.IO.Path.GetExtension(f).ToLower()));
+            var files = Directory.GetFiles(pathFiles, "*.*").Where(f => fileExtensions.Contains(Path.GetExtension(f), StringComparison.CurrentCultureIgnoreCase));
 
             output = ReplaceOutputFolder(pathFiles);
 
@@ -414,8 +405,8 @@ namespace ResizeImages
 
                 var percent = (xfile * 100) / files.Count();
                 progress.Report(percent);
-
             }
+
             //Se não chamou progress.Report
             if (xfile == 0)
                 _countSubFolders--;
@@ -439,9 +430,7 @@ namespace ResizeImages
 
                     if (!sub.Contains(@"\__output") && !sub.Contains(@"\__backup"))
                         CarregarImagens(sub, fileExtensions, progress, token);
-
                 }
-
         }
 
         void AddFileList(string sourceFile)
@@ -470,7 +459,6 @@ namespace ResizeImages
                 var temp = rdbOutputCbz.Checked || rdbOutputPdf.Checked ? $@"\{Guid.NewGuid().ToString()[..8]}\" : @"\";
                 return _userOp.OutputDirectory.Replace(@"%DIR_ORIGEM%", path) + temp;
             }
-
         }
 
         private ResizePaths GetResizePaths(string inputFile, string output = null)
@@ -489,7 +477,7 @@ namespace ResizeImages
         {
             // extensoes
             string extFile = chkFilterJPG.Checked ? chkFilterJPG.Tag.ToString() : string.Empty;
-            extFile += chkFilterPNG.Checked ? (!extFile.Equals(string.Empty) ? ";" : "") + chkFilterPNG.Tag.ToString() : string.Empty;
+            extFile += chkFilterPNG.Checked ? (!extFile.Equals(string.Empty, StringComparison.Ordinal) ? ";" : "") + chkFilterPNG.Tag.ToString() : string.Empty;
 
             // diretorio output
             string dirOutput = "%DIR_ORIGEM%";
@@ -532,7 +520,6 @@ namespace ResizeImages
             //if (!_userOp.CustomOutputDirectory)
             txtOutputFolder.Text = _userOp.OutputFullPath;
 
-
             _ = int.TryParse(txtWidth.Text, out int nOK);
             runOK &= bOK;
             txtWidth.ForeColor = nOK > 0 ? Color.LightGray : Color.Red;
@@ -559,8 +546,5 @@ namespace ResizeImages
 
             return null;
         }
-
-
     }
-
 }

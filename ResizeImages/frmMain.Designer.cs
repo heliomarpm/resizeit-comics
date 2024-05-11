@@ -118,7 +118,7 @@ namespace ResizeImages
             lblFolderCount.Dock = System.Windows.Forms.DockStyle.Bottom;
             lblFolderCount.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             lblFolderCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 140.25F, System.Drawing.FontStyle.Bold);
-            lblFolderCount.ForeColor = System.Drawing.Color.Gainsboro;
+            lblFolderCount.ForeColor = System.Drawing.Color.FromArgb(35, 35, 35);
             lblFolderCount.Location = new System.Drawing.Point(308, 411);
             lblFolderCount.Name = "lblFolderCount";
             lblFolderCount.Size = new System.Drawing.Size(656, 225);
@@ -684,7 +684,7 @@ namespace ResizeImages
             // 
             lblCountInputs.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
             lblCountInputs.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Bold);
-            lblCountInputs.ForeColor = System.Drawing.Color.Gainsboro;
+            lblCountInputs.ForeColor = System.Drawing.Color.FromArgb(50, 50, 50);
             lblCountInputs.Location = new System.Drawing.Point(4, 41);
             lblCountInputs.Name = "lblCountInputs";
             lblCountInputs.Size = new System.Drawing.Size(242, 70);
@@ -731,7 +731,7 @@ namespace ResizeImages
             // 
             lblCountOutputs.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
             lblCountOutputs.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Bold);
-            lblCountOutputs.ForeColor = System.Drawing.Color.Gainsboro;
+            lblCountOutputs.ForeColor = System.Drawing.Color.FromArgb(50, 50, 50);
             lblCountOutputs.Location = new System.Drawing.Point(5, 41);
             lblCountOutputs.Name = "lblCountOutputs";
             lblCountOutputs.Size = new System.Drawing.Size(242, 70);
