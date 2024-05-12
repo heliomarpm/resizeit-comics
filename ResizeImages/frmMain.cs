@@ -486,8 +486,9 @@ namespace ResizeImages
             if (chkOutputFolder.Checked)
                 dirOutput = txtOutputFolder.Text;
             else if (File.Exists(txtInputPath.Text))
+            {
                 dirOutput = Path.GetDirectoryName(@$"{txtInputPath.Text}\");
-
+            }
 
             _userOp = new UserOptions
             {
@@ -519,10 +520,11 @@ namespace ResizeImages
 
             if (bOK)
                 txtOutputFolder.ForeColor = txtOutputFolder.ReadOnly ? Color.DarkGray : Color.LightGray;
-            else 
+            else
+            {
                 txtOutputFolder.ForeColor = Color.Red;
+            }
 
-            //if (!_userOp.CustomOutputDirectory)
             txtOutputFolder.Text = _userOp.OutputFullPath;
 
             _ = int.TryParse(txtWidth.Text, out int nOK);
