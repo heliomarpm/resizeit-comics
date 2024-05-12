@@ -146,6 +146,7 @@ namespace ResizeImages
                         picPreview.Size = new Size(200 * 2, 285);
                     }
                     picPreview.Left = this.Width - (picPreview.Width + 33);
+                    imgOrigem.Dispose();
                 }
             }
             catch (Exception)
@@ -235,7 +236,8 @@ namespace ResizeImages
                 {
                     // subfolders 
                     _countSubFolders = Directory.GetDirectories(txtInputPath.Text, "*", SearchOption.AllDirectories)
-                                                .Where(n => !n.Contains("__output") && !n.Contains("__backup")).Count();
+                                                .Count(n => !n.Contains("__output") && !n.Contains("__backup"));
+
                     lblFolderCount.Text = _countSubFolders.ToString();
                     lblFolderCount.Visible = _countSubFolders > 0;
 
@@ -322,7 +324,6 @@ namespace ResizeImages
                 {
                     // se selecionado apenas 1 arquivo de input
                     string path = Path.GetDirectoryName(value);
-                    //string fileName = Path.GetFileName(value);
 
                     path = path == string.Empty ? "%DIR_ORIGEM%" : path;
                     txtOutputFolder.Text = Path.Combine(path, _userOp.InputFileName + _userOp.OutputFileExtension);
@@ -391,7 +392,6 @@ namespace ResizeImages
 
             output = ReplaceOutputFolder(pathFiles);
 
-            //progBar.Maximum = files.Count();
             int xfile = 0;
             foreach (var file in files)
             {
@@ -477,7 +477,7 @@ namespace ResizeImages
         {
             // extensoes
             string extFile = chkFilterJPG.Checked ? chkFilterJPG.Tag.ToString() : string.Empty;
-            extFile += chkFilterPNG.Checked ? (!extFile.Equals(string.Empty, StringComparison.Ordinal) ? ";" : "") + chkFilterPNG.Tag.ToString() : string.Empty;
+            extFile += chkFilterPNG.Checked ? $"{(string.IsNullOrEmpty(extFile) ? "" : ";")}{chkFilterPNG.Tag}" : string.Empty;
 
             // diretorio output
             string dirOutput = "%DIR_ORIGEM%";
@@ -485,7 +485,7 @@ namespace ResizeImages
             if (chkOutputFolder.Checked)
                 dirOutput = txtOutputFolder.Text;
             else if (File.Exists(txtInputPath.Text))
-                dirOutput = Path.GetDirectoryName(txtInputPath.Text + @"\");
+                dirOutput = Path.GetDirectoryName(@$"{txtInputPath.Text}\");
 
 
             _userOp = new UserOptions
@@ -515,7 +515,7 @@ namespace ResizeImages
 
             bOK = !string.IsNullOrEmpty(_userOp.OutputDirectory);
             runOK &= bOK;
-            txtOutputFolder.ForeColor = bOK ? txtOutputFolder.ReadOnly ? Color.DarkGray : Color.LightGray : Color.Red;
+            txtOutputFolder.ForeColor = bOK ? (txtOutputFolder.ReadOnly ? Color.DarkGray : Color.LightGray) : Color.Red;
 
             //if (!_userOp.CustomOutputDirectory)
             txtOutputFolder.Text = _userOp.OutputFullPath;
