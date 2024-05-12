@@ -477,7 +477,8 @@ namespace ResizeImages
         {
             // extensoes
             string extFile = chkFilterJPG.Checked ? chkFilterJPG.Tag.ToString() : string.Empty;
-            extFile += chkFilterPNG.Checked ? $"{(string.IsNullOrEmpty(extFile) ? "" : ";")}{chkFilterPNG.Tag}" : string.Empty;
+            extFile = string.IsNullOrEmpty(extFile) ? "" : ";";
+            extFile += chkFilterPNG.Checked ? $"{extFile}{chkFilterPNG.Tag}" : string.Empty;
 
             // diretorio output
             string dirOutput = "%DIR_ORIGEM%";
@@ -515,7 +516,11 @@ namespace ResizeImages
 
             bOK = !string.IsNullOrEmpty(_userOp.OutputDirectory);
             runOK &= bOK;
-            txtOutputFolder.ForeColor = bOK ? (txtOutputFolder.ReadOnly ? Color.DarkGray : Color.LightGray) : Color.Red;
+
+            if (bOK)
+                txtOutputFolder.ForeColor = txtOutputFolder.ReadOnly ? Color.DarkGray : Color.LightGray;
+            else 
+                txtOutputFolder.ForeColor = Color.Red;
 
             //if (!_userOp.CustomOutputDirectory)
             txtOutputFolder.Text = _userOp.OutputFullPath;
