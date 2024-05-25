@@ -11,12 +11,12 @@ using System.Windows.Forms;
 
 namespace ResizeImages
 {
-    public partial class frmMain : Form
+    public partial class MainForm : Form
     {
         private CancellationTokenSource _tokenSource;
         private GenerateImages _generateImages;
         private ResizeScale _resizeScale;
-        private UserOptions _userOp;
+        private UserOptions _userOptions;
 
         private int _countSubFolders;
 
@@ -29,13 +29,13 @@ namespace ResizeImages
             public string PathBackup { get; set; }
         }
 
-        public frmMain()
+        public MainForm()
         {
             InitializeComponent();
-            _userOp = new();
+            _userOptions = new();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void MainForm_Load(object sender, EventArgs e)
         {
             rdbPorcent.Checked = true;
             chkOutputFolder.Checked = false;
@@ -47,7 +47,7 @@ namespace ResizeImages
             VerifyOptions();
         }
 
-        private void Form1_ResizeEnd(object sender, EventArgs e)
+        private void MainForm_ResizeEnd(object sender, EventArgs e)
         {
             if (this.WindowState != FormWindowState.Minimized)
             {
@@ -126,28 +126,26 @@ namespace ResizeImages
 
         private void ShowPicPreview(string path)
         {
+            if (!File.Exists(path))
+            {
+                picPreview.Visible = false;
+                return;
+            }
+
             try
             {
-                picPreview.Visible = File.Exists(path);
+                const int paisagem = 200;
+                const int retrato = 400;
 
-                if (picPreview.Visible)
+                picPreview.ImageLocation = path;
+                using (var imgOrigem = Image.FromFile(path))
                 {
-                    picPreview.ImageLocation = path;
-
-                    var imgOrigem = Image.FromFile(path);
-                    if (imgOrigem.Width < imgOrigem.Height)
-                    {
-                        //retrato
-                        picPreview.Size = new Size(200, 285);
-                    }
-                    else
-                    {
-                        //paisagem
-                        picPreview.Size = new Size(200 * 2, 285);
-                    }
+                    int previewWidth = imgOrigem.Width < imgOrigem.Height ? paisagem : retrato;
+                    picPreview.Size = new Size(previewWidth, 285);
                     picPreview.Left = this.Width - (picPreview.Width + 33);
-                    imgOrigem.Dispose();
                 }
+
+                picPreview.Visible = true;
             }
             catch (Exception)
             {
@@ -266,7 +264,7 @@ namespace ResizeImages
 
                     await Task.Run(() =>
                     {
-                        CarregarImagens(txtInputPath.Text, _userOp.SeekImageExtensions, progress, token);
+                        CarregarImagens(txtInputPath.Text, _userOptions.SeekImageExtensions, progress, token);
                     });
 
                     btnRun.Text = "Começar";
@@ -309,7 +307,7 @@ namespace ResizeImages
         {
             if (chkOutputFolder.Checked)
             {
-                txtOutputFolder.Text = _userOp.OutputDirectory;
+                txtOutputFolder.Text = _userOptions.OutputDirectory;
             }
             txtOutputFolder.SelectAll();
         }
@@ -320,13 +318,13 @@ namespace ResizeImages
             // Alterando caminho de destino padrão
             if (chkOutputFolder.Checked)
             {
-                if (_userOp.InputFileExists && value.Length > 0)
+                if (_userOptions.InputFileExists && value.Length > 0)
                 {
                     // se selecionado apenas 1 arquivo de input
                     string path = Path.GetDirectoryName(value);
 
                     path = path == string.Empty ? "%DIR_ORIGEM%" : path;
-                    txtOutputFolder.Text = Path.Combine(path, _userOp.InputFileName + _userOp.OutputFileExtension);
+                    txtOutputFolder.Text = Path.Combine(path, _userOptions.InputFileName + _userOptions.OutputFileExtension);
                 }
                 else if (value.Length > 0 && value[^1].ToString().CompareTo(@"\") == 1)
                 {
@@ -419,8 +417,7 @@ namespace ResizeImages
                 }
             }
 
-
-            if (_userOp.SeekRecursively)
+            if (_userOptions.SeekRecursively)
                 foreach (var sub in Directory.GetDirectories(pathFiles))
                 {
                     if (token.IsCancellationRequested)
@@ -457,7 +454,7 @@ namespace ResizeImages
             else
             {
                 var temp = rdbOutputCbz.Checked || rdbOutputPdf.Checked ? $@"\{Guid.NewGuid().ToString()[..8]}\" : @"\";
-                return _userOp.OutputDirectory.Replace(@"%DIR_ORIGEM%", path) + temp;
+                return _userOptions.OutputDirectory.Replace(@"%DIR_ORIGEM%", path) + temp;
             }
         }
 
@@ -475,77 +472,81 @@ namespace ResizeImages
 
         private void VerifyOptions()
         {
-            // extensoes
-            string extFile = chkFilterJPG.Checked ? chkFilterJPG.Tag.ToString() : string.Empty;
-            extFile = string.IsNullOrEmpty(extFile) ? "" : ";";
-            extFile += chkFilterPNG.Checked ? $"{extFile}{chkFilterPNG.Tag}" : string.Empty;
+            var (seekExtensions, outputDirectory, outputType) = GetFileDefinitions();
 
-            // diretorio output
-            string dirOutput = "%DIR_ORIGEM%";
-
-            if (chkOutputFolder.Checked)
-                dirOutput = txtOutputFolder.Text;
-            else if (File.Exists(txtInputPath.Text))
-            {
-                dirOutput = Path.GetDirectoryName(@$"{txtInputPath.Text}\");
-            }
-
-            _userOp = new UserOptions
+            _userOptions = new UserOptions
             {
                 SeekRecursively = chkSeekRecursively.Checked,
-                SeekImageExtensions = extFile,
+                SeekImageExtensions = seekExtensions,
                 InputFullPath = txtInputPath.Text,
-                OutputDirectory = dirOutput,
-                OutputType = true switch
-                {
-                    true when rdbOutputCbz.Checked => GenerateImages.EOutputType.Cbz,
-                    true when rdbOutputPdf.Checked => GenerateImages.EOutputType.Pdf,
-                    true when rdbOutputCopy.Checked => GenerateImages.EOutputType.Copy,
-                    true when rdbOutputReplace.Checked && chkSaveBackup.Checked => GenerateImages.EOutputType.ReplaceWithBackup,
-                    true when rdbOutputReplace.Checked => GenerateImages.EOutputType.Replace,
-                    _ => GenerateImages.EOutputType.None,
-                },
+                OutputDirectory = outputDirectory,
+                OutputType = outputType,
                 CustomOutputDirectory = chkOutputFolder.Checked
             };
 
-            bool runOK;
-            bool bOK;
+            bool isRunnable = _userOptions.InputFileExists || _userOptions.InputDirExists;
 
-            bOK = _userOp.InputFileExists || _userOp.InputDirExists;
-            runOK = bOK;
-            txtInputPath.ForeColor = bOK ? Color.LightGray : Color.Red;
+            SetTextBoxColor(txtInputPath, isRunnable ? Color.LightGray : Color.Red);
 
-            bOK = !string.IsNullOrEmpty(_userOp.OutputDirectory);
-            runOK &= bOK;
+            isRunnable &= !string.IsNullOrEmpty(_userOptions.OutputDirectory);
+            var outputFolderColor = txtOutputFolder.ReadOnly ? Color.DarkGray : Color.LightGray;
 
-            if (bOK)
-                txtOutputFolder.ForeColor = txtOutputFolder.ReadOnly ? Color.DarkGray : Color.LightGray;
-            else
+            SetTextBoxColor(txtOutputFolder, string.IsNullOrEmpty(_userOptions.OutputDirectory) ? Color.Red : outputFolderColor);
+            txtOutputFolder.Text = _userOptions.OutputFullPath;
+
+            _ = int.TryParse(txtWidth.Text, out int parsedWidth);
+            SetTextBoxColor(txtWidth, parsedWidth > 0 ? Color.LightGray : Color.Red);
+
+            _ = int.TryParse(txtHeight.Text, out int parsedHeight);
+            SetTextBoxColor(txtHeight, parsedHeight > 0 ? Color.LightGray : Color.Red);
+
+            btnRun.Enabled = isRunnable;
+        }
+
+        private (string seekExtensions, string outputDirectory, GenerateImages.EOutputType outputType) GetFileDefinitions()
+        {
+            string imageExtensions = (chkFilterJPG.Checked ? chkFilterJPG.Tag.ToString() : "") +
+                                     (chkFilterPNG.Checked ? ";" + chkFilterPNG.Tag.ToString() : "");
+
+            string outputDirectory = File.Exists(txtInputPath.Text) ? Path.GetDirectoryName(txtInputPath.Text) : "%DIR_ORIGEM%";
+            outputDirectory = chkOutputFolder.Checked ? txtOutputFolder.Text : outputDirectory;
+
+            GenerateImages.EOutputType outputType = GenerateImages.EOutputType.None;
+            switch (true)
             {
-                txtOutputFolder.ForeColor = Color.Red;
+                case var _ when rdbOutputCbz.Checked:
+                    outputType = GenerateImages.EOutputType.Cbz;
+                    break;
+                case var _ when rdbOutputPdf.Checked:
+                    outputType = GenerateImages.EOutputType.Pdf;
+                    break;
+                case var _ when rdbOutputCopy.Checked:
+                    outputType = GenerateImages.EOutputType.Copy;
+                    break;
+                case var _ when rdbOutputReplace.Checked && chkSaveBackup.Checked:
+                    outputType = GenerateImages.EOutputType.ReplaceWithBackup;
+                    break;
+                case var _ when rdbOutputReplace.Checked:
+                    outputType = GenerateImages.EOutputType.Replace;
+                    break;
             }
 
-            txtOutputFolder.Text = _userOp.OutputFullPath;
+            return (imageExtensions, outputDirectory, outputType);
+        }
 
-            _ = int.TryParse(txtWidth.Text, out int nOK);
-            runOK &= bOK;
-            txtWidth.ForeColor = nOK > 0 ? Color.LightGray : Color.Red;
-
-            _ = int.TryParse(txtHeight.Text, out nOK);
-            runOK &= bOK;
-            txtHeight.ForeColor = nOK > 0 ? Color.LightGray : Color.Red;
-
-            btnRun.Enabled = runOK;
+        private static void SetTextBoxColor(TextBox textBox, Color color)
+        {
+            textBox.ForeColor = color;
         }
 
         private string SavePackage(string outPath)
         {
-            if (_userOp.OutputType.Equals(GenerateImages.EOutputType.Cbz))
+            if (_userOptions.OutputType.Equals(GenerateImages.EOutputType.Cbz))
             {
                 GenPackageFile cbz = new();
                 return cbz.Save(outPath, GenPackageFile.ETypeFile.CbzFile);
             }
-            else if (_userOp.OutputType.Equals(GenerateImages.EOutputType.Pdf))
+            else if (_userOptions.OutputType.Equals(GenerateImages.EOutputType.Pdf))
             {
                 GenPackageFile pdf = new();
                 return pdf.Save(outPath, GenPackageFile.ETypeFile.PdfFile);

@@ -1,7 +1,7 @@
 ﻿
 namespace ResizeImages
 {
-    partial class frmMain
+    partial class MainForm
     {
         /// <summary>
         ///  Required designer variable.
@@ -30,7 +30,7 @@ namespace ResizeImages
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             columnHeader1 = new System.Windows.Forms.ColumnHeader();
             folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
             pnlLine = new System.Windows.Forms.Panel();
@@ -761,7 +761,7 @@ namespace ResizeImages
             pictureBox2.TabIndex = 2;
             pictureBox2.TabStop = false;
             // 
-            // frmMain
+            // MainForm
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -777,11 +777,11 @@ namespace ResizeImages
             Font = new System.Drawing.Font("Century Gothic", 11F);
             ForeColor = System.Drawing.Color.WhiteSmoke;
             Icon = (System.Drawing.Icon)resources.GetObject("$this.Icon");
-            Name = "frmMain";
+            Name = "MainForm";
             Text = "ResizeIt! Redimensionador de Imagens";
             WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            Load += Form1_Load;
-            ResizeEnd += Form1_ResizeEnd;
+            Load += MainForm_Load;
+            ResizeEnd += MainForm_ResizeEnd;
             ((System.ComponentModel.ISupportInitialize)picPreview).EndInit();
             panel4.ResumeLayout(false);
             panel4.PerformLayout();
