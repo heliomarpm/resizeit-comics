@@ -1,5 +1,5 @@
-<span id="top"></span>
-<h1 align="center">
+<div id="top" align="center" style="text-align:center;">
+<h1>
   <img src="icon.png" width="128" />
   <br> ResizeIt - Redimensionador de Imagens
 
@@ -7,13 +7,16 @@
   [![CodeFactor](https://www.codefactor.io/repository/github/heliomarpm/resizeit-comics/badge)](https://www.codefactor.io/repository/github/heliomarpm/resizeit-comics)
   [![Publish](https://github.com/heliomarpm/resizeit-comics/actions/workflows/publish.yml/badge.svg)](README.md)
   <a href="https://navto.me/heliomarpm" target="_blank"><img src="https://navto.me/assets/navigatetome-brand.png" width="32"/></a>
-
 </h1>
 
-<p align="center">
+<p>
+  <!-- PixMe -->
+  <a href="https://www.pixme.bio/heliomarpm" target="_blank" rel="noopener noreferrer">
+    <img alt="pixme url" src="https://img.shields.io/badge/donate%20on-pixme-1C1E26?style=for-the-badge&labelColor=1C1E26&color=28f4f4"/>
+  </a>
   <!-- PayPal -->
-  <a href="https://bit.ly/paypal-udeler" target="_blank" rel="noopener noreferrer">
-    <img alt="paypal url" src="https://img.shields.io/badge/donate%20on-paypal-1C1E26?style=for-the-badge&labelColor=1C1E26&color=0475fe"/>
+  <a href="https://bit.ly/paypal-sponsor-heliomarpm" target="_blank" rel="noopener noreferrer">
+    <img alt="paypal url" src="https://img.shields.io/badge/paypal-1C1E26?style=for-the-badge&labelColor=1C1E26&color=0475fe"/>
   </a>
   <!-- Ko-fi -->
   <a href="https://ko-fi.com/heliomarpm" target="_blank" rel="noopener noreferrer">
@@ -40,6 +43,7 @@
     <img alt="license url" src="https://img.shields.io/badge/license%20-MIT-1C1E26?style=for-the-badge&labelColor=1C1E26&color=61ffca"/>
   </a>
 </p>
+</div>
 
 ![C#](https://img.shields.io/badge/c%23-%23239120.svg?style=for-the-badge&logo=c-sharp&logoColor=white)
 &nbsp;![.net 7](https://img.shields.io/badge/CORE%207-5C2D91?style=for-the-badge&logo=.net&logoColor=white)
@@ -102,10 +106,14 @@ Obrigado, a todas as pessoas que já contribuiram com esse projeto
 
 Se você aprecia isso, considere doar para o desenvolvedor.
 
-<p align="center">
+<p>
+  <!-- PixMe -->
+  <a href="https://www.pixme.bio/heliomarpm" target="_blank" rel="noopener noreferrer">
+    <img alt="pixme url" src="https://img.shields.io/badge/donate%20on-pixme-1C1E26?style=for-the-badge&labelColor=1C1E26&color=28f4f4"/>
+  </a>
   <!-- PayPal -->
-  <a href="https://bit.ly/paypal-udeler" target="_blank" rel="noopener noreferrer">
-    <img alt="paypal url" src="https://img.shields.io/badge/donate%20on-paypal-1C1E26?style=for-the-badge&labelColor=1C1E26&color=0475fe"/>
+  <a href="https://bit.ly/paypal-sponsor-heliomarpm" target="_blank" rel="noopener noreferrer">
+    <img alt="paypal url" src="https://img.shields.io/badge/paypal-1C1E26?style=for-the-badge&labelColor=1C1E26&color=0475fe"/>
   </a>
   <!-- Ko-fi -->
   <a href="https://ko-fi.com/heliomarpm" target="_blank" rel="noopener noreferrer">
